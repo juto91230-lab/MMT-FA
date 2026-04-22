@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="icon" type="image/png" href="favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MMT FA | FiveM Server</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
@@ -583,9 +584,49 @@
 }
 
 
+/* --- BARRE DÉFILANTE ZEWO --- */
+.top-marquee-zewo {
+    width: 100%;
+    background: rgba(7, 129, 106, 0.9);
+    color: white;
+    padding: 10px 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    border-bottom: 2px solid #07816a;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-content-zewo {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee-zewo 55s linear infinite;
+}
+
+@keyframes marquee-zewo {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+/* Ajustement de la Navbar pour qu'elle descende un peu */
+.navbar {
+    top: 45px !important;
+}
+
     </style>
 </head>
 <body>
+
+    <!-- MESSAGE DÉFILANT -->
+<div class="top-marquee-zewo">
+    <div class="marquee-content-zewo">
+        ⚠️ MMT FA en préparation ! — Ouverture prévue entre le 08/05/2026 et le 15/05/2026. Envie de soutenir le projet ? Pour tout investissement financier, profitez d'un bonus exceptionnel de +25% en Coins pour votre contribution !  ⚠️ &nbsp;&nbsp;&nbsp;&nbsp; MMT FA en préparation ! — Ouverture prévue entre le 08/05/2026 et le 15/05/2026. Envie de soutenir le projet ? Pour tout investissement financier, profitez d'un bonus exceptionnel de +25% en Coins pour votre contribution ! ⚠️
+    </div>
+</div>
 
     
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
