@@ -7,16 +7,12 @@
 
     <link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/1495913129945862245/1496284933738729694/Design_sans_titre__2_-removebg-preview.png?ex=69f13c6f&is=69efeaef&hm=0187611900feed38e231ae5df77e7833a88d5a9313cec5ce040f364cde7fc10f&=&format=webp&quality=lossless">
     
-    <!-- Google Fonts : Lexend pour le côté Boutique Moderne -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lexend:wght@400;700;900&display=swap" rel="stylesheet">
     
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Particle.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
     <style>
@@ -233,7 +229,7 @@
             border-radius: var(--radius);
             padding: 30px;
             transition: 0.3s;
-            height: auto; /* Changez 100% par auto pour que la case s'ajuste au texte */
+            height: auto; 
         }
 
         .vision-card:hover { border-color: var(--primary); transform: translateY(-5px); }
@@ -300,14 +296,12 @@
 </head>
 <body>
 
-    <!-- MESSAGE DÉFILANT -->
     <div class="top-marquee-zewo">
         <marquee scrollamount="7">
             ⚠️ MMT FA en préparation ! — Ouverture prévue entre le 08/05/2026 et le 15/05/2026. Profitez d'un bonus exceptionnel de +25% en Coins pour votre contribution ! ⚠️
         </marquee>
     </div>
 
-    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">  
             <a class="navbar-brand d-flex align-items-center gap-3" onclick="showPage('home')" style="cursor: pointer;">
@@ -330,7 +324,6 @@
         </div>
     </nav>
 
-    <!-- CONTENU PRINCIPAL -->
     <div id="main-content">
         <section class="hero">
             <div id="particles-js"></div>
@@ -469,7 +462,6 @@
         </section>
     </div>
 
-    <!-- PAGE REGLEMENT -->
     <div id="reglement-page" class="container">
         <div class="text-center mb-5">
             <h2 style="font-size: 3rem;">REGLEMENT DE <span style="color:var(--primary)">MMT FA</span></h2>
@@ -547,7 +539,6 @@
                 <div id="leg" class="rule-pane">
                     <h3 class="mb-4" style="color:var(--primary)">Services Publics & Travail</h3>
                     <div class="accordion" id="accLeg">
-                        <!-- IMMOBILIER -->
                         <div class="accordion-item">
                             <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legImmo">🏠 Règlement Officiel Immobilier</button></h2>
                             <div id="legImmo" class="accordion-collapse collapse" data-bs-parent="#accLeg">
@@ -574,7 +565,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- GOUVERNEMENT -->
                         <div class="accordion-item">
                             <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legGouv">🏛️ Règlement Officiel Gouvernement & DOJ</button></h2>
                             <div id="legGouv" class="accordion-collapse collapse" data-bs-parent="#accLeg">
@@ -593,7 +583,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- LSPD -->
                         <div class="accordion-item">
                             <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legLSPD">🚓 Règlement Officiel LSPD</button></h2>
                             <div id="legLSPD" class="accordion-collapse collapse" data-bs-parent="#accLeg">
@@ -612,7 +601,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- EMS -->
                         <div class="accordion-item">
                             <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legEMS">🚑 Règlement Officiel EMS</button></h2>
                             <div id="legEMS" class="accordion-collapse collapse" data-bs-parent="#accLeg">
@@ -628,7 +616,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- ENTREPRISES -->
                         <div class="accordion-item">
                             <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legJob">🏢 Règlement Officiel Entreprises</button></h2>
                             <div id="legJob" class="accordion-collapse collapse" data-bs-parent="#accLeg">
@@ -650,7 +637,6 @@
                 <div id="ill" class="rule-pane">
                     <h3 class="mb-4" style="color:var(--primary)">Criminalité & Groupes</h3>
                     <div class="accordion" id="accIll">
-                        <!-- INTRODUCTION -->
                         <div class="accordion-item">
                             <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illIntro">📜 Introduction</button></h2>
                             <div id="illIntro" class="accordion-collapse collapse" data-bs-parent="#accIll">
@@ -667,7 +653,6 @@
                             </div>
                         </div>
 
-                        <!-- RÈGLEMENT GÉNÉRAL -->
                         <div class="accordion-item">
                             <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illGenFull">🚫 Règlement Général Illégal</button></h2>
                             <div id="illGenFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
@@ -686,7 +671,6 @@
                             </div>
                         </div>
 
-                        <!-- PRISES D'OTAGES -->
                         <div class="accordion-item">
                             <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illOtageFull">🎭 Prises d’otages</button></h2>
                             <div id="illOtageFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
@@ -707,7 +691,6 @@
                             </div>
                         </div>
 
-                        <!-- ARMES -->
                         <div class="accordion-item">
                             <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illArmesFull">🔫 Armes & Hiérarchie</button></h2>
                             <div id="illArmesFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
@@ -727,7 +710,6 @@
                             </div>
                         </div>
 
-                        <!-- BRAQUAGES -->
                         <div class="accordion-item">
                             <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illBraqFull">🏦 Braquages</button></h2>
                             <div id="illBraqFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
@@ -746,7 +728,6 @@
                             </div>
                         </div>
 
-                        <!-- FUSILLADES -->
                         <div class="accordion-item">
                             <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illGunFull">🔫 Fusillades / Gunfight</button></h2>
                             <div id="illGunFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
@@ -760,7 +741,6 @@
                             </div>
                         </div>
 
-                        <!-- DROGUES -->
                         <div class="accordion-item">
                             <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illDrugFull">🌱 Drogues</button></h2>
                             <div id="illDrugFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
@@ -776,7 +756,6 @@
                             </div>
                         </div>
 
-                        <!-- CORRUPTION -->
                         <div class="accordion-item">
                             <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illCorpFull">🪙 Corruption</button></h2>
                             <div id="illCorpFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
@@ -790,7 +769,6 @@
                             </div>
                         </div>
 
-                        <!-- ARNAQUES ET VOLS -->
                         <div class="accordion-item">
                             <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illTheft">💣 Arnaques / Vols</button></h2>
                             <div id="illTheft" class="accordion-collapse collapse" data-bs-parent="#accIll">
@@ -805,7 +783,6 @@
                             </div>
                         </div>
 
-                        <!-- MORT RP ET WIPE -->
                         <div class="accordion-item">
                             <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illWipeFull">☠️ Mort RP / Wipe</button></h2>
                             <div id="illWipeFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
@@ -823,7 +800,6 @@
                             </div>
                         </div>
 
-                        <!-- FREE LOOT -->
                         <div class="accordion-item">
                             <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illLootFull">📜 Loot RP / Free Loot</button></h2>
                             <div id="illLootFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
@@ -839,7 +815,6 @@
                             </div>
                         </div>
 
-                        <!-- DISCORD -->
                         <div class="accordion-item">
                             <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illDiscFull">🖥️ Discord Illégal</button></h2>
                             <div id="illDiscFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
@@ -859,15 +834,40 @@
         </div>
     </div>
 
-<!-- PATCH NOTES -->
     <div id="patchnotes-page" class="container" style="display: none; padding-top: 150px;">
         <div class="text-center mb-5">
             <h2>PATCH <span style="color:var(--primary)">NOTES</span></h2>
         </div>
         <div class="row justify-content-center">
             <div class="col-md-10">
-                <!-- NOUVELLE VERSION 1.2 -->
+
                 <div class="vision-card mb-4" style="border-left: 4px solid var(--primary)">
+                    <h3>VERSION 1.3 - <small style="opacity: 0.5;">28/04/2026</small></h3>
+                    <div class="mt-3" style="color:var(--text-muted)">
+                        <p><strong>🖥️ HUD & Interface :</strong></p>
+                        <ul class="mb-3">
+                            <li>Modification de l'HUD : Nouvelles couleurs nourriture et eau.</li>
+                            <li>Ajustement de la disposition de l'HUD pour une meilleure visibilité.</li>
+                            <li>Nouveau compteur de vitesse pour les véhicules.</li>
+                            <li>Refonte visuelle du Staffboard.</li>
+                        </ul>
+                        <p><strong>🗺️ Mappings :</strong></p>
+                        <ul class="mb-3">
+                            <li>Ajout du mapping Vigneron.</li>
+                            <li>Ajout du mapping Mendosa.</li>
+                            <li>Ajout du nouveau mapping Gouvernement.</li>
+                        </ul>
+                        <p><strong>🛍️ Boutique In-Game :</strong></p>
+                        <ul>
+                            <li>Intégration de la boutique IG.</li>
+                            <li>Nouvelle catégorie VIP : VIP Gold, Cristal et Platine.</li>
+                            <li>Nouvelle catégorie Boost Farm : Boosts 1j, 7j et 30j.</li>
+                            <li>Nouvelle catégorie cosmétique : Véhicules exclusifs et Skins d'armes.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="vision-card mb-4" style="border-left: 4px solid var(--primary); opacity: 0.7;">
                     <h3>VERSION 1.2 - <small style="opacity: 0.5;">26/04/2026</small></h3>
                     <ul class="mt-3" style="color:var(--text-muted)">
                         <li>🚀 Modification de l’interface du site.</li>
@@ -875,12 +875,11 @@
                         <li>📚 Ajustement du règlement.</li>
                         <li>📖 Ajout du top serveur.</li> 
                         <li>✅ Ajout d’une fonctionnalité : au bout de 60 votes sur le top serveur, une caisse mystère est offerte en jeu.</li>
-                        <li>✅ Création du TikTok MMT FA : Création du TikTok MMT FA : @mmtrolplay.</li>
+                        <li>✅ Création du TikTok MMT FA : @mmtrolplay.</li>
                     </ul>
                 </div>
 
-                <!-- ANCIENNE VERSION 1.1 -->
-                <div class="vision-card mb-4" style="border-left: 4px solid var(--primary); opacity: 0.7;">
+                <div class="vision-card mb-4" style="border-left: 4px solid var(--primary); opacity: 0.5;">
                     <h3>VERSION 1.1 - <small style="opacity: 0.5;">22/04/2026</small></h3>
                     <ul class="mt-3" style="color:var(--text-muted)">
                         <li>✅ Ajout de la section Patch Notes interactive.</li>
