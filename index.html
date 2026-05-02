@@ -517,7 +517,7 @@
                                     <p><strong>12. Fail RP :</strong> Comportement qui ne respecte pas les règles du roleplay, actions irréalistes ou incohérentes avec la situation.</p>
                                     <p><strong>13. Grimace RP :</strong> Refuser de jouer une action subie. Exemple : Ne pas accepter d'être menotté, refus de coopérer lors d'une arrestation.</p>
                                     <p><strong>14. Delay RP :</strong> Prendre volontairement du retard dans une action pour gêner les autres joueurs. Exemple : Conduite lente intentionnelle pendant une poursuite.</p>
-                                    <p><strong>15. Push & Pull :</strong> Pousser ou tirer un autre joueur sans son accord RP. Doit être justifié par une action cohérente.</p>
+                                    <p><strong>15. Push & Pull :</strong> Pousser ou tirer un autre joueur sans son accord RP. Doit être justifyé par une action cohérente.</p>
                                     <p><strong>16. Bump & Run :</strong> Technique de conduite où on percute légèrement un véhicule pour le faire sortir de la route. Doit être réaliste et justifié.</p>
                                     <p><strong>17. PIT Manoeuvre :</strong> Technique d'interception policière qui consiste à percuter l'arrière d'un véhicule en fuite pour le faire tourner. Réservé aux forces de l'ordre expérimentées.</p>
                                     <p><strong>18. Safe Zone :</strong> Zone où aucune action violente n'est autorisée. Exemples : Hôpital, Commissariat, Zones gouvernementales.</p>
@@ -840,6 +840,104 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-10">
+
+                <!-- PATCH NOTE 02/05/2026 -->
+                <div class="vision-card mb-5" style="border-left: 4px solid var(--primary); background: rgba(15, 15, 15, 0.9);">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+                        <h3 class="mb-0 text-white">🧪 Devlog – Avancement du serveur</h3>
+                        <span class="badge fw-bold px-3 py-2" style="background-color: var(--primary); color: #000;">02/05/2026</span>
+                    </div>
+
+                    <div class="mt-3">
+                        <div class="row g-4 text-white">
+                            
+                            <!-- Systèmes & Features -->
+                            <div class="col-md-6">
+                                <h5 style="color:var(--primary)"><i class="fas fa-cogs me-2"></i> 🧩 Systèmes & Features</h5>
+                                <ul class="ps-3" style="font-size: 0.95rem; list-style-type: none;">
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Ajout d’un système d’animation tablette</li>
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Intégration du système de contrats</li>
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Mise en place des prix d’achat/revente de matériaux illégaux</li>
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Possibilité de donner accès à une propriété au joueur le plus proche</li>
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Ajout d’un système immobilier (location & achat via agence IMO)</li>
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Ajout d’un point de modification d’armes (réservé VIP)</li>
+                                </ul>
+                            </div>
+
+                            <!-- Braquages & Activités Illégales -->
+                            <div class="col-md-6">
+                                <h5 style="color:var(--primary)"><i class="fas fa-mask me-2"></i> 💰 Braquages & Activités Illégales</h5>
+                                <ul class="ps-3" style="font-size: 0.95rem; list-style-type: none;">
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Ajout du braquage Pacific</li>
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Ajustement du braquage maison (chance modifiée)</li>
+                                </ul>
+                                <p class="mb-1 mt-2 small text-muted"><strong>Cargo :</strong></p>
+                                <ul class="ps-3 mb-2" style="font-size: 0.90rem; list-style-type: none;">
+                                    <li><i class="fas fa-minus me-2" style="color: var(--primary); font-size: 0.7rem;"></i> Rééquilibrage de l’XP</li>
+                                    <li><i class="fas fa-minus me-2" style="color: var(--primary); font-size: 0.7rem;"></i> Ajustement du nombre de policiers requis</li>
+                                    <li><i class="fas fa-minus me-2" style="color: var(--primary); font-size: 0.7rem;"></i> Modification du temps de braquage</li>
+                                </ul>
+                                <p class="mb-1 small text-muted"><strong>Fleeca :</strong></p>
+                                <ul class="ps-3" style="font-size: 0.90rem; list-style-type: none;">
+                                    <li><i class="fas fa-minus me-2" style="color: var(--primary); font-size: 0.7rem;"></i> Rééquilibrage de l’XP</li>
+                                    <li><i class="fas fa-minus me-2" style="color: var(--primary); font-size: 0.7rem;"></i> Réduction du nombre de policiers requis</li>
+                                </ul>
+                            </div>
+
+                            <!-- Jobs & Activités -->
+                            <div class="col-md-6">
+                                <h5 style="color:var(--primary)"><i class="fas fa-briefcase me-2"></i> 👷 Jobs & Activités</h5>
+                                <ul class="ps-3" style="font-size: 0.95rem; list-style-type: none;">
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Ajout de l’auto-école (Permis voiture, poids lourd, moto)</li>
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Ajout de grossistes (Unicorn, Pearls, Wiwang, Pizzeria)</li>
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Ajout d’un revendeur farm</li>
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Ajout de jobs intérim (Désherbage, Cariste, Nettoyeur de piscine)</li>
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Ajout boucherie & poissonnerie</li>
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Ajout job EMS & agence immobilière</li>
+                                </ul>
+                            </div>
+
+                            <!-- Map & Points d’intérêt -->
+                            <div class="col-md-6">
+                                <h5 style="color:var(--primary)"><i class="fas fa-map-marked-alt me-2"></i> 🗺️ Map & Points d’intérêt</h5>
+                                <ul class="ps-3" style="font-size: 0.95rem; list-style-type: none;">
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> 17 supérettes, 9 Ammunation, 11 garages + 1 garage bateau, 3 casses auto</li>
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Zone de chasse, Fonderie (fer, cuivre, etc.)</li>
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Blips stations-service, coiffeur, Magasins de vêtements + blips</li>
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Locations : Véhicules (Sanchez, Sanchez2, Club) & Bateaux</li>
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Ajout de fourrières (voitures & bateaux)</li>
+                                </ul>
+                            </div>
+
+                            <!-- Doorlock -->
+                            <div class="col-12">
+                                <h5 style="color:var(--primary)"><i class="fas fa-lock me-2"></i> 🔐 Doorlock (Ajouts)</h5>                            
+                                <div class="d-flex flex-wrap gap-1">
+                                    <span class="badge border text-white" style="border-color: var(--primary) !important;">UNICORN</span>
+                                    <span class="badge border text-white" style="border-color: var(--primary) !important;">WIWANG</span>
+                                    <span class="badge border text-white" style="border-color: var(--primary) !important;">PEARLS</span>
+                                    <span class="badge border text-white" style="border-color: var(--primary) !important;">Agence IMO</span>
+                                    <span class="badge border text-white" style="border-color: var(--primary) !important;">LS Custom</span>
+                                    <span class="badge border text-white" style="border-color: var(--primary) !important;">Vigneron</span>
+                                    <span class="badge border text-white" style="border-color: var(--primary) !important;">LSPD / BCSO</span>
+                                    <span class="badge border text-white" style="border-color: var(--primary) !important;">EMS Nord</span>
+                                    <span class="badge border text-white" style="border-color: var(--primary) !important;">Villa Œil Rouge</span>
+                                    <span class="badge border text-white" style="border-color: var(--primary) !important;">Gouvernement</span>
+                                    <span class="badge border text-white" style="border-color: var(--primary) !important;">Pizza</span>
+                                </div>
+                            </div>
+
+                            <!-- Modifications & Notes -->
+                            <div class="col-md-6 mt-4">
+                                <h5 style="color:var(--primary)"><i class="fas fa-wrench me-2"></i> ⚙️ Modifications</h5>
+                                <ul class="ps-3" style="font-size: 0.95rem; list-style-type: none;">
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Modification de la vidéo de loading (suppression des logos de marque)</li>
+                                    <li class="mb-1"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Ajustement des gains d’XP sur plusieurs braquages</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- PATCH NOTE 01/05/2026 -->
                 <div class="vision-card mb-5" style="border-left: 4px solid var(--primary); background: rgba(15, 15, 15, 0.9);">
