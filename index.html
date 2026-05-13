@@ -318,7 +318,7 @@
                     <li class="nav-item"><a class="nav-link" onclick="showPage('patchnotes')">Patch Notes</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://cfx.re/join/qqa4pz6">Serveur</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://discord.gg/ervEHwbCMG" target="_blank">Discord</a></li>
-                    <li class="nav-item"><a class="btn-premium btn-primary-custom py-2 ms-lg-3" href="XXX">Boutique</a></li>
+                    <li class="nav-item"><a class="btn-premium btn-primary-custom py-2 ms-lg-3" href="https://mmt-fa.tebex.io/">Boutique</a></li>
                 </ul>
             </div>
         </div>
@@ -656,7 +656,7 @@
                                         <li>Interduit de participer à des actions illégales sans être recruté dans le CREW officiel.</li>
                                         <li><strong>Poursuites :</strong> Plans pneus autorisés pour les groupes officiels après 15 minutes.</li>
                                         <li><strong>Comportement :</strong> Interdiction de mentir sur ses blessures. Alliances entre groupes interdites. Trash talk sur corps au sol interdit.</li>
-                                        <li><strong>Transactions :</strong> Interdit près du QG ou en zone safe. Vente hors DarkChat interdite.</li>
+                                        <li><strong>Transactions :</strong> Interduit près du QG ou en zone safe. Vente hors DarkChat interdite.</li>
                                         <li><strong>Organisation :</strong> Un seul personnage illégal autorisé. Petites frappes interdites de posséder des habitants ou revendiquer des points de récolte.</li>
                                         <li><strong>Territoires :</strong> Installation uniquement dans les zones indiquées sur la carte. Entrer en zone ennemie doit rester cohérent RP.</li>
                                     </ul>
@@ -837,7 +837,7 @@
                 <div class="vision-card mb-5" style="border-left: 4px solid var(--primary); background: rgba(15, 15, 15, 0.9);">
                     <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
                         <h3 class="mb-0 text-white">🧪 Devlog – Avancement du serveur</h3>
-                        <span class="badge fw-bold px-3 py-2" style="background-color: var(--primary); color: #000;">10/05/2026</span>
+                        <span class="badge fw-bold px-3 py-2" style="background-color: var(--primary); color: #000;">13/05/2026</span>
                     </div>
 
                     <div class="mt-3">
@@ -849,23 +849,21 @@
                                 <ul class="ps-3 mb-3" style="font-size: 0.90rem; list-style-type: none;">
                                     <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Mapping & Entreprise <b>JMS Logistics</b></li>
                                     <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Système de Crafts, Garage et Doorlock JMS</li>
-                                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Ajout du garage Vigneron</li>
+                                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Système de partage auto des véhicules avec l'organisation</li>
+                                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Ajout du garage Vigneron & Récupération armes permanentes</li>
+                                </ul>
+
+                                <p class="mb-1 small text-muted"><strong>Gameplay & Immersion :</strong></p>
+                                <ul class="ps-3 mb-3" style="font-size: 0.90rem; list-style-type: none;">
+                                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Animations de brancard (attachement joueurs)</li>
+                                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Système de blacklist vêtements pour achats items</li>
+                                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Chargement dynamique munitions & Whitelist peds (JSON)</li>
+                                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Formatage date Paris (représentation précise)</li>
                                 </ul>
 
                                 <p class="mb-1 small text-muted"><strong>Nouveaux Items (Vigneron) :</strong></p>
                                 <ul class="ps-3 mb-3" style="font-size: 0.85rem; list-style-type: none;">
-                                    <li>🍇 Raisin / Raisin Blanc (0.250kg)</li>
-                                    <li>🍷 Vin / Vin Blanc (1kg)</li>
-                                    <li>📦 Caisse de Vin (6kg)</li>
-                                    <li>📦 Caisse de Vin Blanc (6kg)</li>
-                                </ul>
-                                
-                                <p class="mb-1 small text-muted"><strong>Gameplay & Immersion :</strong></p>
-                                <ul class="ps-3" style="font-size: 0.90rem; list-style-type: none;">
-                                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Timing dispatch police ajusté (vols véhicules)</li>
-                                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Cachette dans les coffres améliorée</li>
-                                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Notification de fin de loot sur les braquages</li>
-                                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Activation du Pillbox Hospital</li>
+                                    <li>🍇 Raisin / Raisin Blanc (0.250kg) | 🍷 Vin / Vin Blanc (1kg) | 📦 Caisse de Vin (6kg)</li>
                                 </ul>
                             </div>
 
@@ -873,23 +871,25 @@
                                 <h5 style="color:var(--primary)"><i class="fas fa-wrench me-2"></i> 🛠 Fix & Améliorations</h5>
                                 <ul class="ps-3" style="font-size: 0.90rem; list-style-type: none;">
                                     <li><i class="fas fa-tools me-2" style="color: var(--primary);"></i> Passage en <b>version 1.2.22</b></li>
-                                    <li><i class="fas fa-tools me-2" style="color: var(--primary);"></i> Correction des prix du <b>BlackMarket</b></li>
-                                    <li><i class="fas fa-tools me-2" style="color: var(--primary);"></i> Fix HUD et interfaces utilisateur</li>
-                                    <li><i class="fas fa-tools me-2" style="color: var(--primary);"></i> Correction logique cocktails (consommation)</li>
-                                    <li><i class="fas fa-tools me-2" style="color: var(--primary);"></i> Gestion avancée moteur/capot (Engine bay)</li>
+                                    <li><i class="fas fa-tools me-2" style="color: var(--primary);"></i> Refonte notifs traitement labs & Validation codes</li>
+                                    <li><i class="fas fa-tools me-2" style="color: var(--primary);"></i> Fix gestion erreurs dispatch & Stabilité réseau peds</li>
+                                    <li><i class="fas fa-tools me-2" style="color: var(--primary);"></i> Optimisation bruit & Distance interaction cargo</li>
+                                    <li><i class="fas fa-tools me-2" style="color: var(--primary);"></i> Retrait items panier NUI (restauration origine)</li>
+                                    <li><i class="fas fa-tools me-2" style="color: var(--primary);"></i> Fix interactions véhicules d'urgence & Pillbox Hospital</li>
                                 </ul>
 
-                                <h5 style="color:var(--primary)" class="mt-4"><i class="fas fa-sync me-2"></i> 🔄 Rework</h5>
+                                <h5 style="color:var(--primary)" class="mt-4"><i class="fas fa-sync me-2"></i> 🔄 Rework & UI</h5>
                                 <ul class="ps-3" style="font-size: 0.90rem; list-style-type: none;">
-                                    <li><i class="fas fa-bolt me-2" style="color: var(--primary);"></i> Synchronisation des systèmes internes</li>
-                                    <li><i class="fas fa-bolt me-2" style="color: var(--primary);"></i> Optimisation des builds NUI</li>
-                                    <li><i class="fas fa-bolt me-2" style="color: var(--primary);"></i> Amélioration globale des assets HUD</li>
+                                    <li><i class="fas fa-bolt me-2" style="color: var(--primary);"></i> Gestion focus NUI (Identité / Radar / Panier)</li>
+                                    <li><i class="fas fa-bolt me-2" style="color: var(--primary);"></i> Amélioration sacs de loot & Alertes dispatch</li>
+                                    <li><i class="fas fa-bolt me-2" style="color: var(--primary);"></i> Optimisation globale des assets HUD</li>
                                 </ul>
                             </div>
 
                             <div class="col-12 mt-2">
+                                <span class="badge border text-white" style="border-color: var(--primary) !important;">Publication du Tebex</span>
                                 <span class="badge border text-white" style="border-color: var(--primary) !important;">Medic Overlay Update</span>
-                                <span class="badge border text-white" style="border-color: var(--primary) !important;">Asset Makeup</span>
+                                <span class="badge border text-white" style="border-color: var(--primary) !important;">Désactivation Fauteuil Roulant (Auth remove)</span>
                             </div>
                         </div>
                     </div>
