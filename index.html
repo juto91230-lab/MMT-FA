@@ -16,6 +16,33 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
     <style>
+
+
+/* --- AJOUTER CE BLOC JUSTE ICI --- */
+        #video-bg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            transform: translateX(-50%) translateY(-50%);
+            object-fit: cover;
+            filter: brightness(0.4); /* Assombrit légèrement pour lire le texte */
+        }
+        
+        /* On rend les sections transparentes pour voir la vidéo derrière */
+        .hero, .vision-section, #server {
+            background: transparent !important;
+        }
+
+        .main-hero-card, .vision-card, .team-card {
+            background: rgba(15, 15, 15, 0.6) !important;
+            backdrop-filter: blur(10px);
+        }
+
     :root {
     --primary: #07816a; 
     --primary-glow: rgba(7, 129, 106, 0.3);
@@ -292,15 +319,142 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         footer { border-top: 1px solid var(--border-color); padding: 60px 0; background: #000; margin-top: 100px; }
-    </style>
+   
+   
+   .navbar {
+    padding-top: 0 !important;    /* Supprime l'espace en haut */
+    padding-bottom: 0 !important; /* Supprime l'espace en bas */
+    min-height: 80px;             /* Définit une hauteur plus petite (ajuste selon tes goûts) */
+    display: flex;
+    align-items: center;          /* Centre verticalement le contenu dans la petite barre */
+    top: 0;                       /* Force le collage au sommet */
+    position: fixed;              /* Garde le menu en haut au scroll */
+    width: 100%;
+}
+
+/* Si tu as un container à l'intérieur, vérifie aussi ses marges */
+.nav-container {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+   
+
+/* 1. On retire les marges par défaut du navigateur */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 2. On colle la navbar au sommet */
+.navbar {
+    top: 0 !important;
+    margin-top: 0 !important;
+    position: fixed; /* Ou 'absolute' si tu ne veux pas qu'elle suive le scroll */
+    width: 100%;
+    z-index: 9999;
+}
+
+:root {
+    --devlog-bg: #0a0a0a;
+    --devlog-border: #07816a; /* Ta couleur verte */
+    --devlog-text-muted: #888;
+    --ajouts-color: #00ffa3;
+    --fix-color: #00d1ff;
+    --rework-color: #0085ff;
+}
+
+.devlog-section {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.devlog-card {
+    background-color: var(--devlog-bg);
+    border: 2px solid var(--devlog-border);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 1000px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(7, 129, 106, 0.2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.devlog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.devlog-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.devlog-title h2 {
+    color: white;
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+.devlog-date {
+    background: #07816a;
+    color: black;
+    padding: 5px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.devlog-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* Titres de colonnes */
+.devlog-col h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.title-ajouts { color: var(--ajouts-color); }
+.title-fix { color: var(--fix-color); }
+.title-rework { color: var(--rework-color); }
+
+.sub-cat {
+    color: var(--devlog-text-muted);
+    font-size: 0.9rem;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* Listes */
+.devlog-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.devlog-col li {
+    color: white;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}  
+   </style>
 </head>
 <body>
 
-    <div class="top-marquee-zewo">
-        <marquee scrollamount="7">
-            ⚠️ MMT FA : Ouverture officielle le 15/05/2026 à 20h00 ⚠️
-        </marquee>
-    </div>
+
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">  
@@ -332,7 +486,7 @@
                     <div class="row g-0 align-items-stretch">
                         <div class="col-lg-6 d-flex align-items-center">
                             <div class="hero-text-content p-5">
-                                <span class="hero-badge">Ouverture le 15/05/2026 a 20h00</span>
+                                <span class="hero-badge">Votre expérience notre plaisir</span>
                                 <h1>BIENVENUE SUR <br><span class="accent-color">MMT FA</span></h1>
                                 <p>Entrez dans une expérience vivante, façonnée par vos décisions. Un univers unique conçu pour une immersion totale et une fluidité maximale.</p>
                                 <div class="d-flex gap-3 mt-4">
@@ -446,10 +600,10 @@
         <section id="server" class="py-5" style="background: #0a0a0a;">
             <div class="container">
                 <div class="row g-4 text-center">
-                    <div class="col-md-3"><div class="vision-card"><h2 style="color:var(--primary)">20</h2><p>Joueurs Totaux</p></div></div>
+                    <div class="col-md-3"><div class="vision-card"><h2 style="color:var(--primary)">18</h2><p>Joueurs Totaux</p></div></div>
                     <div class="col-md-3"><div class="vision-card"><h2 style="color:var(--primary)">97%</h2><p>Optimisation</p></div></div>
                     <div class="col-md-3"><div class="vision-card"><h2 style="color:var(--primary)">+60</h2><p>Scripts Inédits</p></div></div>
-                    <div class="col-md-3"><div class="vision-card"><h2 style="color:var(--primary)">8</h2><p>Membres Staff</p></div></div>
+                    <div class="col-md-3"><div class="vision-card"><h2 style="color:var(--primary)">6</h2><p>Membres Staff</p></div></div>
                 </div>
             </div>
         </section>
@@ -526,301 +680,1418 @@
                                 </div>
                             </div>
                         </div>
+
+
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#genCGUFull">
+             CGV & CGU 
+        </button>
+    </h2>
+    <div id="genCGUFull" class="accordion-collapse collapse" data-bs-parent="#accGen">
+        <div class="accordion-body" style="line-height: 1.8; color: #d0d0d0; padding: 30px;">
+            
+            <h2 class="text-white mb-4" style="border-bottom: 2px solid var(--primary); padding-bottom: 10px;">CONDITIONS GÉNÉRALES DE VENTE ET D’UTILISATION (CGV/CGU)</h2>
+            <p class="text-white">Boutique Officielle <strong>MMT FA</strong> via la Plateforme Tebex</p>
+
+            <h3 class="accent-color mt-4">PRÉAMBULE</h3>
+            <p>Les présentes conditions régissent l'ensemble des transactions effectuées sur la boutique virtuelle du serveur. En finalisant une transaction, l'utilisateur (ci-après désigné "le Client") reconnaît avoir la pleine capacité juridique et accepte sans réserve les clauses détaillées ci-dessous.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">ARTICLE 1 : NATURE DES BIENS ET SERVICES</h3>
+            <p>Le Client reconnaît que les achats effectués consistent en des "biens virtuels" ou "services numériques" (grades, cosmétiques, monnaie virtuelle, etc.) destinés exclusivement à l'utilisation sur le serveur de jeu. Ces éléments n'ont aucune valeur monétaire réelle en dehors de l'infrastructure du serveur.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">ARTICLE 2 : RENONCIATION AU DROIT DE RÉTRACTATION</h3>
+            <p>Conformément aux dispositions de l’article L.221-28 13° du Code de la Consommation, le droit de rétractation ne peut être exercé pour les contrats de fourniture de contenu numérique non fourni sur un support matériel.</p>
+            <p><strong>Conséquence juridique :</strong> En cochant la case d'acceptation lors du paiement, le Client donne son accord exprès pour que la livraison du contenu commence immédiatement après le paiement. Par cette action, il reconnaît perdre son droit de rétractation. Aucune demande de remboursement ne sera acceptée pour quelque motif que ce soit une fois la commande validée.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">ARTICLE 3 : RESPONSABILITÉ ET GESTION DES ABONNEMENTS</h3>
+            <p>Certains articles sont vendus sous forme de souscription récurrente (abonnements mensuels).</p>
+            <ul>
+                <li><strong>Responsabilité de résiliation :</strong> Le Client est l'unique responsable de la gestion et de la résiliation de ses abonnements via son interface Tebex ou son compte de paiement (PayPal/Stripe).</li>
+                <li><strong>Oubli et négligence :</strong> En cas d'oubli d'annulation de l'abonnement par le Client avant la date d'échéance, la transaction automatique sera considérée comme valide. Aucun remboursement rétroactif ne pourra être exigé.</li>
+                <li><strong>Maintien des paiements :</strong> Le prélèvement automatique reste actif tant que le Client ne procède pas manuellement à sa désactivation, et ce, indépendamment de son activité en jeu.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">ARTICLE 4 : RÉVOCATION DE L’ACCÈS ET SANCTIONS DISCIPLINAIRES</h3>
+            <p>L'achat d'un avantage sur la boutique ne confère aucun droit dérogatoire au règlement intérieur du serveur.</p>
+            <ul>
+                <li><strong>Rupture de contrat pour faute :</strong> Si le Client se rend coupable d'une infraction au règlement (triche, harcèlement, ou toute autre violation grave) entraînant un bannissement définitif, l'accès aux services achetés est de facto révoqué.</li>
+                <li><strong>Absence de remboursement pour sanction :</strong> Si l'interruption du service est causée par le comportement fautif du Client, aucun remboursement (total ou prorata) ne sera effectué. L'exclusion du serveur ne constitue pas une annulation automatique des engagements financiers du Client.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">ARTICLE 5 : LITIGES, "CHARGEBACKS" ET CONSÉQUENCES</h3>
+            <p>Toute demande d'opposition auprès d'un organisme bancaire (Litige PayPal, Chargeback) sans accord préalable écrit de l'administration sera considérée comme une tentative de fraude.</p>
+            <p><strong>Sanction administrative :</strong> Toute tentative de litige entraînera le bannissement immédiat et irréversible du Client de toutes nos infrastructures et de la base de données globale de Tebex.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">ARTICLE 6 : MODIFICATION DES SERVICES</h3>
+            <p>La direction se réserve le droit de modifier, d'équilibrer ou de supprimer certains avantages liés à un achat pour garantir l'équité du jeu. Ces modifications techniques ne peuvent donner lieu à une demande de remboursement.</p>
+
+            <div style="margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 10px; border-left: 4px solid var(--primary);">
+                <p style="margin-bottom: 0; font-style: italic; color: #fff;">En validant votre panier, vous certifiez avoir compris que tout achat est définitif, non remboursable, et que vous restez responsable de vos abonnements même en cas d'exclusion définitive du serveur.</p>
+            </div>
+
+        </div>
+    </div>
+</div>
                     </div>
                 </div>
 
-                <div id="leg" class="rule-pane">
-                    <h3 class="mb-4" style="color:var(--primary)">Services Publics & Travail</h3>
-                    <div class="accordion" id="accLeg">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legImmo">🏠 Règlement Officiel Immobilier</button></h2>
-                            <div id="legImmo" class="accordion-collapse collapse" data-bs-parent="#accLeg">
-                                <div class="accordion-body">
-                                    <p>Si un bien immobilier <strong>n’est pas loué ou utilisé pendant une période de 14 jours (2 semaines)</strong>, l’agent immobilier aura l’autorisation de <strong>supprimer la propriété afin d’en placer une nouvelle à la place</strong>.</p>
-                                    <p>La règle des <strong>30 jours de non-utilisation</strong> reste également en vigueur, ce qui entraînera une <strong>suppression automatique de la propriété</strong>.</p>
-                                    <hr>
-                                    <h5>⚠️ Bannissement</h5>
-                                    <p>En cas de bannissement : aucun remboursement ne sera accordé même si la location est interrompue. Cette règle s’applique également aux locataires.</p>
-                                    <h5>🔁 Non-renouvellement</h5>
-                                    <p>En cas de non-renouvellement d’une propriété, aucun remboursement ne sera accordé.</p>
-                                    <h5>📞 Contact des agents immobiliers</h5>
-                                    <p>Si les agents vous contactent pour une incohérence, vous avez <strong>l’obligation de répondre</strong>. En cas d'absence, ils peuvent <strong>verrouiller la propriété</strong> jusqu'au contact.</p>
-                                    <h5>💰 Vente d’emplacement</h5>
-                                    <p>Il est interdit de <strong>vendre l’emplacement d’une propriété</strong>. (Exemple: Vendre l’emplacement d’une maison afin que l’acheteur y place ses propres points de location).</p>
-                                    <hr>
-                                    <h5>📍 Placement des propriétés</h5>
-                                    <p>Il est interdit de placer une propriété à côté d'une entrée existante, dans un emplacement incohérent, ou à côté d'un point de drogue (2km). Interdit de placer devant des armoires électriques ou bloquant des accès.</p>
-                                    <h5>🏨 Motels, caravanes et garages</h5>
-                                    <p>Les intérieurs "Motel" et "Caravane" sont réservés à leurs types respectifs. Les garages doivent être placés exclusivement devant les portes de garage. Interdiction de louer uniquement le garage sans l'habitation.</p>
-                                    <hr>
-                                    <h5>⛔ Interdictions générales</h5>
-                                    <p>Interdiction de passer de l'illégal à l'agent immobilier (ou inversement) sous peine de wipe, blacklist et sanctions staff. Agents immobiliers interdits de participer à des braquages, go fast ou activités criminelles. Confidentialité obligatoire. Sous-location interdite. Interdiction de transférer ou voler des décorations.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legGouv">🏛️ Règlement Officiel Gouvernement & DOJ</button></h2>
-                            <div id="legGouv" class="accordion-collapse collapse" data-bs-parent="#accLeg">
-                                <div class="accordion-body">
-                                    <p>Le Gouverneur dirige l'État, élu lors d'élections régulières. Le DOJ est indépendant et supervise la justice.</p>
-                                    <h5>🗳️ Conditions pour devenir Gouverneur</h5>
-                                    <p>Avoir 17 ans minimum HRP, aucun ban récent et proposer un projet politique sérieux.</p>
-                                    <hr>
-                                    <h5>⚖️ Illégal et Matériel</h5>
-                                    <p><strong>RP illégal strictement interdit :</strong> toute violation entraîne sanction staff et possible wipe. Vol de matériel public interdit (bannissement définitif).</p>
-                                    <h5>🏢 Zones de sécurité</h5>
-                                    <p>Tribunaux et bâtiments gouvernementaux sont des zones safe. Attaques contre le gouvernement rares et RP justifiées uniquement.</p>
-                                    <hr>
-                                    <h5>⚖️ DOJ et Sanctions</h5>
-                                    <p>Confidentialité stricte pour les enquêtes. Le DOJ applique les peines (prison à vie ou peine majeure validée par le staff).</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legLSPD">🚓 Règlement Officiel LSPD</button></h2>
-                            <div id="legLSPD" class="accordion-collapse collapse" data-bs-parent="#accLeg">
-                                <div class="accordion-body">
-                                    <p>Le poste principal est Mission Row. Recrutement : 15 ans min HRP, aucun lien illégal sur le personnage.</p>
-                                    <hr>
-                                    <h5>📌 Règlement Général LSPD</h5>
-                                    <p>Un joueur LSPD ne peut avoir qu'un seul personnage et aucun autre métier. Vol de matériel de police interdit.</p>
-                                    <h5>👮 Comportement et Devoirs</h5>
-                                    <p>Fouilles autorisées uniquement en cas de délit, suspicion raisonnable ou état d'alerte. Bodycam active obligatoire.</p>
-                                    <h5>🔫 Armes et Poursuites</h5>
-                                    <p>Arme de service en dernier recours. Poursuites : 1 suspect (2 unités max), 2 suspects (3 unités min), 3+ suspects (4 unités min). PIT manoeuvre autorisé après 10 minutes (ou danger immédiat) avec accord.</p>
-                                    <hr>
-                                    <h5>🏦 Prison et Sanctions</h5>
-                                    <p>Évasion impossible une fois en prison. Interdiction d'attirer la police dans une embuscade. Les sanctions incluent rétrogradation ou licenciement.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legEMS">🚑 Règlement Officiel EMS</button></h2>
-                            <div id="legEMS" class="accordion-collapse collapse" data-bs-parent="#accLeg">
-                                <div class="accordion-body">
-                                    <p>Les EMS assurent les soins d'urgence. L'unité SAR est spécialisée dans les sauvetages complexes.</p>
-                                    <hr>
-                                    <h5>⚕️ Obligations des EMS</h5>
-                                    <p>Obligation d'être en service et en tenue pour soigner. Interdiction de soigner hors service. Véhicules réservés aux interventions.</p>
-                                    <h5>⚖️ Éthique et Activités</h5>
-                                    <p>Interdiction d'aider des criminels. Changement de rôle (Legal/Illegal) entraîne wipe et blacklist.</p>
-                                    <h5>🩺 Soins et Matériel</h5>
-                                    <p>Soins réalistes (pas de "soins magiques"). Interdiction de vendre du matériel médical aux civils. Mort RP confirmée si l'icône tête de mort apparaît au stéthoscope.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legJob">🏢 Règlement Officiel Entreprises</button></h2>
-                            <div id="legJob" class="accordion-collapse collapse" data-bs-parent="#accLeg">
-                                <div class="accordion-body">
-                                    <p>Respect des codes des taxes, travail et entreprises requis. Discord interdit pour le RP.</p>
-                                    <hr>
-                                    <h5>💰 Finances et Matériel</h5>
-                                    <p>L'argent appartient à l'entreprise. Véhicules vendables uniquement au concessionnaire.</p>
-                                    <h5>👨‍💼 Emploi et Réintégration</h5>
-                                    <p>Max 2 entreprises par joueur (secteurs différents). Après wipe/mort RP : délai de 1 mois avant réintégration.</p>
-                                    <h5>👑 Gestion et Sanctions</h5>
-                                    <p>Limite de 10 employés maximum. Mécano : kits déposés en stock en fin de service. Concessionnaire : direction strictement légale. Sécurité : menottes stockées hors service.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div id="leg" class="rule-pane">
+    <h3 class="mb-4" style="color:var(--primary)">Services Publics & Travail</h3>
+    <div class="accordion" id="accLeg">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legImmo">
+                    🏠 Règlement Officiel Immobilier
+                </button>
+            </h2>
+<div id="legImmo" class="accordion-collapse collapse" data-bs-parent="#accLeg">
+    <div class="accordion-body" style="line-height: 1.8; color: #d0d0d0; padding: 30px;">
+                    
+                    <h3 class="text-white"> 🏠 Règlement Officiel Immobilier</h3>
+                    <hr style="border-color: rgba(255,255,255,0.1);">
+
+                    <h3 class="accent-color mt-4"> 👤 Règlement — Joueurs</h3>
+                    <p>Si un bien immobilier <strong>n’est pas loué ou utilisé pendant une période de 14 jours (2 semaines)</strong>, l’agent immobilier aura l’autorisation de <strong>supprimer la propriété afin d’en placer une nouvelle à la place</strong>.</p>
+                    <p>La règle des <strong>30 jours de non-utilisation</strong> reste également en vigueur, ce qui entraînera une <strong>suppression automatique de la propriété</strong>.</p>
+                    <hr style="border-color: rgba(255,255,255,0.1);">
+
+                    <h4 class="text-white mt-4"> ⚠️ Bannissement</h4>
+                    <p>En cas de bannissement :</p>
+                    <ul>
+                        <li>aucun remboursement ne sera accordé</li>
+                        <li>même si la location de votre propriété est interrompue</li>
+                    </ul>
+                    <p>Cette règle s’applique également <strong>aux locataires présents dans votre propriété</strong>.</p>
+                    <hr style="border-color: rgba(255,255,255,0.1);">
+
+                    <h4 class="text-white mt-4"> 🔁 Non-renouvellement</h4>
+                    <p>En cas de <strong>non-renouvellement d’une propriété</strong>, aucun remboursement ne sera accordé.</p>
+                    <p>Cela concerne également <strong>les locataires présents dans la propriété</strong>.</p>
+                    <hr style="border-color: rgba(255,255,255,0.1);">
+
+                    <h4 class="text-white mt-4"> 📞 Contact des agents immobiliers</h4>
+                    <p>Si les agents immobiliers vous contactent concernant :</p>
+                    <ul>
+                        <li>une incohérence</li>
+                        <li>un problème lié à votre propriété</li>
+                    </ul>
+                    <p>vous avez <strong>l’obligation de répondre</strong>.</p>
+                    <p>En cas d'absence de réponse, les agents immobiliers peuvent :</p>
+                    <ul>
+                        <li><strong>verrouiller la propriété</strong></li>
+                    </ul>
+                    <p>jusqu’à ce que vous les contactiez.</p>
+                    <hr style="border-color: rgba(255,255,255,0.1);">
+
+                    <h4 class="text-white mt-4"> 💰 Vente d’emplacement</h4>
+                    <p>Il est interdit de <strong>vendre l’emplacement d’une propriété</strong>.</p>
+                    <p>Exemple : Vendre l’emplacement d’une maison afin que l’acheteur y place ses propres points de location.</p>
+                    <hr style="border-color: rgba(255,255,255,0.1);">
+
+                    <h3 class="accent-color mt-5"> 📍 Placement des propriétés</h3>
+                    <p>Il est interdit de placer une nouvelle propriété :</p>
+                    <ul>
+                        <li>à côté d’une entrée existante</li>
+                        <li>dans un emplacement incohérent</li>
+                        <li>à côté d’un points de drogue (2km)</li>
+                    </ul>
+                    <p>Même si cela semble possible naturellement (exemple : maisons mitoyennes, copropriétés, plusieurs entrées).</p>
+                    <p>Dans ce cas, vous devez <strong>obtenir l’accord d’un référent immobilier</strong>.</p>
+                    <hr style="border-color: rgba(255,255,255,0.1);">
+
+                    <h4 class="text-white mt-4"> ⛔ Emplacements interdits</h4>
+                    <p>Il est formellement interdit de placer des propriétés :</p>
+                    <ul>
+                        <li>devant des armoires électriques</li>
+                        <li>dans des zones incohérentes</li>
+                        <li>dans des zones bloquant des accès</li>
+                    </ul>
+                    <hr style="border-color: rgba(255,255,255,0.1);">
+
+                    <h3 class="accent-color mt-5"> 🏨 Motels et caravanes</h3>
+                    <p>Les intérieurs doivent respecter les règles suivantes :</p>
+                    <ul>
+                        <li>l’intérieur <strong>"Motel"</strong> est réservé uniquement aux motels</li>
+                        <li>l’intérieur <strong>"Caravane"</strong> est réservé uniquement aux caravanes</li>
+                    </ul>
+                    <hr style="border-color: rgba(255,255,255,0.1);">
+
+                    <h3 class="accent-color mt-5"> 🚘 Garages</h3>
+                    <p>Les garages doivent être placés <strong>exclusivement devant les portes de garage</strong>.</p>
+                    <p>Il est interdit de placer un garage :</p>
+                    <ul>
+                        <li>sur une place de parking</li>
+                        <li>dans un emplacement incohérent</li>
+                        <li>dans une zone non prévue pour cela</li>
+                    </ul>
+                    <hr style="border-color: rgba(255,255,255,0.1);">
+
+                    <h3 class="accent-color mt-5"> 🏡 Maison avec garage</h3>
+                    <p>Il est interdit de :</p>
+                    <ul>
+                        <li>louer uniquement le garage d’une maison</li>
+                        <li>sans louer l’habitation elle-même</li>
+                    </ul>
+                    <p>Chaque maison doit :</p>
+                    <ul>
+                        <li>afficher l’intérieur de l’habitation sur la porte principale</li>
+                        <li>posséder <strong>au moins un garage</strong></li>
+                    </ul>
+                    <p>Si plusieurs garages sont présents : une seule représentation de l’intérieur de la maison est autorisée.</p>
+                    <hr style="border-color: rgba(255,255,255,0.1);">
+
+                    <h3 class="accent-color mt-5"> ⛔ Interdictions générales</h3>
+                    <p>Il est strictement interdit :</p>
+
+                    <h4 class="text-white mt-4"> 🔄 Changement de rôle</h4>
+                    <p>Il est interdit de passer : de l’illégal au rôle d’agent immobilier OU d’agent immobilier à l’illégal.</p>
+                    <p>Toute violation entraînera : <strong>wipe du personnage</strong>, <strong>blacklist</strong>, <strong>sanctions staff</strong>.</p>
+
+                    <h4 class="text-white mt-4"> ⚖️ Activités illégales</h4>
+                    <p>Les agents immobiliers ne peuvent pas : participer à des activités illégales, rejoindre un groupe criminel, participer à des braquages, participer à des go fast, réaliser des transferts d'argent illégaux.</p>
+
+                    <h4 class="text-white mt-4"> 🚢 Emplacements interdits</h4>
+                    <p>Il est interdit de placer des propriétés sur des yachts ou sur des zones non prévues pour cela.</p>
+
+                    <h4 class="text-white mt-4"> 🏨 Motels et caravanes</h4>
+                    <p>Il est interdit de placer un motel sur une maison ou une caravane sur un emplacement non prévu.</p>
+
+                    <h4 class="text-white mt-4"> 🚘 Garages</h4>
+                    <p>Il est interdit de placer un garage sur une place de parking ou sur un emplacement non adapté.</p>
+
+                    <h4 class="text-white mt-4"> 🏢 Entrepôts et bureaux</h4>
+                    <p>Il est interdit d’avoir des entrepôts et des bureaux à l’arrière de maisons.</p>
+
+                    <h4 class="text-white mt-4"> 🔫 Braquages</h4>
+                    <p>Il est interdit de : braquer un agent immobilier en service ou prendre un rendez-vous immobilier dans le but de braquer l’agent.</p>
+
+                    <h4 class="text-white mt-4"> 🔒 Confidentialité</h4>
+                    <p>Les informations concernant les clients, les propriétés et les transactions sont <strong>strictement confidentielles</strong>. Toute divulgation est interdite.</p>
+
+                    <h4 class="text-white mt-4"> 🏠 Sous-location</h4>
+                    <p>La sous-location est interdite. Exemple : Prendre une propriété à son nom afin de cacher le véritable propriétaire.</p>
+
+                    <h4 class="text-white mt-4"> 👤 Personnages</h4>
+                    <p>Si votre P1 travaille dans une agence immobilière, vous ne pouvez pas créer un P2 dans l’illégal (et inversement).</p>
+
+                    <h4 class="text-white mt-4"> 🪑 Décorations</h4>
+                    <p>Il est interdit de transférer une décoration achetée, de revendre une décoration non créée par vous ou de voler les décorations d’autres joueurs.</p>
+                    <hr style="border-color: rgba(255,255,255,0.1);">
+
+                    <h3 class="accent-color mt-5"> ⚖️ Sanctions</h3>
+                    <ul>
+                        <li>avertissement / suppression de propriété</li>
+                        <li>suspension / blacklist immobilier</li>
+                        <li>sanctions administratives</li>
+                    </ul>
+                    <hr style="border-color: rgba(255,255,255,0.1);">
+
+                    <h3 class="accent-color mt-5"> 🎯 Objectif du règlement</h3>
+                    <p>Garantir une organisation cohérente, éviter les abus et maintenir un RP réaliste. Les agences et les joueurs doivent contribuer à une gestion saine du marché de San Andreas.</p>
+
                 </div>
+            </div>
+        </div>
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legGov">
+            🏛️ Règlement Officiel Gouvernement & DOJ
+        </button>
+    </h2>
+    <div id="legGov" class="accordion-collapse collapse" data-bs-parent="#accLeg">
+        <div class="accordion-body" style="line-height: 1.8; color: #d0d0d0; padding: 30px;">
+            
+            <h2 class="text-white mb-4" style="border-bottom: 2px solid var(--primary); padding-bottom: 10px;">🏛️ Règlement Officiel Gouvernement & Département de la Justice (DOJ)</h2>
+
+            <h3 class="accent-color mt-4"># 📜 Introduction</h3>
+            <p>Le <strong>Gouvernement de San Andreas</strong> est l’autorité politique chargée de diriger l’État et de prendre les décisions concernant la gestion publique, les lois et l’administration.</p>
+            <p>Le gouvernement est dirigé par le <strong>Gouverneur</strong>, accompagné de son cabinet composé de :</p>
+            <ul>
+                <li>conseillers</li>
+                <li>secrétaires</li>
+                <li>personnel administratif</li>
+                <li>agents de sécurité</li>
+            </ul>
+            <p>Le Gouverneur est élu par les citoyens de <strong>San Andreas</strong> lors d’élections organisées régulièrement afin de permettre à l’ensemble des joueurs de participer à la vie politique de l’État.</p>
+            <p>Toute personne souhaitant devenir Gouverneur devra :</p>
+            <ul>
+                <li>contacter le <strong>staff responsable du gouvernement</strong></li>
+                <li>officialiser sa candidature</li>
+                <li>organiser une <strong>campagne électorale RP</strong></li>
+            </ul>
+            <p>La campagne peut inclure : réunions publiques, interventions médiatiques, rencontres avec des entreprises, débats politiques.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"># ⚖️ Gouvernement et DOJ</h3>
+            <p>Le <strong>Department of Justice (DOJ)</strong> est indépendant du gouvernement. Bien qu’ils collaborent étroitement, le <strong>DOJ et le Gouvernement sont deux institutions distinctes</strong>.</p>
+            <p>Le DOJ est chargé :</p>
+            <ul>
+                <li>d'appliquer la justice</li>
+                <li>de superviser les procédures judiciaires</li>
+                <li>de contrôler l'application des lois</li>
+            </ul>
+            <p>Aucune des deux institutions n’est supérieure à l’autre.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"># 🗳️ Conditions pour devenir Gouverneur</h3>
+            <ul>
+                <li>avoir <strong>17 ans minimum HRP</strong></li>
+                <li>ne pas avoir de <strong>bannissement actif ou récent sur le serveur</strong></li>
+                <li>proposer un <strong>projet politique RP sérieux</strong></li>
+            </ul>
+            <p>La candidature doit être validée par le <strong>staff responsable du gouvernement</strong> avant le début de la campagne.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"># 📌 Règlement Général</h3>
+            
+            <h4 class="text-white mt-4">## ⚖️ Illégal</h4>
+            <p>Le <strong>RP illégal est strictement interdit</strong> pour les membres du Gouvernement et du DOJ. Il est impossible :</p>
+            <ul>
+                <li>de rejoindre l’illégal</li>
+                <li>de déposer un dossier illégal</li>
+                <li>de collaborer avec un groupe criminel</li>
+            </ul>
+            <p>Toute violation entraînera : sanctions staff, exclusion de la faction, possible wipe du personnage.</p>
+
+            <h4 class="text-white mt-4">## 🏢 Matériel des services publics</h4>
+            <p>Il est strictement interdit de voler du matériel appartenant aux services publics, de détourner du matériel officiel ou de transférer des équipements gouvernementaux. Toute infraction pourra entraîner un <strong>bannissement définitif</strong>.</p>
+
+            <h4 class="text-white mt-4">## 👤 Personnage</h4>
+            <p>Les membres du Gouvernement et du DOJ : ne peuvent pas exercer <strong>un autre métier</strong>, ne peuvent pas avoir <strong>un deuxième personnage actif</strong>, ne peuvent pas posséder <strong>un slot supplémentaire</strong>. Toute exception doit être validée par le staff.</p>
+
+            <h4 class="text-white mt-4">## 📦 Transfert de matériel</h4>
+            <p>Le transfert d’équipement appartenant au gouvernement ou au DOJ est strictement interdit. Toute tentative entraînera <strong>de lourdes sanctions</strong>.</p>
+
+            <h4 class="text-white mt-4">## ⚠️ Autorité hiérarchique</h4>
+            <p>En rejoignant le Gouvernement ou le DOJ, vous acceptez que le <strong>lead de la faction</strong> puisse vous licencier avec ou sans justification publique.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"># 🏢 Zones de sécurité</h3>
+            <p>Les lieux suivants sont considérés comme <strong>zones safe</strong> : tribunaux, bâtiments du gouvernement, bureaux administratifs. Il est strictement interdit d’y braquer, kidnapper, agresser ou déclencher une fusillade.</p>
+
+            <h3 class="accent-color mt-4"># ⚠️ Attaques contre le Gouvernement</h3>
+            <p>Les attaques doivent rester <strong>rares et RP justifiées</strong>. Il est interdit d’organiser une embuscade gratuite ou de kidnapper un membre sans préparation RP sérieuse.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"># ⚖️ Règlement — DOJ</h3>
+            <p>Le <strong>Department of Justice</strong> supervise la justice (procès, décisions judiciaires, contrôle de la légalité policière).</p>
+            
+            <h4 class="text-white mt-4">## 🔒 Confidentialité</h4>
+            <p>Les informations liées aux enquêtes sont <strong>strictement confidentielles</strong>. Toute fuite pourra entraîner des sanctions.</p>
+
+            <h4 class="text-white mt-4">## 📢 Communication publique</h4>
+            <p>Les interactions doivent être réalisées via les <strong>canaux officiels du serveur</strong>.</p>
+
+            <h4 class="text-white mt-4">## ⚖️ Avocats</h4>
+            <p>Les cabinets d’avocats sont soumis aux mêmes règles : confidentialité, professionnalisme et respect des procédures.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"># 🏛️ Règlement — Gouvernement</h3>
+            <p>Le Gouvernement gère l’administration, propose des lois et supervise les services publics.</p>
+            <p>Les élections ont lieu <strong>tous les 5 mois</strong>. Le Gouverneur élu constitue son équipe (adjoints, secrétaires, conseillers, sécurité).</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"># ⚖️ Application des peines</h3>
+            <p>Le DOJ possède l’autorité sur les peines de prison, sanctions pénales, prison à vie ou fin du personnage. Les décisions doivent être équitables et impartiales.</p>
+            <p>⚠️ Toute demande de <strong>prison à vie ou de peine majeure</strong> doit être validée par le <strong>staff responsable du gouvernement</strong>.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"># 🎯 Objectif du règlement</h3>
+            <p>Garantir un RP politique sérieux, assurer un système judiciaire équitable et maintenir un équilibre entre les institutions. Le Gouvernement et le DOJ s’engagent pour la justice, la transparence et l’équité au service de San Andreas.</p>
+
+        </div>
+    </div>
+</div>
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legLspd">
+            🚓 Règlement Officiel Los Santos Police Department (LSPD)
+        </button>
+    </h2>
+    <div id="legLspd" class="accordion-collapse collapse" data-bs-parent="#accLeg">
+        <div class="accordion-body" style="line-height: 1.8; color: #d0d0d0; padding: 30px;">
+            
+            <h2 class="text-white mb-4" style="border-bottom: 2px solid var(--primary); padding-bottom: 10px;">🚓 Règlement Officiel Los Santos Police Department (LSPD)</h2>
+
+            <h3 class="accent-color mt-4"> 📜 Introduction</h3>
+            <p>Le <strong>Los Santos Police Department (LSPD)</strong> est une institution chargée de maintenir l’ordre public, de protéger les citoyens et de faire respecter la loi dans la ville de <strong>Los Santos</strong>.</p>
+            <p>Les officiers du LSPD ont pour mission :</p>
+            <ul>
+                <li>protéger la population</li>
+                <li>lutter contre la criminalité</li>
+                <li>assurer la sécurité routière</li>
+                <li>intervenir lors d’incidents et de situations d’urgence</li>
+                <li>mener des enquêtes criminelles</li>
+                <li>protéger les institutions publiques et les personnalités importantes</li>
+            </ul>
+            <p>Le <strong>poste principal et unique du LSPD</strong> est situé à <strong>Mission Row</strong>, qui sert de quartier général pour l’ensemble du département. Ce poste est dirigé par <strong>l’État-Major</strong>, responsable de la gestion des opérations et de la supervision des officiers.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> 🖥️ Rejoindre la Police</h3>
+            <p>Avant de pouvoir intégrer le Los Santos Police Department, vous devez suivre une procédure de recrutement.</p>
+            <h4 class="text-white"> Conditions d’éligibilité</h4>
+            <p>Pour postuler vous devez :</p>
+            <ul>
+                <li>avoir <strong>15 ans minimum HRP</strong></li>
+                <li>ne pas avoir reçu de <strong>bannissement lourd sur le serveur</strong></li>
+                <li>posséder un <strong>RP sérieux et cohérent</strong></li>
+                <li>ne pas avoir de <strong>lien avec l’illégal sur votre personnage</strong></li>
+            </ul>
+            <p>Toute tentative de rejoindre la police avec un personnage ayant été impliqué dans l’illégal entraînera une sanction et le <strong>wipe définitif du personnage</strong>. Les candidatures doivent être réalisées via le <strong>Discord officiel du serveur lspd</strong> : <a href="https://discord.gg/zgzrwV6H7P" target="_blank" style="color: var(--primary);">https://discord.gg/zgzrwV6H7P</a>.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> 🎖️ Hiérarchie du LSPD</h3>
+            <p>Le LSPD fonctionne avec une <strong>hiérarchie stricte</strong>.</p>
+            <h4 class="text-white"> Command Staff</h4>
+            <ul>
+                <li>Chief of Police</li>
+                <li>Assistant Chief</li>
+                <li>Deputy Chief</li>
+            </ul>
+            <h4 class="text-white"> Supervisors</h4>
+            <ul>
+                <li>Commandant</li>
+                <li>Captain (1/2/3)</li>
+                <li>Lieutenant (1/2)</li>
+                <li>Sergeant (1/2)</li>
+            </ul>
+            <h4 class="text-white"> Officiers</h4>
+            <ul>
+                <li>Senior Officer (SLO)</li>
+                <li>Police Officer (1/2/3)</li>
+                <li>Cadet / Rookie (en formation)</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> 📌 Règlement Général LSPD</h3>
+            <h4 class="text-white"> Personnage Police</h4>
+            <p>Un joueur LSPD ne peut pas exercer <strong>une autre profession</strong> ni posséder <strong>un deuxième personnage</strong>. S'il souhaite rejoindre l'illégal, il devra <strong>wipe son personnage</strong>.</p>
+            
+            <h4 class="text-white"> Matériel de police</h4>
+            <p>Il est strictement interdit de voler du matériel de police, des uniformes, des armes ou des véhicules de service. Le transfert de matériel est <strong>strictement interdit</strong> et peut entraîner un <strong>bannissement définitif</strong>.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> 👮 Comportement des Officiers</h3>
+            <p>Les membres doivent rester professionnels, éviter les abus de pouvoir et faire preuve d'intégrité. La discrimination, le harcèlement et l'abus d'autorité sont interdits.</p>
+
+            <h3 class="accent-color mt-4"> ⚖️ Fouilles</h3>
+            <p>Un citoyen ne peut être fouillé qu'en cas de <strong>délit</strong>, de <strong>suspicion raisonnable</strong> ou d'un <strong>état d'alerte dans la ville</strong>. Les fouilles abusives sont interdites.</p>
+
+            <h3 class="accent-color mt-4"> 👕 Uniforme & 🎥 Bodycam</h3>
+            <p>En service, l'officier doit porter l'<strong>uniforme et l'équipement officiel</strong>. Hors service, tout doit être déposé au <strong>casier</strong>. La <strong>bodycam</strong> doit être active en service (selon les capacités techniques).</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> 🔫 Utilisation des armes</h3>
+            <p>L’arme de service est un <strong>dernier recours</strong>. Elle s'utilise uniquement si des vies sont menacées ou face à un suspect armé/dangereux. Chaque tir doit faire l'objet d'un <strong>rapport obligatoire</strong>.</p>
+
+            <h3 class="accent-color mt-4"> 🚓 Poursuites</h3>
+            <p>Les poursuites doivent être réalistes. <strong>Nombre d'unités :</strong> 1 suspect (2 unités max), 2 suspects (3 unités min), 3 suspects+ (4 unités min).</p>
+            <p><strong>PIT manoeuvre :</strong> Doit être autorisé par un <strong>superviseur</strong>, réalisé à vitesse modérée après <strong>10 minutes de poursuite</strong> (sauf danger immédiat pour les civils).</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> 🏢 Zones de sécurité & ⚠️ Embuscades</h3>
+            <p>Mission Row est une <strong>zone safe</strong>. Il est strictement interdit d'y commettre des agressions. Il est interdit d'attirer volontairement la police dans une <strong>embuscade</strong> pour piéger un officier.</p>
+
+            <h3 class="accent-color mt-4"> 🏦 Règlement Prison</h3>
+            <p>À Bolingbroke, le joueur doit jouer un <strong>RP prisonnier</strong>. Aucune évasion n'est possible <strong>une fois dans la prison</strong> (uniquement possible pendant un transfert).</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> ⚖️ Sanctions</h3>
+            <p>Les sanctions incluent : avertissement, suspension, rétrogradation, licenciement, sanctions administratives ou prison.</p>
+
+            <h3 class="accent-color mt-4"> 🎯 Objectif du règlement</h3>
+            <p>Garantir un RP police sérieux, maintenir l'équilibre et assurer une expérience immersive en défendant la justice, l'intégrité et le professionnalisme.</p>
+
+        </div>
+    </div>
+</div>
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legEms">
+            🚑 Règlement Officiel EMS (Emergency Medical Services)
+        </button>
+    </h2>
+    <div id="legEms" class="accordion-collapse collapse" data-bs-parent="#accLeg">
+        <div class="accordion-body" style="line-height: 1.8; color: #d0d0d0; padding: 30px;">
+            
+            <h2 class="text-white mb-4" style="border-bottom: 2px solid var(--primary); padding-bottom: 10px;">🚑 Règlement Officiel EMS (Emergency Medical Services)</h2>
+
+            <h3 class="accent-color mt-4"> 🪢 Présentation</h3>
+            <p>Les <strong>Emergency Medical Services (EMS)</strong> représentent le service médical d'urgence de l'État de <strong>San Andreas</strong>. Ils sont un pilier essentiel du système de santé et assurent la prise en charge médicale de l'ensemble de la population de <strong>Los Santos</strong>.</p>
+            <p>Leur rôle est d’intervenir rapidement afin de :</p>
+            <ul>
+                <li>porter secours aux blessés</li>
+                <li>stabiliser les patients</li>
+                <li>effectuer des diagnostics médicaux</li>
+                <li>transporter les patients vers les centres médicaux</li>
+                <li>assurer un suivi médical adapté</li>
+            </ul>
+            <p>Les EMS travaillent en coordination avec le <strong>LSPD</strong>, les <strong>services publics</strong> et les <strong>citoyens</strong> afin d'assurer une prise en charge rapide et efficace.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> 🧑‍⚕️ Unités et services médicaux</h3>
+            <h4 class="text-white"> 🩺 Services médicaux</h4>
+            <ul>
+                <li>Service d'urgence / Service de chirurgie</li>
+                <li>Service psychologique / Service obstétrique</li>
+                <li>Service de laboratoire / Service mortuaire</li>
+            </ul>
+            <h4 class="text-white"> 🚁 Search And Rescue (SAR)</h4>
+            <p>Cette unité est spécialisée dans les interventions en montagne, les sauvetages en mer et les interventions aériennes pour répondre aux <strong>situations médicales les plus complexes</strong>.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> 📌 Règlement Général EMS</h3>
+            <p>Les scènes de soins doivent être réalisées de manière réaliste, sérieuse et immersive. Les EMS représentent des médecins, des urgentistes et des secouristes.</p>
+            
+            <h4 class="text-white mt-4"> ⚕️ Obligations des EMS</h4>
+            <p>Les EMS doivent être <strong>en service</strong>, porter leur <strong>tenue de service</strong> et utiliser <strong>un véhicule médical adapté</strong>. Il est interdit de soigner ou facturer hors service, ou de pratiquer le favoritisme.</p>
+
+            <h4 class="text-white mt-4"> 🚑 Véhicules de service</h4>
+            <p>Les véhicules sont <strong>strictement réservés aux interventions médicales</strong>. Usage personnel ou transport non médical strictement interdit.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> ⚖️ Activités illégales & 🔄 Changement de rôle</h3>
+            <p>Il est interdit de participer à des activités illégales ou d'aider des criminels. Un EMS n'intervient en scène illégale qu'en tant que médecin.</p>
+            <p>Le passage de l'EMS vers l'illégal (ou inversement) entraîne un <strong>wipe du personnage</strong>, une <strong>blacklist EMS</strong> et des <strong>sanctions staff</strong>.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> 🩺 Scènes de soins & 💊 Matériel médical</h3>
+            <p>Les soins doivent être détaillés (examen, diagnostic, traitement). Les <strong>"soins magiques"</strong> sont interdits. Il est interdit de donner ou vendre du matériel médical aux civils sous peine de <strong>BAN</strong>.</p>
+
+            <h3 class="accent-color mt-4"> 👥 Personnage EMS</h3>
+            <p>Un joueur EMS ne peut pas avoir de personnage dans l'illégal ni de deuxième métier. Le personnage doit rester <strong>exclusivement médical</strong>.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> ☠️ Mort RP médicales</h3>
+            <p>Si lors de l'utilisation du stéthoscope une <strong>icône tête de mort</strong> apparaît, le personnage est considéré comme décédé. Chaque Mort RP médicale est étudiée individuellement.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> ⚖️ Sanctions</h3>
+            <p>Les sanctions incluent : avertissement, suspension, rétrogradation, licenciement, blacklist EMS ou sanctions staff.</p>
+
+            <h3 class="accent-color mt-4"> 🎯 Objectif du règlement</h3>
+            <p>Garantir un RP médical réaliste et offrir une expérience immersive en maintenant une organisation médicale crédible au service de la population de San Andreas.</p>
+
+        </div>
+    </div>
+</div>
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legJobFull">
+            🏢 Règlement Officiel Entreprises
+        </button>
+    </h2>
+    <div id="legJobFull" class="accordion-collapse collapse" data-bs-parent="#accLeg">
+        <div class="accordion-body" style="line-height: 1.8; color: #d0d0d0; padding: 30px;">
+            
+            <h2 class="text-white mb-4" style="border-bottom: 2px solid var(--primary); padding-bottom: 10px;">🏢 Règlement Officiel Entreprises</h2>
+
+            <h3 class="accent-color mt-4"> 🌐 Règlement Général</h3>
+            <p>Toutes les entreprises du serveur doivent respecter les codes mis en place par le <strong>Gouvernement en RP</strong> :</p>
+            <ul>
+                <li>Le <strong>Code des taxes</strong></li>
+                <li>Le <strong>Code du travail</strong></li>
+                <li>Le <strong>Code des entreprises</strong></li>
+            </ul>
+            <p>Toute infraction pourra entraîner des sanctions RP ou administratives.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> 💻 Utilisation de Discord</h3>
+            <p>L’utilisation de <strong>Discord à des fins RP est interdite</strong>. Les interactions doivent être réalisées <strong>en jeu</strong>.</p>
+            <p><strong>Exceptions autorisées :</strong> Réception des candidatures, activités gouvernementales, affichage (règlement, carte, catalogue), annonces et discussions internes, communications EMS. Tout le reste (commandes, rendez-vous, réunions) doit se faire en jeu.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> 💰 Argent et 🚗 Véhicules</h3>
+            <p>L'argent de l'entreprise <strong>n'appartient pas au patron</strong>. Son utilisation à des fins personnelles est strictement interdite.</p>
+            <p>Il est interdit de vendre des véhicules d'entreprise à des particuliers. Ils doivent être revendus uniquement au <strong>concessionnaire concerné</strong>.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> 👥 Emploi et Réintégration</h3>
+            <p>Il est interdit d’avoir plusieurs personnages dans la même entreprise. Un joueur peut travailler dans <strong>deux entreprises maximum</strong> (secteurs différents).</p>
+            <p><strong>Après un wipe ou mort RP :</strong> Interdiction de réintégrer l'entreprise immédiatement. Un délai de <strong>1 mois minimum</strong> et la création d'un personnage intermédiaire sont requis. Le retour se fait obligatoirement au grade le plus bas.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> 🔧 Règlement — Mécano</h3>
+            <p>À la fin du service, tous les <strong>kits de réparation doivent être déposés dans le stock</strong>. Il est interdit de les conserver ou de se déconnecter avec.</p>
+            <p>Le dépannage d'amis ne doit pas être la seule raison de prise de service. Les mécanos sont limités à <strong>2 véhicules 4x4 maximum</strong> pour les zones difficiles.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> 🚗 Concessionnaire & 📰 Presse</h3>
+            <p>La direction (Patron/Co-patron) de ces entreprises ne peut <strong>pas participer à des activités illégales</strong>.</p>
+            <p><strong>Concessionnaire :</strong> Caution maximale de 55 000 $. Rachat de véhicules d'occasion autorisé seulement si présents au catalogue.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> 🦺 Agents de sécurité</h3>
+            <p>Les <strong>menottes</strong> doivent être stockées dans le coffre de l'entreprise et rendues en fin de service. Leur conservation hors service est interdite.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color"> ⚖️ Sanctions</h3>
+            <p>Le non-respect peut entraîner : avertissement, retrait de licence, fermeture d’entreprise ou sanctions administratives.</p>
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
 
                 <div id="ill" class="rule-pane">
                     <h3 class="mb-4" style="color:var(--primary)">Criminalité & Groupes</h3>
                     <div class="accordion" id="accIll">
                         <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illIntro">📜 Introduction</button></h2>
-                            <div id="illIntro" class="accordion-collapse collapse" data-bs-parent="#accIll">
-                                <div class="accordion-body">
-                                    <h5>Présentation du système illégal</h5>
-                                    <p>Chaque joueur commence civil. Pour un parcours criminel, créez un groupe de petites frappes (10 membres max) et évoluez dans Los Santos pour gagner en réputation. La validation officielle se fait via ticket staff après avoir atteint une réputation suffisante.</p>
-                                    <h5>📈 Comment augmenter vos chances de validation ?</h5>
-                                    <ul>
-                                        <li><strong>Qualité du Roleplay :</strong> Cohérence comportementale et implication dans les scènes.</li>
-                                        <li><strong>Dossier complet :</strong> Nom, lore, membres, motivations et objectifs du groupe.</li>
-                                        <li><strong>Entretien :</strong> Présentation orale du projet devant l'équipe de modération.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+ <div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legIllegalIntro">
+            📜 Introduction au Système Illégal
+        </button>
+    </h2>
+    <div id="legIllegalIntro" class="accordion-collapse collapse" data-bs-parent="#accLeg">
+        <div class="accordion-body" style="line-height: 1.8; color: #d0d0d0; padding: 30px;">
+            
+            <h2 class="text-white mb-4" style="border-bottom: 2px solid var(--primary); padding-bottom: 10px;">Introduction</h2>
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illGenFull">🚫 Règlement Général Illégal</button></h2>
-                            <div id="illGenFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
-                                <div class="accordion-body">
-                                    <ul>
-                                        <li>Interdiction de retourner au quartier/QG après une course-poursuite.</li>
-                                        <li>Le fear naturel envers les services publics est obligatoire.</li>
-                                        <li>Interduit de participer à des actions illégales sans être recruté dans le CREW officiel.</li>
-                                        <li><strong>Poursuites :</strong> Plans pneus autorisés pour les groupes officiels après 15 minutes.</li>
-                                        <li><strong>Comportement :</strong> Interdiction de mentir sur ses blessures. Alliances entre groupes interdites. Trash talk sur corps au sol interdit.</li>
-                                        <li><strong>Transactions :</strong> Interduit près du QG ou en zone safe. Vente hors DarkChat interdite.</li>
-                                        <li><strong>Organisation :</strong> Un seul personnage illégal autorisé. Petites frappes interdites de posséder des habitants ou revendiquer des points de récolte.</li>
-                                        <li><strong>Territoires :</strong> Installation uniquement dans les zones indiquées sur la carte. Entrer en zone ennemie doit rester cohérent RP.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+            <h3 class="accent-color mt-4">Présentation du système illégal</h3>
+            <p>Sur le serveur, chaque joueur commence son aventure en tant que <strong>civil</strong>. Si vous souhaitez vous orienter vers un <strong>parcours criminel</strong>, vous devrez créer un <strong>groupe de petites frappes</strong>, composé de <strong>10 membres maximum</strong>.</p>
+            <p>Votre groupe devra évoluer progressivement dans les quartiers de <strong>Los Santos</strong> en réalisant différentes activités et scènes RP illégales afin de <strong>gagner en crédibilité et en réputation</strong>.</p>
+            <p>Lorsque votre groupe aura atteint une <strong>réputation suffisante</strong>, vous pourrez ouvrir <strong>un ticket auprès du staff</strong> afin de demander la <strong>validation officielle de votre groupe</strong>.</p>
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illOtageFull">🎭 Prises d’otages</button></h2>
-                            <div id="illOtageFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
-                                <div class="accordion-body">
-                                    <p>Action majeure devant rester rare et justifiée.</p>
-                                    <h5>⚖️ Cas particuliers</h5>
-                                    <p>Prendre un agent de l'État en otage est un ultime recours (risque de prison à vie ou Mort RP). Mort RP de l'otage possible sur demande validée.</p>
-                                    <h5>⛔ Interdictions</h5>
-                                    <ul>
-                                        <li>Faux otages ou attente devant les QG/zones Mass RP.</li>
-                                        <li>Rançons plafonnées : 5k (bas gradé), 10k (gradé), 15k (lead).</li>
-                                        <li>Échanges contre armes ou points illégaux interdits.</li>
-                                        <li>Interdiction de forcer des scènes sexuelles ou humiliantes.</li>
-                                    </ul>
-                                    <h5>⭐ Règles complémentaires</h5>
-                                    <p>Durée : 30 à 45 min max. Négociation obligatoire. Limite de 2 otages par groupe. Délai de 1h30 avant un nouveau chain-otage.</p>
-                                </div>
-                            </div>
-                        </div>
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illArmesFull">🔫 Armes & Hiérarchie</button></h2>
-                            <div id="illArmesFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
-                                <div class="accordion-body">
-                                    <ul>
-                                        <li><strong>Indépendants/Civils :</strong> SNS, Beretta, Ceramic. Pas d'automatiques.</li>
-                                        <li><strong>Petites frappes :</strong> SNS, Beretta, Ceramic, Heavy Pistol, Cal .50.</li>
-                                        <li><strong>Gangs :</strong> Précédents + Scorpion, Micro SMG, Tec-9.</li>
-                                        <li><strong>Familles :</strong> Précédents + ADP, AKU.</li>
-                                        <li><strong>Organisations/Cartels :</strong> Accès AK-47.</li>
-                                    </ul>
-                                    <h5>🔋 Munitions max</h5>
-                                    <p>Poing : 36 | Pompe : 24 | SMG : 80 | Assaut : 90.</p>
-                                    <h5>⛔ Interdictions</h5>
-                                    <p>Posséder une arme non autorisée ou casser l'économie est interdit.</p>
-                                </div>
-                            </div>
-                        </div>
+            <h3 class="accent-color">Comment augmenter vos chances de validation ?</h3>
+            
+            <h4 class="text-white mt-4">Qualité du Roleplay</h4>
+            <p>La validation d’un groupe dépend avant tout de la <strong>qualité et de la cohérence de votre roleplay</strong>.</p>
+            <p>Durant votre période en tant que <strong>petites frappes</strong>, nous observerons :</p>
+            <ul>
+                <li>Votre comportement RP</li>
+                <li>La cohérence de votre groupe</li>
+                <li>Votre implication dans les scènes RP</li>
+                <li>Votre capacité à créer des interactions avec les autres joueurs</li>
+            </ul>
+            <p>Même après une validation, cette <strong>qualité de jeu devra être maintenue</strong>.</p>
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illBraqFull">🏦 Braquages</button></h2>
-                            <div id="illBraqFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
-                                <div class="accordion-body">
-                                    <h5>🏪 Supérettes</h5>
-                                    <p>Attendre 10 min la police. Pas d'otages ni de plan mule. Véhicules sportifs/imports interdits.</p>
-                                    <h5>🏦 Fleeca</h5>
-                                    <p>3 braqueurs min, 2 otages min, 1 arme min. Attendre 15 min la police.</p>
-                                    <h5>💎 Bijouterie</h5>
-                                    <p>6 braqueurs min, 4 otages min, 3 armes min. Plans mules autorisés après 10 min de poursuite.</p>
-                                    <h5>🏦 Pacific (Dossier écrit)</h5>
-                                    <p>10 braqueurs min, 5 otages min, arme pour tous. Reservé Familles/Mafias/Organisations/Cartels/MC.</p>
-                                    <h5>LIMITES par groupe</h5>
-                                    <p>Supérette : 1h | Fleeca : 2 jours | Bijouterie : 1 semaine | Pacific : 1 mois.</p>
-                                </div>
-                            </div>
-                        </div>
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illGunFull">🔫 Fusillades / Gunfight</button></h2>
-                            <div id="illGunFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
-                                <div class="accordion-body">
-                                    <p>Dernier recours obligatoire. Échange verbal et tentative de négociation requis avant de tirer.</p>
-                                    <ul>
-                                        <li><strong>Interdictions :</strong> Max une fusillade par soir entre mêmes groupes. Pas de vengeance après coma. Pas de tir en zone safe.</li>
-                                        <li><strong>Drive-by :</strong> Exceptionnel (accord staff écrit). Véhicule à l'arrêt, action rapide, départ immédiat. Braquage depuis véhicule interdit.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+            <h4 class="text-white mt-4">Création d’un dossier</h4>
+            <p>Afin de présenter votre groupe au staff, vous devrez préparer <strong>un dossier complet</strong> (Google Slides recommandé).</p>
+            <p>Ce dossier doit contenir :</p>
+            <ul>
+                <li>Le <strong>nom du groupe</strong></li>
+                <li>Le <strong>lore</strong> (l’histoire et les origines du groupe)</li>
+                <li>La <strong>liste des membres</strong></li>
+                <li>Vos <strong>motivations RP</strong></li>
+                <li>Vos <strong>objectifs dans l’univers du serveur</strong></li>
+                <li>L’identité et la culture de votre groupe</li>
+            </ul>
+            <p>Ce dossier doit permettre au staff de <strong>comprendre votre projet RP et votre vision de jeu</strong>. Nous vous encourageons à proposer <strong>un projet RP original, cohérent et immersif</strong>.</p>
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illDrugFull">🌱 Drogues</button></h2>
-                            <div id="illDrugFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
-                                <div class="accordion-body">
-                                    <p>Vente interdite en Zone Safe, depuis véhicule en mouvement ou à moins de 3km du QG. Véhicules sportifs/imports interdits.</p>
-                                    <h5>Répartition par groupe</h5>
-                                    <ul>
-                                        <li><strong>Weed / Coke :</strong> Indépendants, Petites frappes, Gangs.</li>
-                                        <li><strong>Meth / Ecstasy :</strong> MC, Familles, Organisations, Cartels.</li>
-                                    </ul>
-                                    <p>Vente PNJ interdite aux organisations (sauf si moins de 2 gangs actifs). Transport en utilitaire obligatoire (Speedo, Rumpo, Burrito).</p>
-                                </div>
-                            </div>
-                        </div>
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illCorpFull">🪙 Corruption</button></h2>
-                            <div id="illCorpFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
-                                <div class="accordion-body">
-                                    <p>Possibilité exceptionnelle soumise à dossier validé. Risque de Mort RP.</p>
-                                    <ul>
-                                        <li><strong>Autorisés :</strong> Conseiller, Secrétaire, Sécurité (Gouv) ; LSPD (accord Chief) ; Immo.</li>
-                                        <li><strong>Interdits :</strong> Gouverneur, Adjoint, Chef de cabinet, IRS.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+            <h4 class="text-white mt-4">Entretien avec le staff</h4>
+            <p>Une fois votre dossier étudié par l’équipe de <strong>modération</strong>, vous serez contactés afin d’organiser <strong>un entretien oral avec plusieurs membres du staff</strong>.</p>
+            <p>Cet entretien permettra de :</p>
+            <ul>
+                <li>Revoir les éléments de votre dossier</li>
+                <li>Poser des questions sur votre projet RP</li>
+                <li>Vérifier votre vision et votre motivation</li>
+            </ul>
+            <p>C’est le moment de <strong>montrer votre sérieux et votre engagement dans le projet</strong>.</p>
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illTheft">💣 Arnaques / Vols</button></h2>
-                            <div id="illTheft" class="accordion-collapse collapse" data-bs-parent="#accIll">
-                                <div class="accordion-body">
-                                    <h5>⛔ Interdiction des arnaques</h5>
-                                    <p>Strictement interdites : fausses ventes d'armes, drogue, immobilier ou blanchiment. Vente de véhicule à prix abusif interdite.</p>
-                                    <h5>🔫 Vol d'armes et d'appartements</h5>
-                                    <p>Vol d'armes dans les coffres de véhicules strictement interdit. Vols d'appartements autorisés seulement si ouverts (interdiction de forcer).</p>
-                                    <h5>💳 Cartes bancaires et Limites</h5>
-                                    <p>Vol et utilisation de carte bancaire strictement interdits. <strong>Limite de vol :</strong> interdiction de voler plus de 50% d'un item (joueur, coffre ou inventaire).</p>
-                                </div>
-                            </div>
-                        </div>
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illWipeFull">☠️ Mort RP / Wipe</button></h2>
-                            <div id="illWipeFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
-                                <div class="accordion-body">
-                                    <p>MRP/Wipe = fin définitive de l'histoire du personnage sans aucun souvenir.</p>
-                                    <h5>⚠️ Wipe obligatoire</h5>
-                                    <p>Obligatoire lors de l'entrée ou de la sortie d'un groupe illégal officiel. Non obligatoire pour les petites frappes.</p>
-                                    <h5>👤 Autorité du lead</h5>
-                                    <p>Le lead officiel peut imposer une Mort RP à un membre (prévenir le gestionnaire 48h à l'avance).</p>
-                                    <h5>📦 Départ et Délais</h5>
-                                    <p>Départ sans aucun objet (armes, argent, véhicules). Délai de 5 jours minimum avant de rejoindre un nouveau groupe officiel.</p>
-                                    <h5>⛔ Interdictions</h5>
-                                    <p>Transition Legal vers Illegal sans wipe interdite. Transfert de biens avant wipe interdit. Wipe interdit si procédure judiciaire en cours.</p>
-                                </div>
-                            </div>
-                        </div>
+            <h4 class="text-white mt-4">Réponse finale</h4>
+            <p>Après l’entretien, l’équipe du staff prendra une décision. Vous recevrez une <strong>réponse positive ou négative dans un délai de 1 à 2 jours</strong>.</p>
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illLootFull">📜 Loot RP / Free Loot</button></h2>
-                            <div id="illLootFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
-                                <div class="accordion-body">
-                                    <ul>
-                                        <li>Loot d'armes ou munitions strictement interdit.</li>
-                                        <li>Freeloot (racket sans raison RP) interdit.</li>
-                                        <li>Loot plus d'un item ou plus de 50% d'un item illégal interdit.</li>
-                                        <li>Loot du téléphone interdit (saisie temporaire obligatoire).</li>
-                                        <li>Interdiction de looter un joueur farmant un job légal.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illDiscFull">🖥️ Discord Illégal</button></h2>
-                            <div id="illDiscFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
-                                <div class="accordion-body">
-                                    <p>Le bannissement Discord peut entraîner un ban IG.</p>
-                                    <ul>
-                                        <li>Interdiction : ping staff sans raison, provocations, publicité, spam.</li>
-                                        <li>Leads responsables du comportement de leurs membres.</li>
-                                        <li>Signalements obligatoirement accompagnés de preuves.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illGenFull">
+            🚫 Règlement Général Activités Illégales
+        </button>
+    </h2>
+    <div id="illGenFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
+        <div class="accordion-body" style="line-height: 1.8; color: #d0d0d0; padding: 30px;">
+            
+            <h2 class="text-white mb-4" style="border-bottom: 2px solid var(--primary); padding-bottom: 10px;">Règlement Général Activités Illégales</h2>
+
+            <p>Les activités illégales doivent être réalisées dans un <strong>cadre RP cohérent et crédible</strong>. Les joueurs évoluant dans l’illégal doivent respecter certaines règles afin de garantir un <strong>RP équilibré, immersif et respectueux entre les différents groupes</strong>.</p>
+            <p>Tout abus ou comportement non RP pourra entraîner <strong>des sanctions administratives</strong>.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Règles générales</h3>
+            <ul>
+                <li>Interdiction de retourner au quartier/QG après une course-poursuite.</li>
+                <li>Le fear naturel envers les services publics est obligatoire. En tant que criminel, votre personnage doit avoir <strong>peur d’être arrêté ou poursuivi</strong> par la police.</li>
+                <li>Interdit de participer à des actions illégales sans être recruté dans le CREW officiel.</li>
+                <li>Il est interdit de <strong>se faire passer pour membre d’un groupe illégal</strong> si vous n’avez pas été recruté via le système du jeu.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Poursuites et Comportement</h3>
+            <ul>
+                <li><strong>Poursuites :</strong> Plans pneus autorisés pour les groupes officiels après 15 minutes.</li>
+                <li>La fuite dans l’eau après une course-poursuite est possible, mais <strong>les poursuivants sont autorisés à tirer</strong>.</li>
+                <li><strong>Comportement :</strong> Interdiction de mentir sur ses blessures. Les blessures doivent rester <strong>cohérentes avec la scène RP</strong>.</li>
+                <li>Alliances entre groupes interdites.</li>
+                <li>Trash talk sur corps au sol interdit.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Transactions et Organisation</h3>
+            <ul>
+                <li><strong>Transactions :</strong> Interdit près du QG ou en zone safe.</li>
+                <li>Vente hors DarkChat interdite.</li>
+                <li><strong>Organisation :</strong> Un seul personnage illégal autorisé.</li>
+                <li>Petites frappes interdites de posséder des habitants ou de revendiquer des points de récolte.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Territoires et Immersion</h3>
+            <ul>
+                <li><strong>Territoires :</strong> Installation uniquement dans les zones indiquées sur la carte.</li>
+                <li>Entrer en zone ennemie doit rester cohérent RP.</li>
+                <li>Se rendre dans une <strong>zone ennemie</strong> sans raison peut entraîner racket, passage à tabac ou intimidation.</li>
+            </ul>
+
+            <h4 class="text-white mt-4">Objectif de cette organisation</h4>
+            <p>Cette organisation territoriale permet une séparation claire des environnements de gangs, un renforcement de la cohérence RP et une meilleure immersion dans l’univers des factions. L’objectif est de rendre chaque zone <strong>identifiable selon son identité propre</strong>.</p>
+
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illOtageFull">
+            🎭 Règlement Prises d’otages
+        </button>
+    </h2>
+    <div id="illOtageFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
+        <div class="accordion-body" style="line-height: 1.8; color: #d0d0d0; padding: 30px;">
+            
+            <h2 class="text-white mb-4" style="border-bottom: 2px solid var(--primary); padding-bottom: 10px;">Règlement Prises d’otages</h2>
+
+            <h3 class="accent-color mt-4">Principe général</h3>
+            <p>La prise d’otage est une <strong>action RP majeure et grave</strong>. Elle doit rester <strong>rare, réfléchie et justifiée par un contexte roleplay solide</strong>.</p>
+            <p>Toute prise d’otage abusive, troll ou sans cohérence RP pourra entraîner des <strong>sanctions du staff</strong>.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Cas particuliers importants</h3>
+            <p><strong>Agents de l’État / Services publics</strong></p>
+            <ul>
+                <li>Prendre en otage un agent de l’État (police, gouvernement, etc.) doit être un <strong>ultime recours</strong>.</li>
+                <li>Votre personnage s’expose à de <strong>lourdes conséquences RP</strong> : Prison à perpétuité ou Mort RP.</li>
+                <li>Tout abus de prise d’otage sur des agents en service sera <strong>sanctionné</strong>. Nous encourageons les joueurs à être <strong>créatifs et innovants</strong> dans leurs actions RP.</li>
+            </ul>
+
+            <h4 class="text-white mt-4">Conditions de Mort RP pour un otage</h4>
+            <p>Un otage peut être soumis à une Mort RP si :</p>
+            <ul>
+                <li>Une <strong>demande de Mort RP</strong> est effectuée et validée sur le Discord du serveur.</li>
+                <li>Son groupe ne se présente pas pour tenter de le récupérer <strong>après vérification du staff</strong>.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Interdictions</h3>
+            <p>Il est strictement interdit de :</p>
+            <ul>
+                <li>Utiliser de <strong>faux otages</strong>.</li>
+                <li>Attendre devant un <strong>quartier / QG</strong> ou dans une <strong>zone de Mass RP</strong> pour prendre des joueurs en otage.</li>
+                <li>Prendre un joueur en otage <strong>en zone safe</strong>.</li>
+                <li>Braquer un groupe ennemi s’il possède déjà <strong>un otage de votre camp</strong>.</li>
+                <li>Prendre en otage un <strong>médecin en service</strong> (sauf validation exceptionnelle du staff).</li>
+                <li>Forcer un joueur à jouer des <strong>scènes sexuelles, humiliantes ou malsaines</strong>.</li>
+            </ul>
+
+            <h4 class="text-white mt-4">Rançons et Échanges</h4>
+            <p><strong>Plafonds des rançons :</strong></p>
+            <ul>
+                <li>Membre <strong>bas gradé</strong> : 5 000 $ maximum.</li>
+                <li>Membre <strong>gradé</strong> : 10 000 $ maximum.</li>
+                <li><strong>Lead ou co-lead</strong> : 15 000 $ maximum.</li>
+                <li>Interdiction de forcer un joueur à retirer de l'argent à la banque pour payer sa libération.</li>
+            </ul>
+            <p><strong>Échanges interdits :</strong> Il est interdit d'échanger un otage contre des armes blanches, armes à feu, munitions ou points illégaux.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Règles complémentaires</h3>
+            <ul>
+                <li><strong>Durée maximale :</strong> Une prise d’otage ne doit pas durer <strong>plus de 30 à 45 minutes</strong>. La scène doit ensuite évoluer ou se terminer.</li>
+                <li><strong>Obligation de négociation :</strong> Les ravisseurs doivent toujours laisser une possibilité de négociation.</li>
+                <li><strong>Nombre d’otages :</strong> Autorisé de prendre <strong>2 otages maximum par groupe</strong> par scène.</li>
+                <li><strong>Chain-otage :</strong> Un délai RP d'environ <strong>1 h 30</strong> doit être respecté avant de reprendre un membre du camp opposé en otage.</li>
+                <li><strong>Fear RP :</strong> L’otage doit coopérer, éviter les provocations et les actions irréalistes sous peine de sanctions.</li>
+            </ul>
+
+            <h4 class="text-white mt-4">Intervention des forces de l’ordre</h4>
+            <p>La police peut mettre en place un périmètre, une négociation ou un assaut. Les ravisseurs doivent <strong>jouer la scène jusqu’à son terme</strong>. Déconnexion ou fuite HRP interdite.</p>
+
+            <h4 class="text-white mt-4">Raisons RP valables</h4>
+            <p>Conflit sérieux entre groupes, pression stratégique, braquage réaliste ou vengeance construite. Une prise d’otage doit toujours <strong>faire avancer le roleplay</strong>.</p>
+
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illArmesFull">
+            🔫 Règlement Armes & Hiérarchie
+        </button>
+    </h2>
+    <div id="illArmesFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
+        <div class="accordion-body" style="line-height: 1.8; color: #d0d0d0; padding: 30px;">
+            
+            <h2 class="text-white mb-4" style="border-bottom: 2px solid var(--primary); padding-bottom: 10px;">Règlement Armes & Hiérarchie</h2>
+
+            <h3 class="accent-color mt-4">Principe général</h3>
+            <p>Le serveur n’est <strong>pas un serveur GunFight (GF)</strong>. Les armes doivent rester <strong>rares, précieuses et utilisées uniquement dans un contexte RP solide</strong>.</p>
+            <p>L’utilisation d’une arme doit toujours être <strong>le dernier recours</strong>. Tout abus d’armes ou comportement GF pourra entraîner des sanctions administratives ou RP.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Hiérarchie des groupes et accès</h3>
+
+            <h4 class="text-white mt-4">Indépendants / Civils</h4>
+            <p>Représentent les citoyens et petits criminels débutants.</p>
+            <ul>
+                <li><strong>Armes autorisées :</strong> Pistolet SNS, Beretta, Ceramic Pistol.</li>
+                <li><strong>Restrictions :</strong> Pas d’armes automatiques, fusils, SMG ou armes lourdes.</li>
+            </ul>
+
+            <h4 class="text-white mt-4">Petites frappes</h4>
+            <p>Criminels de rue débutants en évolution vers un gang.</p>
+            <ul>
+                <li><strong>Armes autorisées :</strong> SNS, Beretta, Ceramic, Heavy Pistol, Cal .50.</li>
+                <li><strong>Restrictions :</strong> Interdiction d’armes automatiques et de fusils d’assaut.</li>
+            </ul>
+
+            <h4 class="text-white mt-4">Gangs</h4>
+            <p>Groupes de quartier (protection de territoire, tensions de rue).</p>
+            <ul>
+                <li><strong>Armes autorisées :</strong> Précédents + Scorpion, Micro SMG, Tec-9.</li>
+                <li><strong>Restrictions :</strong> Fusils d’assaut et armes lourdes interdits.</li>
+            </ul>
+
+            <h4 class="text-white mt-4">Familles & Mafias</h4>
+            <p>Groupes structurés, locaux ou influents.</p>
+            <ul>
+                <li><strong>Armes autorisées :</strong> Précédents + ADP, AKU.</li>
+                <li><strong>Restrictions :</strong> Fusils d’assaut très limités, armes lourdes interdites (sauf scènes majeures pour les Mafias).</li>
+            </ul>
+
+            <h4 class="text-white mt-4">Organisations & Cartels</h4>
+            <p>Groupes les plus puissants avec ressources importantes.</p>
+            <ul>
+                <li><strong>Armes autorisées :</strong> Précédents + AK-47.</li>
+                <li><strong>Restrictions :</strong> L’utilisation d’armes lourdes doit rester exceptionnelle et justifiée RP.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">🔋 Quantité maximale de munitions</h3>
+            <ul>
+                <li>Armes de poing : <strong>36 balles maximum</strong></li>
+                <li>Fusil à pompe : <strong>24 balles maximum</strong></li>
+                <li>SMG : <strong>80 balles maximum</strong></li>
+                <li>Fusil d’assaut : <strong>90 balles maximum</strong></li>
+            </ul>
+            <p>⚠️ Les joueurs doivent respecter ces limites en permanence sur eux.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">⛔ Interdictions générales</h3>
+            <ul>
+                <li>Posséder une arme non autorisée pour votre groupe.</li>
+                <li>Casser l’économie en vendant à des prix abusivement bas.</li>
+                <li>Posséder plusieurs armes automatiques ou lourdes sur soi.</li>
+                <li>Vendre des armes en dehors du DarkChat.</li>
+                <li>Utiliser des outils de farm (pioches, etc.) comme armes.</li>
+            </ul>
+
+            <h4 class="text-white mt-4">Tarifs et Économie</h4>
+            <p>Les tarifs maximums sont fixés sur le Discord illégal : <a href="https://discord.gg/rMS3JUc9Us" target="_blank" style="color: var(--primary);">https://discord.gg/rMS3JUc9Us</a>. Il est interdit de dépasser les limites fixées.</p>
+
+            <h4 class="text-white mt-4">Objectif</h4>
+            <p>Éviter le GunFight inutile, créer une progression RP entre les groupes et maintenir une économie stable pour un RP réaliste et immersif.</p>
+
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illBraqFull">
+            🏦 Règlement Braquages
+        </button>
+    </h2>
+    <div id="illBraqFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
+        <div class="accordion-body" style="line-height: 1.8; color: #d0d0d0; padding: 30px;">
+            
+            <h2 class="text-white mb-4" style="border-bottom: 2px solid var(--primary); padding-bottom: 10px;">Règlement Braquages</h2>
+
+            <p>Les braquages représentent des <strong>scènes RP majeures</strong>. Ils doivent être réalisés dans un <strong>contexte roleplay crédible</strong>, avec préparation et interaction avec les forces de l’ordre.</p>
+            <p>Le but d’un braquage est de créer <strong>une scène RP immersive</strong>, et non de faire uniquement de l’argent. Les braquages doivent obligatoirement inclure une <strong>interaction avec la police</strong> lorsque celle-ci est disponible.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Braquage de supérettes / petits braquages</h3>
+            <p>Cela inclut les supérettes, cambriolages et autres petits braquages.</p>
+            <h4 class="text-white">Conditions</h4>
+            <ul>
+                <li>Vous devez attendre l’arrivée de la <strong>police avant de quitter les lieux</strong>.</li>
+                <li>Lancer une <strong>course-poursuite si la police intervient</strong>.</li>
+                <li>Si <strong>aucune patrouille n’arrive après 10 minutes</strong>, vous êtes autorisés à partir.</li>
+            </ul>
+            <h4 class="text-white">Interdictions</h4>
+            <ul>
+                <li>Interdiction d’utiliser un <strong>plan mule</strong>.</li>
+                <li>Interdiction d’utiliser : deux-roues, skate, BMX, véhicules de métiers, véhicules <strong>sportifs</strong> ou <strong>imports</strong>.</li>
+                <li>Disponible seulement pour les <strong>indépendants, petites frappes, gangs et MC</strong>.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Braquage de banque Fleeca</h3>
+            <ul>
+                <li><strong>3 braqueurs minimum</strong>, <strong>2 otages minimum</strong>, <strong>1 arme à feu minimum</strong> et <strong>2 véhicules maximum</strong>.</li>
+                <li>Vous devez attendre l’arrivée de la police et engager une <strong>négociation</strong>.</li>
+                <li>Si la police ne se présente pas après <strong>15 minutes</strong>, vous pouvez quitter la zone.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Braquage de bijouterie (Braquage majeur)</h3>
+            <ul>
+                <li><strong>6 braqueurs minimum</strong>, <strong>4 otages minimum</strong>, au moins <strong>3 armes à feu</strong> et <strong>3 véhicules maximum</strong>.</li>
+                <li>Attente obligatoire de la police et <strong>négociation</strong> (départ autorisé après 15 minutes d'absence).</li>
+                <li><strong>Plans mules autorisés :</strong> Un minimum de <strong>10 minutes de poursuite</strong> est requis avant l'utilisation.</li>
+                <li>Disponible seulement pour les <strong>familles, mafias, organisations, cartels et MC</strong>.</li>
+                <li>Interdiction de loot des objets sur vos otages ou de demander une rançon. Les otages servent uniquement à <strong>négocier votre fuite</strong>.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Braquage de Pacific Bank (Dossier écrit)</h3>
+            <p>Il doit être réalisé uniquement avec <strong>une préparation RP sérieuse</strong>.</p>
+            <ul>
+                <li><strong>10 braqueurs minimum</strong>, <strong>5 otages minimum</strong>, une arme pour chaque braqueur et <strong>5 véhicules maximum</strong>.</li>
+                <li>Disponible seulement pour les <strong>familles, mafias, organisations, cartels et MC</strong>.</li>
+                <li>Attente de la police et scène de <strong>négociation</strong> obligatoire.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Course poursuite & MC</h3>
+            <p>Les <strong>Motor Clubs (MC)</strong> sont autorisés à braquer à moto si cela reste cohérent et organisé.</p>
+            <p>Après un braquage majeur, la fuite doit obligatoirement inclure une <strong>course-poursuite</strong> jouée jusqu’à son terme. Il est interdit de quitter le jeu ou d'utiliser des bugs pour fuir.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">LIMITE DE BRAQUAGE par groupe</h3>
+            <ul>
+                <li>Supérette : <strong>une toutes les 1 heure</strong></li>
+                <li>Fleeca : <strong>une tous les deux jours</strong></li>
+                <li>Bijouterie : <strong>une par semaine</strong></li>
+                <li>Pacific : <strong>une par mois, tous groupes confondus</strong></li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Abus & Objectif</h3>
+            <p>Enchaîner les braquages abusivement ou provoquer des gunfights volontairement est interdit sous peine de sanctions.</p>
+            <p>L'objectif est de favoriser des <strong>scènes RP immersives</strong>, maintenir l'équilibre entre criminels et police, et encourager les négociations.</p>
+
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illGunFull">
+            🔫 Règlement Fusillades / Gunfight
+        </button>
+    </h2>
+    <div id="illGunFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
+        <div class="accordion-body" style="line-height: 1.8; color: #d0d0d0; padding: 30px;">
+            
+            <h2 class="text-white mb-4" style="border-bottom: 2px solid var(--primary); padding-bottom: 10px;">Règlement Fusillades / Gunfight</h2>
+
+            <h3 class="accent-color mt-4">Principe général</h3>
+            <p>Les fusillades représentent des <strong>scènes RP à très haut risque</strong>. Elles doivent rester <strong>rares, logiques et justifiées par un contexte roleplay solide</strong>.</p>
+            <p>Le serveur encourage fortement les joueurs à privilégier la discussion, la négociation, l’intimidation et les scènes RP construites. <strong>L’utilisation d’armes à feu doit toujours être le dernier recours</strong>. Toute fusillade abusive, irréaliste ou répétitive pourra entraîner des sanctions du staff.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Déclenchement d’une fusillade</h3>
+            <p>Avant d’engager une fusillade, les joueurs doivent obligatoirement :</p>
+            <ul>
+                <li>Avoir un <strong>conflit RP clair et existant</strong>.</li>
+                <li>Effectuer un <strong>échange verbal ou une tentative de négociation</strong>.</li>
+                <li>Laisser une <strong>possibilité de désescalade</strong>.</li>
+            </ul>
+            <p>Il est strictement interdit de tirer directement sans interaction RP préalable, sauf situation exceptionnelle validée par le staff.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Interdictions générales</h3>
+            <ul>
+                <li>Participer à <strong>plus d’une fusillade par soirée RP entre les mêmes groupes</strong>.</li>
+                <li>Revenir sur une scène pour se <strong>venger après une réanimation EMS ou un retour hôpital</strong>.</li>
+                <li>Préparer une fusillade en prenant <strong>des hauteurs ou positions abusives</strong> avant son déclenchement.</li>
+                <li><strong>Free-loot</strong> un joueur en état de coma.</li>
+                <li>Déplacer, cacher ou récupérer un joueur <strong>dans le coma</strong> après une fusillade.</li>
+                <li>Déclencher une fusillade uniquement pour <strong>provoquer ou gagner un affrontement</strong>.</li>
+                <li>Tirer en <strong>zone safe ou zone à fort RP</strong>, sauf autorisation exceptionnelle écrite du staff.</li>
+            </ul>
+            <p>Le staff se réserve le droit de <strong>sanctionner ou de prononcer une Mort RP</strong> en cas d’abus ou de participation excessive.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Comportement en scène de gunfight</h3>
+            <p>Lors d’une fusillade, chaque joueur doit :</p>
+            <ul>
+                <li>Respecter son <strong>Fear RP</strong>.</li>
+                <li>Jouer correctement ses blessures et ses chutes.</li>
+                <li>Éviter tout comportement <strong>tryhard ou anti-RP</strong>.</li>
+                <li>Privilégier la cohérence de la scène plutôt que la victoire.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Règlement Drive-by</h3>
+            <p>Le drive-by est une action <strong>exceptionnelle et encadrée</strong>. Il est autorisé uniquement <strong>avec une demande écrite préalable au staff</strong>.</p>
+            <h4 class="text-white mt-3">Conditions</h4>
+            <ul>
+                <li>Le véhicule doit être <strong>complètement à l’arrêt</strong>.</li>
+                <li>L’action doit être <strong>très rapide (quelques secondes)</strong>.</li>
+                <li>Les tireurs doivent <strong>tirer puis quitter immédiatement la zone</strong>.</li>
+                <li>Le groupe visé peut riposter s’il en a l’occasion.</li>
+            </ul>
+            <h4 class="text-white mt-3">Interdictions</h4>
+            <ul>
+                <li>Tirer depuis un <strong>véhicule en mouvement</strong>.</li>
+                <li>Braquer un joueur depuis un véhicule (voiture, moto, vélo…). Pour braquer, il est obligatoire <strong>de descendre du véhicule</strong>.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Conséquences RP</h3>
+            <p>Une participation excessive ou abusive peut entraîner des sanctions staff, des pertes d’avantages RP, une prison longue durée ou la Mort RP du personnage.</p>
+
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illDrugFull">
+            🌱 Règlement Drogues
+        </button>
+    </h2>
+    <div id="illDrugFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
+        <div class="accordion-body" style="line-height: 1.8; color: #d0d0d0; padding: 30px;">
+            
+            <h2 class="text-white mb-4" style="border-bottom: 2px solid var(--primary); padding-bottom: 10px;">Règlement RP – Drogues</h2>
+
+            <h3 class="accent-color mt-4">Interdictions générales</h3>
+            <p>Afin de garantir un <strong>RP cohérent et équilibré</strong>, les actions suivantes sont strictement interdites :</p>
+            <ul>
+                <li>Vendre de la drogue en <strong>Zone Safe</strong>.</li>
+                <li>Vendre aux PNJ depuis un <strong>véhicule en mouvement</strong> (voiture, moto, quad, vélo, skateboard) et repartir immédiatement.</li>
+                <li>Effectuer des transactions illégales en <strong>Zone Safe</strong> ou à moins de <strong>3 km de votre QG</strong>.</li>
+                <li>Utiliser des véhicules <strong>inadaptés</strong> (motos, quads, vélos pour la vente directe, super-sportifs ou imports interdits).</li>
+            </ul>
+            <p>Toute infraction pourra entraîner des <strong>sanctions administratives et des sanctions RP</strong>.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Vente aux PNJ</h3>
+            <p>La vente aux PNJ est autorisée uniquement pour les Civils, Habitants, Petites frappes et Gangs.</p>
+            <p><strong>Organisations :</strong> Vente PNJ interdite, sauf s'il n'y a pas au minimum <strong>2 gangs actifs</strong> sur le serveur.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Tarifs et transactions</h3>
+            <ul>
+                <li>Les transactions doivent rester <strong>raisonnables et RP</strong>.</li>
+                <li>Les joueurs peuvent négocier leurs prix dans le respect d'une <strong>fourchette de prix RP</strong> définie par le serveur.</li>
+                <li>Il est de la responsabilité du joueur de se renseigner sur les tarifs officiels.</li>
+                <li>⚠️ Aucun remboursement ne sera effectué en cas d’erreur de transaction.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Récoltes et production</h3>
+            <p>Il est interdit de partager abusivement les points de récolte. Les gangs ne peuvent pas récolter les drogues réservées aux organisations.</p>
+            
+            <h4 class="text-white mt-4">Répartition des drogues par groupe</h4>
+            <ul>
+                <li><strong>Weed & Coke :</strong> Indépendants, Petites frappes, Gangs.</li>
+                <li><strong>Meth & Ecstasy :</strong> MC, Familles, Organisations, Cartels.</li>
+            </ul>
+
+            <h4 class="text-white mt-4">Transport et véhicules</h4>
+            <p>L’utilisation d’un <strong>véhicule adapté</strong> (Speedo, Rumpo, Burrito ou autres utilitaires) est obligatoire pour se rendre aux zones de récolte ou de traitement. Les véhicules sportifs ou super-sportifs sont interdits.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Bonnes pratiques RP</h3>
+            <ul>
+                <li>Favoriser les <strong>interactions entre groupes</strong> plutôt que le farm solo.</li>
+                <li>Éviter les actions automatiques et répétitives.</li>
+                <li>Respecter la <strong>hiérarchie et la distribution des rôles</strong>.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Objectif du règlement</h3>
+            <p>Garantir un RP illégal réaliste, un équilibre entre les groupes et des interactions immersives.</p>
+
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illCorpFull">
+            🪙 Règlement Corruption
+        </button>
+    </h2>
+    <div id="illCorpFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
+        <div class="accordion-body" style="line-height: 1.8; color: #d0d0d0; padding: 30px;">
+            
+            <h2 class="text-white mb-4" style="border-bottom: 2px solid var(--primary); padding-bottom: 10px;">Règlement Corruption</h2>
+
+            <p>La corruption est une <strong>possibilité RP exceptionnelle</strong> réservée aux membres du <strong>Gouvernement et des services publics</strong>. Elle doit être réalisée dans un cadre <strong>strictement encadré par le staff</strong> afin de garantir un RP cohérent et équilibré.</p>
+            <p>Aucun joueur ne peut jouer un <strong>RP de corruption</strong> sans autorisation préalable (dossier validé).</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Autorisation et Postes</h3>
+            <p>Un membre du Gouvernement, de la LSPD, des EMS ou de l’Agence Immobilière peut devenir corrompu <strong>uniquement après validation d’un dossier par le staff</strong>.</p>
+            
+            <h4 class="text-white mt-4">Postes pouvant être corrompus :</h4>
+            <ul>
+                <li>Conseiller</li>
+                <li>Secrétaire</li>
+                <li>Sécurité rapprochée</li>
+                <li>LSPD (Après validation Staff + Chief Of Police)</li>
+                <li>Agence Immobilière</li>
+                <li>EMS (De manière extrêmement limitée)</li>
+            </ul>
+
+            <h4 class="text-white mt-4">Postes strictement interdits à la corruption :</h4>
+            <ul>
+                <li>Gouverneur / Gouverneur adjoint</li>
+                <li>Chef de cabinet</li>
+                <li>IRS (Services fiscaux)</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Exemples de RP de corruption</h3>
+            <ul>
+                <li><strong>LSPD :</strong> Transmettre des infos, fermer les yeux sur l'illégal, protéger un groupe.</li>
+                <li><strong>EMS :</strong> Divulguer des infos sensibles, aide discrète à un groupe criminel.</li>
+                <li><strong>Immo :</strong> Infos sur les propriétés, faciliter l'accès aux logements, ventes contre avantages.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Demande et Sanctions</h3>
+            <p>Pour devenir corrompu, vous devez ouvrir un <strong>ticket Discord</strong> avec un dossier complet (Nom, poste, motivations, objectifs). Le staff analysera la cohérence et les risques d'abus.</p>
+
+            <h4 class="text-white mt-4">Risques et conséquences :</h4>
+            <p>Un personnage corrompu s'expose à de <strong>lourdes conséquences RP</strong>. En cas de découverte de ses activités :</p>
+            <ul>
+                <li>Le personnage pourra être soumis à une <strong>Mort RP</strong>.</li>
+                <li>Retrait immédiat du poste et sanctions administratives.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Objectif du règlement</h3>
+            <p>Encadrer la pratique pour éviter les abus de pouvoir, préserver l'équilibre des institutions et créer des <strong>scénarios RP riches et crédibles</strong>.</p>
+
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illTheft">
+            💣 Règlement Arnaques / Vols
+        </button>
+    </h2>
+    <div id="illTheft" class="accordion-collapse collapse" data-bs-parent="#accIll">
+        <div class="accordion-body" style="line-height: 1.8; color: #d0d0d0; padding: 30px;">
+            
+            <h2 class="text-white mb-4" style="border-bottom: 2px solid var(--primary); padding-bottom: 10px;">Règlement Arnaques / Vols</h2>
+
+            <p>Afin de garantir une <strong>expérience de jeu équitable pour tous les joueurs</strong>, les arnaques et les abus sont formellement interdits sur le serveur. Ces pratiques sont souvent sources de conflits non RP et nuisent à l'expérience globale.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">⛔ Interdiction des arnaques</h3>
+            <p>Les arnaques sont <strong>strictement interdites</strong>. Cela inclut notamment :</p>
+            <ul>
+                <li>Les <strong>fausses ventes d’armes</strong> ou de <strong>drogue</strong>.</li>
+                <li>Les <strong>fausses opérations de blanchiment d’argent</strong>.</li>
+                <li>Les <strong>fausses ventes immobilières</strong>.</li>
+                <li>Toute activité visant à tromper volontairement un joueur pour lui dérober ses biens.</li>
+            </ul>
+            <p>👉 Toute tentative d’arnaque sera sanctionnée par le staff.</p>
+
+            <h4 class="text-white mt-4">Vente de véhicules</h4>
+            <p>Il est interdit de vendre un véhicule à un prix injustifié ou abusif. Le prix doit rester cohérent avec le prix d’achat, les améliorations et l’état général du véhicule.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">🔫 Vol d’armes et de véhicules</h3>
+            <ul>
+                <li><strong>Vol d’armes :</strong> Le vol d'armes (blanches ou de poing) dans les coffres de véhicules est <strong>strictement interdit</strong>. En cas de vol, les armes pourront être remboursées par le staff.</li>
+                <li><strong>Coffres de véhicules :</strong> Les vols d’objets dans les coffres sont <strong>autorisés</strong> mais ne seront plus remboursés par le staff (sauf pour les armes). Soyez prudents.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">🏠 Vol dans les appartements</h3>
+            <p>Les vols dans les appartements sont autorisés uniquement si l’appartement est <strong>ouvert</strong> et qu’aucune contrainte RP n’est utilisée pour forcer l’accès.</p>
+            <ul>
+                <li>❌ Interdiction de <strong>forcer un joueur à ouvrir son appartement</strong>.</li>
+                <li>❌ Interdiction de <strong>prendre plus de 50 % d’un item</strong> lors du vol.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">💳 Cartes bancaires et Limites</h3>
+            <ul>
+                <li><strong>Cartes bancaires :</strong> Le vol et l’utilisation frauduleuse de cartes bancaires (retraits, achats) sont <strong>strictement interdits</strong>.</li>
+                <li><strong>Limite de vol :</strong> Quel que soit le type de vol (joueur, véhicule, appartement, inventaire), il est <strong>strictement interdit de voler plus de 50 % d’un item</strong>.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">⚖️ Sanctions et Objectif</h3>
+            <p>En cas de non-respect, le staff pourra appliquer des avertissements, exiger la restitution des objets, ou prononcer un bannissement temporaire ou définitif.</p>
+            <p>L'objectif est de protéger les joueurs contre les abus, maintenir une économie stable et garantir un <strong>RP équitable et respectueux</strong>.</p>
+
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illWipeFull">
+            ☠️ Règlement Mort RP / Wipe
+        </button>
+    </h2>
+    <div id="illWipeFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
+        <div class="accordion-body" style="line-height: 1.8; color: #d0d0d0; padding: 30px;">
+            
+            <h2 class="text-white mb-4" style="border-bottom: 2px solid var(--primary); padding-bottom: 10px;">Règlement Mort RP / Wipe</h2>
+
+            <p>La <strong>Mort RP (MRP)</strong> ou <strong>Wipe</strong> représente la fin définitive de l’histoire d’un personnage. Elle implique la création d'un nouveau personnage avec une nouvelle histoire, <strong>sans aucun souvenir de l’ancien</strong>.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">⚠️ Wipe obligatoire</h3>
+            <p>Le wipe est obligatoire dans les situations suivantes :</p>
+            <ul>
+                <li>Lors de l’entrée dans un <strong>projet illégal officiel</strong> (sauf pour les nouveaux joueurs).</li>
+                <li>Lorsque vous <strong>quittez un groupe illégal officiel</strong>, peu importe la raison ou l'ancienneté.</li>
+                <li>Passage du <strong>RP légal au RP illégal</strong>.</li>
+            </ul>
+            <p><strong>Note :</strong> Le wipe n'est pas obligatoire pour les membres quittant un groupe de <em>petites frappes</em>, sous réserve de cohérence RP.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">👤 Autorité du Lead</h3>
+            <p>Le lead d’un groupe officiel a autorité sur l'avenir RP de ses membres :</p>
+            <ul>
+                <li>Il peut imposer une <strong>Mort RP</strong> (doit prévenir la gestion illégale par écrit 48h à l'avance).</li>
+                <li>Il décide si une scène de Mort RP est réalisée ou non.</li>
+                <li>Il peut exclure un membre si le personnage ne correspond plus au projet.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">📦 Départ et Délais</h3>
+            <ul>
+                <li><strong>Inventaire :</strong> Vous devez partir <strong>sans emporter aucun objet</strong> (armes, argent, véhicules, ressources), même s'ils vous appartiennent.</li>
+                <li><strong>Délai de nouveau groupe :</strong> Un délai de <strong>5 jours minimum</strong> est requis après la création de votre personnage dans le groupe précédent avant d'en rejoindre un nouveau.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">⛔ Interdictions Strictes</h3>
+            <ul>
+                <li><strong>Metagaming :</strong> Interdiction totale d'utiliser des informations de l'ancien personnage (emplacements de drogue, relations, alliances).</li>
+                <li><strong>Transfert de biens :</strong> Interdiction de transférer de l'argent ou des biens avant un wipe (aucun héritage autorisé).</li>
+                <li><strong>Wipe sous condition :</strong> Interdit si une procédure judiciaire est en cours, si le compte bancaire est négatif ou si des factures sont impayées.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">⚖️ Sanctions et Objectif</h3>
+            <p>Tout contournement (metagaming, transfert occulte) entraînera des sanctions administratives pouvant aller jusqu'au bannissement définitif.</p>
+            <p>L'objectif est de garantir un <strong>RP criminel et civil équilibré</strong> et d'empêcher les abus de changement de personnage.</p>
+
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illLootFull">
+            📜 Règlement Loot RP / Free Loot
+        </button>
+    </h2>
+    <div id="illLootFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
+        <div class="accordion-body" style="line-height: 1.8; color: #d0d0d0; padding: 30px;">
+            
+            <h2 class="text-white mb-4" style="border-bottom: 2px solid var(--primary); padding-bottom: 10px;">Règlement Free Loot / Loot RP</h2>
+
+            <p>Le loot sur un joueur doit toujours être réalisé dans un <strong>contexte RP cohérent et crédible</strong>. Le but n’est pas de récupérer un maximum d’objets, mais de <strong>faire évoluer la scène RP</strong>.</p>
+            <p>Tout abus de loot pourra être considéré comme <strong>Free Loot</strong> et entraîner des sanctions administratives.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Interdictions</h3>
+            <p>Les actions suivantes sont strictement interdites :</p>
+            <ul>
+                <li>Loot des <strong>armes et/ou des munitions</strong> sur un joueur (peu importe la raison).</li>
+                <li><strong>Freeloot un joueur :</strong> Racketter quelqu’un sans aucune raison RP, uniquement pour son argent ou ses objets.</li>
+                <li>Loot <strong>plus d’un item</strong> sur un joueur.</li>
+                <li>Prendre <strong>plus de 50 % d’un item illégal</strong> présent dans l’inventaire.</li>
+                <li>Loot le <strong>téléphone</strong> : Il peut être saisi temporairement pour la scène (interrogatoire, etc.), mais doit être <strong>rendu à la fin</strong>.</li>
+                <li>Forcer un joueur à retirer de l’argent à la banque ou au distributeur.</li>
+                <li>Piller les clés, cartes d’identité ou documents RP (Exception : clés de véhicule autorisées si cohérent).</li>
+                <li>Loot ou braquer un joueur <strong>en train de farmer un job intermédiaire / légal</strong>.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Comportement attendu</h3>
+            <p>Lors d’un loot, les joueurs doivent privilégier la <strong>cohérence RP</strong> et respecter les limites imposées. Le loot ne doit jamais être utilisé pour simplement profiter du système de jeu au détriment du Fair-Play.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Sanctions</h3>
+            <p>En cas d'abus ou de Free Loot, le staff appliquera des sanctions adaptées : avertissement, restitution obligatoire des objets, jail RP, ou sanctions plus lourdes en cas de récidive.</p>
+
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#illDiscFull">
+            🖥️ Règlement Discord Illégal
+        </button>
+    </h2>
+    <div id="illDiscFull" class="accordion-collapse collapse" data-bs-parent="#accIll">
+        <div class="accordion-body" style="line-height: 1.8; color: #d0d0d0; padding: 30px;">
+            
+            <h2 class="text-white mb-4" style="border-bottom: 2px solid var(--primary); padding-bottom: 10px;">Règlement Discord Illégal</h2>
+
+            <p>Avant de rejoindre le <strong>Discord illégal de MMT FA</strong>, vous devez impérativement prendre connaissance des règles suivantes. Le non-respect de ces règles pourra entraîner <strong>des sanctions pouvant aller jusqu’au bannissement</strong>.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Interdictions</h3>
+            <ul>
+                <li>Ping les membres du <strong>staff sans raison valable</strong>.</li>
+                <li>Publier des <strong>messages provocateurs</strong> envers un joueur ou un groupe.</li>
+                <li>Contenu inapproprié (offensant, raciste, sexiste, pornographique ou violent).</li>
+                <li>Publicité pour d’autres serveurs ou projets extérieurs.</li>
+                <li>Spam (messages en boucle, répétitions, liens excessifs).</li>
+                <li>Utilisation des mauvais canaux (chaque salon a un sujet précis).</li>
+                <li>Posséder <strong>plusieurs comptes Discord</strong> sur le serveur.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Comportement et Responsabilité</h3>
+            <p>Les membres doivent adopter un comportement <strong>respectueux et mature</strong>. Les insultes et le harcèlement ne sont pas tolérés. Les désaccords doivent être réglés de manière calme.</p>
+            
+            <h4 class="text-white mt-4">Responsabilité des leads</h4>
+            <p>Les <strong>leads de groupes</strong> sont responsables du comportement de leurs membres. Si les membres d’un groupe ne respectent pas les règles, <strong>l’ensemble du groupe pourra être sanctionné</strong>.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Communication avec le staff</h3>
+            <ul>
+                <li>Demande de rôle obligatoire pour tous les membres afin de répertorier les joueurs.</li>
+                <li>Des <strong>référents illégaux</strong> sont assignés à chaque groupe : vous devez respecter leurs consignes.</li>
+                <li><strong>Signalement :</strong> Pour signaler un problème, vous devez <strong>obligatoirement fournir des preuves</strong> (vidéos, screenshots).</li>
+                <li>Privilégiez les tickets complets plutôt que les explications en vocal.</li>
+            </ul>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
+
+            <h3 class="accent-color">Suggestions et Sanctions</h3>
+            <p>Le canal suggestion est réservé aux idées d'amélioration, il ne doit pas servir de lieu de débat.</p>
+            <h4 class="text-white mt-4">Sanctions</h4>
+            <p>Le staff se réserve le droit de sanctionner tout manquement. ⚠️ Un <strong>bannissement du Discord illégal peut également entraîner un bannissement en jeu (IG)</strong>.</p>
+
+        </div>
+    </div>
+</div>
                     </div>
                 </div>
             </div>
@@ -833,6 +2104,76 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-10">
+
+
+
+<section class="patch-notes-section" id="patchnotes">
+    <div class="container">
+        <div class="patch-card">
+            <div class="patch-header">
+
+                <div class="vision-card mb-5" style="border-left: 4px solid var(--primary); background: rgba(15, 15, 15, 0.9);">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+                        <h3 class="mb-0 text-white">🧪 Patch Note — Mise à jour serveur avant ouverture</h3>
+                        <span class="badge fw-bold px-3 py-2" style="background-color: var(--primary); color: #000;">14/05/2026</span>
+                    </div>
+
+                    <div class="mt-3">
+                        <div class="row g-4 text-white">
+                            
+                            <div class="col-md-4">
+                                <h5 style="color:var(--primary)"><i class="fas fa-car me-2"></i> 🚗 Véhicules</h5>
+                                <ul class="ps-3 mb-3" style="font-size: 0.85rem; list-style-type: none;">
+                                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Voiture <b>L’œil Rouge</b></li>
+                                    <li class="mt-2"><b>EMS & Police :</b></li>
+                                    <li><i class="fas fa-plus me-2" style="color: var(--primary); font-size: 0.7rem;"></i> 2vd_vscout2 / 2vd_vsandking</li>
+                                    <li><i class="fas fa-plus me-2" style="color: var(--primary); font-size: 0.7rem;"></i> Bus : 2vd_bpbus2</li>
+                                </ul>
+
+                                <h5 style="color:var(--primary)"><i class="fas fa-map me-2"></i> 🗺️ Mapping</h5>
+                                <ul class="ps-3 mb-3" style="font-size: 0.85rem; list-style-type: none;">
+                                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Mapping <b>Ballas</b> (Textures OK)</li>
+                                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Doorlocks <b>EMS sud</b></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-4">
+                                <h5 style="color:var(--primary)"><i class="fas fa-building me-2"></i> 🏢 Entreprises</h5>
+                                <ul class="ps-3 mb-3" style="font-size: 0.85rem; list-style-type: none;">
+                                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> <b>BALLAS CLUB</b> (Points/Menus)</li>
+                                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> <b>JUSTICE AND PEACE</b> (Blip et job)</li>
+                                </ul>
+
+                                <h5 style="color:var(--primary)"><i class="fas fa-cogs me-2"></i> 🛒 Systèmes</h5>
+                                <ul class="ps-3 mb-3" style="font-size: 0.85rem; list-style-type: none;">
+                                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Nouvelles cryptomonnaies</li>
+                                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Intégration <b>CGV et CGU</b></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-4" style="border-left: 1px solid rgba(255,255,255,0.05);">
+                                <h5 style="color:var(--primary)"><i class="fas fa-magic me-2"></i> ✨ Effets & Fun</h5>
+                                <ul class="ps-3 mb-3" style="font-size: 0.85rem; list-style-type: none;">
+                                    <li><i class="fas fa-wine-glass-alt me-2" style="color: var(--primary);"></i> <b>Effet Alcool :</b> Actif sur +25 items</li>
+                                    <li><i class="fas fa-smoking me-2" style="color: var(--primary);"></i> <b>Tabac :</b> Cigarette & Cigare fonctionnels</li>
+                                    <li><i class="fas fa-leaf me-2" style="color: var(--primary);"></i> <b>Joint :</b> Nouvel effet visuel spécial</li>
+                                </ul>
+                                <div class="p-2 rounded mt-3" style="background: rgba(7, 129, 106, 0.1); border: 1px dashed var(--primary); font-size: 0.75rem;">
+                                    <i class="fas fa-info-circle me-1"></i> Système de fumée synchronisé avec les autres joueurs.
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-2">
+                                <hr style="opacity: 0.1;">
+                                <h6 class="text-uppercase" style="font-size: 0.7rem; letter-spacing: 1px; color: var(--primary);">Inventaire des nouveaux consommables :</h6>
+                                <p class="mb-0" style="font-size: 0.75rem; opacity: 0.7; font-style: italic;">
+                                    Bière gingembre, Champagne, Aviation, B52, Bloody Marry, Blue Lagoon, Cuba Libre, Gin Tonic, Long Island, Martini Fresh, Mojito, Negroni, Pina Colada, Rainbow, Rouge Passion, Sweet Poison, Tequila Sunrise, Zombie, Jager, Martini, Rum, Sake, Liqueur Violette, Vin Blanc, Vodka, Wigwam Bleeder, Whisky.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
 
                 <div class="vision-card mb-5" style="border-left: 4px solid var(--primary); background: rgba(15, 15, 15, 0.9);">
                     <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
@@ -1354,6 +2695,53 @@
         </div>
     </div>
 
+<div id="cgv-page" class="container" style="display: none; padding-top: 150px; padding-bottom: 50px; position: relative; z-index: 2;">
+    <div class="main-hero-card p-5" style="background: rgba(15, 15, 15, 0.9); border: 1px solid var(--border-color); border-radius: var(--radius); box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+        
+        <div class="text-center mb-5">
+            <h2 class="accent-color" style="font-size: 2rem; letter-spacing: 1px;">CONDITIONS GÉNÉRALES DE VENTE ET D’UTILISATION (CGV/CGU)</h2>
+            <p class="text-muted">Boutique Officielle <strong>MMT FA</strong> via la Plateforme Tebex</p>
+            <div style="width: 100px; height: 2px; background: var(--primary); margin: 20px auto;"></div>
+        </div>
+
+        <div class="cgv-text" style="line-height: 1.8; color: #d0d0d0; font-size: 0.95rem;">
+            
+            <h4 style="color: var(--primary); margin-top: 30px; border-bottom: 1px solid rgba(7, 129, 106, 0.2); padding-bottom: 10px;">PRÉAMBULE</h4>
+            <p>Les présentes conditions régissent l'ensemble des transactions effectuées sur la boutique virtuelle du serveur MMT FA. En finalisant une transaction, l'utilisateur (ci-après désigné "le Client") reconnaît avoir la pleine capacité juridique et accepte sans réserve les clauses détaillées ci-dessous.</p>
+
+            <h4 style="color: var(--primary); margin-top: 30px; border-bottom: 1px solid rgba(7, 129, 106, 0.2); padding-bottom: 10px;">ARTICLE 1 : NATURE DES BIENS ET SERVICES</h4>
+            <p>Le Client reconnaît que les achats effectués consistent en des "biens virtuels" ou "services numériques" (grades, cosmétiques, monnaie virtuelle, etc.) destinés exclusivement à l'utilisation sur le serveur de jeu. Ces éléments n'ont aucune valeur monétaire réelle en dehors de l'infrastructure de MMT FA.</p>
+
+            <h4 style="color: var(--primary); margin-top: 30px; border-bottom: 1px solid rgba(7, 129, 106, 0.2); padding-bottom: 10px;">ARTICLE 2 : RENONCIATION AU DROIT DE RÉTRACTATION</h4>
+            <p>Conformément aux dispositions de l’article L.221-28 13° du Code de la Consommation, le droit de rétractation ne peut être exercé pour les contrats de fourniture de contenu numérique non fourni sur un support matériel.</p>
+            <p><strong>Conséquence juridique :</strong> En cochant la case d'acceptation lors du paiement, le Client donne son accord exprès pour que la livraison du contenu commence immédiatement après le paiement. Par cette action, il reconnaît perdre son droit de rétractation. Aucune demande de remboursement ne sera acceptée pour quelque motif que ce soit une fois la commande validée.</p>
+
+            <h4 style="color: var(--primary); margin-top: 30px; border-bottom: 1px solid rgba(7, 129, 106, 0.2); padding-bottom: 10px;">ARTICLE 3 : RESPONSABILITÉ ET GESTION DES ABONNEMENTS</h4>
+            <p>Certains articles sont vendus sous forme de souscription récurrente (abonnements mensuels).</p>
+            <p><strong>Responsabilité de résiliation :</strong> Le Client est l'unique responsable de la gestion et de la résiliation de ses abonnements via son interface Tebex ou son compte de paiement (PayPal/Stripe).<br>
+            <strong>Oubli et négligence :</strong> En cas d'oubli d'annulation de l'abonnement par le Client avant la date d'échéance, la transaction automatique sera considérée comme valide. Aucun remboursement rétroactif ne pourra être exigé sous prétexte que le Client "n'utilisait plus le service".<br>
+            <strong>Maintien des paiements :</strong> Le prélèvement automatique reste actif tant que le Client ne procède pas manuellement à sa désactivation, et ce, indépendamment de son activité en jeu.</p>
+
+            <h4 style="color: var(--primary); margin-top: 30px; border-bottom: 1px solid rgba(7, 129, 106, 0.2); padding-bottom: 10px;">ARTICLE 4 : RÉVOCATION DE L’ACCÈS ET SANCTIONS DISCIPLINAIRES</h4>
+            <p>L'achat d'un avantage sur la boutique ne confère aucun droit dérogatoire au règlement intérieur du serveur.</p>
+            <p><strong>Rupture de contrat pour faute :</strong> Si le Client se rend coupable d'une infraction au règlement du serveur (triche, harcèlement, publicité, ou toute autre violation grave) entraînant un bannissement définitif, l'accès aux services achetés est de facto révoqué.<br>
+            <strong>Absence de remboursement pour sanction :</strong> Conformément au droit des contrats, si l'interruption du service est causée par le comportement fautif du Client, aucun remboursement (total ou prorata) ne sera effectué. L'abonnement en cours, s'il n'est pas annulé par le Client banni, continuera d'être prélevé jusqu'à résiliation manuelle par celui-ci. L'exclusion du serveur ne constitue pas une annulation automatique des engagements financiers du Client.</p>
+
+            <h4 style="color: var(--primary); margin-top: 30px; border-bottom: 1px solid rgba(7, 129, 106, 0.2); padding-bottom: 10px;">ARTICLE 5 : LITIGES, "CHARGEBACKS" ET CONSÉQUENCES</h4>
+            <p>Toute demande d'opposition auprès d'un organisme bancaire (Litige PayPal, Chargeback) sans accord préalable écrit de l'administration du serveur sera considérée comme une tentative de fraude.</p>
+            <p><strong>Sanction administrative :</strong> Toute tentative de litige entraînera le bannissement immédiat et irréversible du Client de toutes nos infrastructures et de la base de données globale de Tebex.<br>
+            <strong>Recours :</strong> Nous nous réservons le droit de transmettre l'historique de connexion, les logs de livraison et l'acceptation des présentes CGV aux organismes bancaires pour faire valoir nos droits.</p>
+
+            <h4 style="color: var(--primary); margin-top: 30px; border-bottom: 1px solid rgba(7, 129, 106, 0.2); padding-bottom: 10px;">ARTICLE 6 : MODIFICATION DES SERVICES</h4>
+            <p>La direction de MMT FA se réserve le droit de modifier, d'équilibrer ou de supprimer certains avantages liés à un achat pour garantir l'équité du jeu. Ces modifications techniques ne peuvent donner lieu à une demande de remboursement.</p>
+
+            <div style="margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 10px; border-left: 4px solid var(--primary);">
+                <p style="margin-bottom: 0; font-style: italic; color: #fff;">En validant votre panier, vous certifiez avoir compris que tout achat est définitif, non remboursable, et que vous restez responsable de vos abonnements même en cas d'exclusion définitive du serveur.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
     <footer>
         <div class="container text-center">
             <h2 style="color:var(--primary); font-weight:900">MMT FA</h2>
@@ -1366,25 +2754,26 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        function showPage(pageId) {
-            const main = document.getElementById('main-content');
-            const reglement = document.getElementById('reglement-page');
-            const patchnotes = document.getElementById('patchnotes-page');
+function showPage(pageId) {
+    const main = document.getElementById('main-content');
+    const reglement = document.getElementById('reglement-page');
+    const cgv = document.getElementById('cgv-page');
+    const patchnotes = document.getElementById('patchnotes-page');
 
-            main.style.display = 'none';
-            reglement.style.display = 'none';
-            patchnotes.style.display = 'none';
+    // On cache tout
+    if(main) main.style.display = 'none';
+    if(reglement) reglement.style.display = 'none';
+    if(cgv) cgv.style.display = 'none';
+    if(patchnotes) patchnotes.style.display = 'none';
 
-            if (pageId === 'reglement') { reglement.style.display = 'block'; }
-            else if (pageId === 'patchnotes') { patchnotes.style.display = 'block'; }
-            else { main.style.display = 'block'; }
-            
-            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-            event.currentTarget.classList.add('active');
-            
-            window.scrollTo(0, 0);
-        }
-
+    // On affiche la bonne page
+    if (pageId === 'reglement') { reglement.style.display = 'block'; }
+    else if (pageId === 'cgv') { cgv.style.display = 'block'; }
+    else if (pageId === 'patchnotes') { patchnotes.style.display = 'block'; }
+    else { if(main) main.style.display = 'block'; }
+    
+    window.scrollTo(0, 0);
+}
         function openRule(evt, ruleName) {
             var pane = document.getElementsByClassName("rule-pane");
             for (var i = 0; i < pane.length; i++) { pane[i].classList.remove("active"); }
@@ -1407,3 +2796,4 @@
     </script>
 </body>
 </html>
+
