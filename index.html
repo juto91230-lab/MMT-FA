@@ -450,6 +450,177 @@ html, body {
     align-items: flex-start;
     gap: 10px;
 }  
+
+/* --- STYLES EXCLUSIFS DU MODULE QUIZ RP --- */
+:root {
+    --quiz-easy: #00ffa3;
+    --quiz-medium: #ff8800;
+    --quiz-hard: #ff3e3e;
+}
+
+#quiz-page { 
+    display: none; 
+    padding-top: 150px; 
+}
+
+.difficulty-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.quiz-diff-btn {
+    padding: 20px 40px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 2px solid;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.3s;
+    background: rgba(15, 15, 15, 0.8);
+}
+
+.quiz-diff-btn.easy { border-color: var(--quiz-easy); color: var(--quiz-easy); }
+.quiz-diff-btn.medium { border-color: var(--quiz-medium); color: var(--quiz-medium); }
+.quiz-diff-btn.hard { border-color: var(--quiz-hard); color: var(--quiz-hard); }
+
+.quiz-diff-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.03);
+}
+
+.quiz-container {
+    background: rgba(15, 15, 15, 0.6);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 30px;
+    display: none;
+    animation: fadeIn 0.5s;
+    backdrop-filter: blur(10px);
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.difficulty-badge {
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.difficulty-badge.easy { background: rgba(0, 255, 163, 0.1); color: var(--quiz-easy); border: 1px solid var(--quiz-easy); }
+.difficulty-badge.medium { background: rgba(255, 136, 0, 0.1); color: var(--quiz-medium); border: 1px solid var(--quiz-medium); }
+.difficulty-badge.hard { background: rgba(255, 62, 62, 0.1); color: var(--quiz-hard); border: 1px solid var(--quiz-hard); }
+
+.progress-bar-quiz {
+    width: 200px;
+    height: 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary);
+    transition: width 0.3s;
+}
+
+.question-box {
+    background: rgba(0,0,0,0.3);
+    padding: 30px;
+    border-radius: var(--radius);
+    margin-bottom: 30px;
+    border-left: 4px solid var(--primary);
+}
+
+.category-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background: rgba(7, 129, 106, 0.1);
+    color: var(--primary);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.option-btn {
+    padding: 20px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: left;
+    position: relative;
+}
+
+.option-btn:hover:not(.disabled) {
+    background: rgba(7, 129, 106, 0.1);
+    border-color: var(--primary);
+    transform: translateX(10px);
+}
+
+.option-btn.correct { background: rgba(0,255,163,0.1) !important; border-color: var(--quiz-easy) !important; color: var(--quiz-easy); }
+.option-btn.incorrect { background: rgba(255,62,62,0.1) !important; border-color: var(--quiz-hard) !important; color: var(--quiz-hard); }
+.option-btn.disabled { pointer-events: none; opacity: 0.6; }
+
+.results-container {
+    display: none;
+    background: rgba(15, 15, 15, 0.6);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 40px;
+    animation: fadeIn 0.5s;
+}
+
+.score-circle {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 4px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-text { font-size: 2.5rem; font-weight: 900; color: #fff; }
+.score-rank { display: inline-block; padding: 10px 30px; border-radius: 30px; color: #000; font-weight: bold; margin-top: 15px;}
+
+.category-breakdown { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+.category-card { background: rgba(0,0,0,0.3); padding: 20px; border-radius: 15px; border: 1px solid var(--border-color); }
+.category-card.good { border-left: 4px solid var(--quiz-easy); }
+.category-card.medium { border-left: 4px solid var(--quiz-medium); }
+.category-card.bad { border-left: 4px solid var(--quiz-hard); }
+
+.rec-list { list-style: none; padding-left: 0; }
+.rec-list li { padding: 10px 0; border-bottom: 1px solid var(--border-color); color: var(--text-muted); }
+.rec-list li::before { content: "→ "; color: var(--primary); font-weight: bold; }
+
+
    </style>
 </head>
 <body>
@@ -471,6 +642,7 @@ html, body {
                     <li class="nav-item"><a class="nav-link" onclick="showPage('reglement')">Règlement</a></li>
                     <li class="nav-item"><a class="nav-link" onclick="showPage('patchnotes')">Patch Notes</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://cfx.re/join/qqa4pz6">Serveur</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-quiz" onclick="showPage('quiz')">Quiz RP</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://discord.gg/ervEHwbCMG" target="_blank">Discord</a></li>
                     <li class="nav-item"><a class="btn-premium btn-primary-custom py-2 ms-lg-3" href="https://mmt-fa.tebex.io/">Boutique</a></li>
                 </ul>
@@ -655,7 +827,7 @@ html, body {
                             <div id="genLexique" class="accordion-collapse collapse" data-bs-parent="#accGen">
                                 <div class="accordion-body">
                                     <p><strong>1. IC (In Character) :</strong> Tout ce qui est dit, fait ou vécu par votre personnage dans le jeu. C'est la partie 'réelle' du roleplay.</p>
-                                    <p><strong>2. HRC (Hors Roleplay) / OOC (Out Of Character) :</strong> Tout ce concerne le joueur derrière l'écran, en dehors du personnage. Les discussions HRC doivent rester sur Discord ou les canaux prévus.</p>
+                                    <p><strong>2. HRC (Hors Roleplay) :</strong> Tout ce concerne le joueur derrière l'écran, en dehors du personnage. Les discussions HRC doivent rester sur Discord ou les canaux prévus.</p>
                                     <p><strong>3. Metagaming (MG) :</strong> Utiliser des informations obtenues hors-jeu (stream, Discord, vie réelle) dans le jeu. Strictement interdit. Exemple : Voir un pseudo sur stream et appeler ce joueur en jeu.</p>
                                     <p><strong>4. Powergaming (PGM) :</strong> Forcer une action impossible ou irréalisable sans laisser le choix aux autres joueurs. Exemple : '/me lui casse le nez' au lieu de '/me tente de lui donner un coup'.</p>
                                     <p><strong>5. Fear RP (Peur du Roleplay) :</strong> Votre personnage doit avoir peur de mourir ou d'être blessé. Vous ne pouvez pas agir comme un héros sans raison valable.</p>
@@ -2093,15 +2265,121 @@ html, body {
             <h4 class="text-white mt-4">Sanctions</h4>
             <p>Le staff se réserve le droit de sanctionner tout manquement. ⚠️ Un <strong>bannissement du Discord illégal peut également entraîner un bannissement en jeu (IG)</strong>.</p>
 
-        </div>
-    </div>
-</div>
+                              </div>
+                           </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+<div id="quiz-page" class="container">
+        <div class="text-center mb-5">
+            <h2 style="font-size: 3rem;">QUIZ ROLEPLAY <span style="color:var(--primary)">MMT FA</span></h2>
+            <p style="color:var(--text-muted)">Validez vos connaissances théoriques basées sur notre charte réglementaire.</p>
+            
+            <div class="my-4">
+                <button onclick="openLexique()" class="btn-premium btn-primary-custom" style="padding: 12px 30px;">
+                    <i class="fas fa-book-open me-2"></i> Ouvrir le Lexique RP Complet (Débutants)
+                </button>
+            </div>
+        </div>
 
+        <div class="difficulty-menu" id="quiz-menu">
+            <button class="quiz-diff-btn easy" onclick="startQuiz('easy')">
+                A) CITOYEN / FACILE<br><small>Bases fondamentales du serveur</small>
+            </button>
+            <button class="quiz-diff-btn medium" onclick="startQuiz('medium')">
+                B) SÉCURITÉ & MÉTIERS / MOYEN<br><small>Règlement LSPD / EMS / Immo</small>
+            </button>
+            <button class="quiz-diff-btn hard" onclick="startQuiz('hard')">
+                C) CRIMINEL VÉTÉRAN / DIFFICILE<br><small>Règles de l'illégal et des braquages</small>
+            </button>
+        </div>
+
+        <div class="quiz-container" id="quizContainer">
+            <div class="quiz-header">
+                <span class="difficulty-badge" id="diffBadge">FACILE</span>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="progress-bar-quiz">
+                        <div class="progress-fill" id="progressBar" style="width: 0%"></div>
+                    </div>
+                    <div class="question-counter" id="questionCounter" style="color: var(--text-muted);">Question 1/5</div>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <span class="category-tag" id="categoryTag">CHARTE DE JEU</span>
+                <div class="question-text h4 mb-0" id="questionText">Chargement...</div>
+            </div>
+
+            <div class="options-grid" id="optionsGrid"></div>
+        </div>
+
+        <div class="results-container text-center" id="resultsContainer">
+            <div class="score-display">
+                <div class="score-circle">
+                    <div class="score-text" id="scoreText">0/5</div>
+                </div>
+                <div class="score-message h4 my-3" id="scoreMessage">Message</div>
+                <div class="score-rank text-uppercase" id="scoreRank">RANG</div>
+            </div>
+
+            <div class="mt-5 text-start">
+                <h3 class="mb-4" style="color: var(--primary); border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">📊 Analyse par dossier réglementaire</h3>
+                <div class="category-breakdown" id="categoryBreakdown"></div>
+            </div>
+
+            <div class="mt-4 text-start p-4 rounded-3" style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color);" id="recommendations">
+                <h4 style="color: var(--primary);"><i class="fas fa-lightbulb me-2"></i> Recommandations du staff :</h4>
+                <ul class="rec-list mt-3" id="recList"></ul>
+            </div>
+
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <button class="btn-premium btn-primary-custom" onclick="resetQuiz()">
+                    <i class="fas fa-redo me-2"></i> Recommencer
+                </button>
+                <button class="btn-premium" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color:#fff;" onclick="showPage('reglement')">
+                    <i class="fas fa-scroll me-2"></i> Lire les règles complètes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="lexiqueModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:10005; justify-content:center; align-items:center; padding:20px;">
+        <div class="p-4" style="background: #0a0a0a; border: 1px solid var(--primary); border-radius:24px; max-width:800px; width:100%; max-height:85vh; overflow-y:auto; position:relative; backdrop-filter: blur(20px);">
+            <button onclick="closeLexique()" style="position:absolute; top:15px; right:20px; background:transparent; border:none; color:var(--quiz-hard); font-size:2rem; cursor:pointer;">&times;</button>
+            
+            <h3 class="text-center mb-4" style="color:var(--primary); font-family:'Lexend', sans-serif;"><i class="fas fa-book me-2"></i> Lexique RP pour débutants</h3>
+            
+            <div style="display:grid; gap:15px;">
+                <div class="p-3 rounded-3" style="background:rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-left: 4px solid var(--primary);">
+                    <strong style="color:var(--primary);">Fear RP</strong> : Avoir peur pour sa vie quand c’est réaliste (arme sur toi, infériorité numérique, etc.). Tu dois coopérer, pas jouer les héros.
+                </div>
+                <div class="p-3 rounded-3" style="background:rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-left: 4px solid var(--primary);">
+                    <strong style="color:var(--primary);">VDM (Vehicle Deathmatch)</strong> : Utiliser une voiture comme arme (percuter exprès, bloquer sans raison RP). Interdit, sanction lourde.
+                </div>
+                <div class="p-3 rounded-3" style="background:rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-left: 4px solid var(--primary);">
+                    <strong style="color:var(--primary);">Meta Gaming</strong> : Utiliser des infos que ton perso ne peut pas savoir (Twitch, Discord, YouTube, amis en vocal). Très sanctionné.
+                </div>
+                <div class="p-3 rounded-3" style="background:rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-left: 4px solid var(--primary);">
+                    <strong style="color:var(--primary);">Power Gaming</strong> : Faire des actions impossibles ou irréalistes (tomber de 5m sans dégât, ignorer une blessure grave). Interdit.
+                </div>
+                <div class="p-3 rounded-3" style="background:rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-left: 4px solid var(--primary);">
+                    <strong style="color:var(--primary);">Combat Logging</strong> : Se déconnecter pendant une scène RP ou un combat pour éviter les conséquences. Ban quasi systématique.
+                </div>
+                <div class="p-3 rounded-3" style="background:rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-left: 4px solid var(--primary);">
+                    <strong style="color:var(--primary);">Grimace RP</strong> : Refuser de jouer une action subie (ex: refuser d'être menotté ou de coopérer lors d'une arrestation).
+                </div>
+                <div class="p-3 rounded-3" style="background:rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-left: 4px solid var(--primary);">
+                    <strong style="color:var(--primary);">Delay RP</strong> : Prendre volontairement du retard dans une action pour gêner les autres joueurs (ex: conduite lente intentionnelle en poursuite).
+                </div>
+                <div class="p-3 rounded-3" style="background:rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-left: 4px solid var(--primary);">
+                    <strong style="color:var(--primary);">New Life Rule (NLR)</strong> : Après un coma, votre personnage oublie tout ce qui s'est passé. Il ne peut pas revenir sur les lieux ni se souvenir des événements.
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="patchnotes-page" class="container" style="display: none; padding-top: 150px;">
         <div class="text-center mb-5">
             <h2>PATCH <span style="color:var(--primary)">NOTES</span></h2>
@@ -2820,18 +3098,36 @@ function showPage(pageId) {
     const reglement = document.getElementById('reglement-page');
     const cgv = document.getElementById('cgv-page');
     const patchnotes = document.getElementById('patchnotes-page');
+    const quiz = document.getElementById('quiz-page');
 
     // On cache tout
     if(main) main.style.display = 'none';
     if(reglement) reglement.style.display = 'none';
     if(cgv) cgv.style.display = 'none';
     if(patchnotes) patchnotes.style.display = 'none';
+    if(quiz) quiz.style.display = 'none';
+
+    // On gère l'état actif de la navbar
+    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
 
     // On affiche la bonne page
-    if (pageId === 'reglement') { reglement.style.display = 'block'; }
-    else if (pageId === 'cgv') { cgv.style.display = 'block'; }
-    else if (pageId === 'patchnotes') { patchnotes.style.display = 'block'; }
-    else { if(main) main.style.display = 'block'; }
+    if (pageId === 'reglement') { 
+        if(reglement) reglement.style.display = 'block'; 
+    }
+    else if (pageId === 'cgv') { 
+        if(cgv) cgv.style.display = 'block'; 
+    }
+    else if (pageId === 'patchnotes') { 
+        if(patchnotes) patchnotes.style.display = 'block'; 
+    }
+    else if (pageId === 'quiz') { 
+        if(quiz) quiz.style.display = 'block'; 
+        document.getElementById('nav-quiz')?.classList.add('active');
+        resetQuiz(); 
+    }
+    else { 
+        if(main) main.style.display = 'block'; 
+    }
     
     window.scrollTo(0, 0);
 }
@@ -2854,6 +3150,357 @@ function showPage(pageId) {
                 move: { enable: true, speed: 2 }
             }
         });
+
+// DONNÉES STRICTEMENT FONDÉES SUR LE RÈGLEMENT DE MMT FA
+const quizData = {
+    easy: [
+        { q: "Qu'est-ce que le 'Grimace RP' selon la charte du serveur ?", options: ["Parler hors-jeu en vocal", "Prendre du retard exprès dans une scène", "Refuser de jouer ou d'assumer une action subie (ex: refuser des menottes)", "Utiliser des informations de stream"], correct: 2, category: "Règles Générales" },
+        { q: "Que stipule la New Life Rule (NLR) après une réanimation ou un coma ?", options: ["Vous pouvez retourner sur la scène pour vous venger", "Votre personnage oublie tout de la scène et ne peut pas retourner sur les lieux", "Vous devez changer de pseudo", "Vous gardez vos souvenirs mais pas vos armes"], correct: 1, category: "Règles Générales" },
+        { q: "Quelle est la règle concernant le vol d'objets dans les coffres de véhicules ?", options: ["Tout est autorisé et remboursé par le staff", "Le vol est autorisé sauf pour les armes, et le vol d'un item est limité à 50% maximum", "C'est strictement interdit de fouiller un coffre", "On peut tout voler à 100% sans restriction"], correct: 1, category: "Arnaques & Vols" },
+        { q: "Qu'est-ce que le 'Delay RP' ?", options: ["Se déconnecter volontairement en combat", "Prendre volontairement du retard dans une action pour gêner (ex: rouler exprès lentement en poursuite)", "Tuer sans aucune raison valable", "Forcer une action irréaliste"], correct: 1, category: "Règles Générales" },
+        { q: "Quelle est la règle absolue sur les arnaques (fausses ventes d'armes/drogue/blanchiment) ?", options: ["Autorisées si elles font moins de 10k", "Strictement interdites et sanctionnées par le staff", "Autorisées seulement entre gangs officiels", "Autorisées uniquement sur les civils"], correct: 1, category: "Arnaques & Vols" }
+    ],
+    medium: [
+        { q: "Dans l'immobilier, au bout de combien de jours de non-utilisation/non-location un bien peut-il être supprimé par l'agence ?", options: ["2 jours", "7 jours", "14 jours (2 semaines)", "30 jours uniquement"], correct: 2, category: "Services Publics" },
+        { q: "Pour un agent immobilier ou un concessionnaire, quelle est l'interdiction majeure concernant son personnage ?", options: ["Il ne peut pas posséder plus de 2 maisons", "Le RP illégal lui est strictement interdit (sous peine de wipe du personnage)", "Il n'a pas le droit de parler au Gouverneur", "Il doit obligatoirement être VIP"], correct: 1, category: "Services Publics" },
+        { q: "Au LSPD, après combien de temps de poursuite réaliste la manœuvre PIT peut-elle être tentée ?", options: ["Dès le début de la poursuite", "Après 5 minutes de fuite", "Après 10 minutes de poursuite (sauf danger immédiat)", "Uniquement après l'accord écrit du Gouverneur"], correct: 2, category: "Services Publics" },
+        { q: "Si vous faites un wipe ou une mort RP, quel délai devez-vous respecter avant de réintégrer votre ancienne entreprise ?", options: ["24 heures", "7 jours", "1 mois minimum (et retour au grade le plus bas)", "C'est totalement interdit à vie"], correct: 2, category: "Services Publics" },
+        { q: "Quelle est la limite de transport de munitions autorisée sur soi pour une arme de poing ?", options: ["12 balles maximum", "36 balles maximum", "50 balles maximum", "Munitions illimitées"], correct: 1, category: "Hiérarchie & Armes" }
+    ],
+    hard: [
+        { q: "Quelles sont les limites de prix (rançons max) pour l'échange d'un otage 'Lead ou Co-lead' d'un groupe ?", options: ["5 000 $", "10 000 $", "15 000 $ maximum", "50 000 $"], correct: 2, category: "Prises d'otages" },
+        { q: "Quels sont les groupes autorisés à faire de la vente de drogue directe aux PNJ ?", options: ["Uniquement les Organisations et Cartels", "Uniquement les Civils, Habitants, Petites frappes et Gangs", "Tout le monde sans restriction", "Seulement le groupe du Vigneron"], correct: 1, category: "Drogues & Territoires" },
+        { q: "Quelle est la limite réglementaire de braquage de bijouterie autorisée par groupe ?", options: ["Une toutes les 1 heure", "Une toutes les 24 heures", "Une par semaine", "Une par mois maximum"], correct: 2, category: "Braquages" },
+        { q: "Quelle est la condition obligatoire pour réaliser un 'Drive-by' sur le serveur ?", options: ["Avoir l'accord écrit préalable du staff et le véhicule doit être complètement à l'arrêt", "Être au moins 4 dans le véhicule en mouvement", "Avoir une arme automatique SMG", "Le faire uniquement en zone safe"], correct: 0, category: "Fusillades & Gunfights" },
+        { q: "Quelle est la règle concernant le 'Loot RP / Free Loot' lors d'un coma après un affrontement ?", options: ["On peut tout voler, y compris les armes et munitions", "Il est strictement interdit de loot des armes et munitions, et on est limité à 1 seul item (max 50% si illégal)", "Le loot est réservé uniquement aux EMS", "On peut voler 100% de l'inventaire"], correct: 1, category: "Loot RP" }
+    ]
+};
+
+let currentDifficulty = '';
+let currentQuestions = [];
+let currentQuestionIndex = 0;
+let score = 0;
+let categoryStats = {};
+
+function startQuiz(difficulty) {
+    currentDifficulty = difficulty;
+    currentQuestions = [...quizData[difficulty]];
+    currentQuestions.sort(() => Math.random() - 0.5);
+    
+    currentQuestionIndex = 0;
+    score = 0;
+    categoryStats = {};
+    
+    document.getElementById('quiz-menu').style.display = 'none';
+    document.getElementById('quizContainer').style.display = 'block';
+    document.getElementById('resultsContainer').style.display = 'none';
+    
+    const badge = document.getElementById('diffBadge');
+    badge.className = 'difficulty-badge ' + difficulty;
+    badge.textContent = difficulty === 'easy' ? 'FACILE' : difficulty === 'medium' ? 'MOYEN' : 'DIFFICILE';
+    
+    showQuestion();
+}
+
+function showQuestion() {
+    const q = currentQuestions[currentQuestionIndex];
+    const progress = (currentQuestionIndex / currentQuestions.length) * 100;
+    
+    document.getElementById('progressBar').style.width = progress + '%';
+    document.getElementById('questionCounter').textContent = `Question ${currentQuestionIndex + 1}/${currentQuestions.length}`;
+    document.getElementById('categoryTag').textContent = q.category;
+    document.getElementById('questionText').textContent = q.q;
+    
+    const grid = document.getElementById('optionsGrid');
+    grid.innerHTML = '';
+    
+    q.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.textContent = opt;
+        btn.onclick = () => selectAnswer(idx);
+        grid.appendChild(btn);
+    });
+}
+
+function selectAnswer(selectedIndex) {
+    const q = currentQuestions[currentQuestionIndex];
+    const buttons = document.querySelectorAll('.option-btn');
+    
+    buttons.forEach(btn => btn.classList.add('disabled'));
+    buttons[q.correct].classList.add('correct');
+    
+    if (selectedIndex !== q.correct) {
+        buttons[selectedIndex].classList.add('incorrect');
+    }
+    
+    if (!categoryStats[q.category]) {
+        categoryStats[q.category] = { total: 0, correct: 0 };
+    }
+    categoryStats[q.category].total++;
+    
+    if (selectedIndex === q.correct) {
+        score++;
+        categoryStats[q.category].correct++;
+    }
+    
+    setTimeout(() => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < currentQuestions.length) {
+            showQuestion();
+        } else {
+            showResults();
+        }
+    }, 1800);
+}
+
+function showResults() {
+    document.getElementById('quizContainer').style.display = 'none';
+    document.getElementById('resultsContainer').style.display = 'block';
+    
+    const total = currentQuestions.length;
+    const percentage = (score / total) * 100;
+    document.getElementById('scoreText').textContent = `${score}/${total}`;
+    
+    let message, rank, color;
+    if (percentage >= 80) {
+        message = 'Félicitations ! Excellente maîtrise de la charte MMT FA.';
+        rank = '👑 EXPERT SÉCURISÉ';
+        color = 'var(--quiz-easy)';
+    } else if (percentage >= 60) {
+        message = 'Bon résultat, mais relisez quelques points spécifiques.';
+        rank = '⭐ RÉSIDENT CONFIRMÉ';
+        color = 'var(--quiz-medium)';
+    } else {
+        message = 'Attention, vous devez impérativement relire le règlement du serveur.';
+        rank = '📚 CITOYEN APPRENTI';
+        color = 'var(--quiz-hard)';
+    }
+    
+    document.getElementById('scoreMessage').textContent = message;
+    document.getElementById('scoreMessage').style.color = color;
+    
+    const rankEl = document.getElementById('scoreRank');
+    rankEl.textContent = rank;
+    rankEl.style.background = color;
+    
+    showCategoryAnalysis();
+    showRecommendations();
+}
+
+function showCategoryAnalysis() {
+    const container = document.getElementById('categoryBreakdown');
+    container.innerHTML = '';
+    
+    Object.entries(categoryStats).forEach(([cat, stats]) => {
+        const pct = Math.round((stats.correct / stats.total) * 100);
+        let status, colorClass;
+        
+        if (pct >= 80) { status = 'Validé'; colorClass = 'good'; }
+        else if (pct >= 50) { status = 'À vérifier'; colorClass = 'medium'; }
+        else { status = 'Recalé'; colorClass = 'bad'; }
+        
+        const card = document.createElement('div');
+        card.className = `category-card ${colorClass}`;
+        card.innerHTML = `
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="fw-bold text-white">${cat}</span>
+                <span class="small" style="opacity:0.8;">${stats.correct}/${stats.total}</span>
+            </div>
+            <div class="small text-muted">${pct}% — Dossier : ${status}</div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+function showRecommendations() {
+    const list = document.getElementById('recList');
+    list.innerHTML = '';
+    const recs = [];
+    
+    Object.entries(categoryStats).forEach(([cat, stats]) => {
+        const pct = (stats.correct / stats.total) * 100;
+        if (pct < 50) {
+            if (cat === 'Règles Générales') recs.push("Faites attention aux définitions du Grimace RP et du Delay RP dans le lexique.");
+            else if (cat === 'Arnaques & Vols') recs.push("Rappel : Les arnaques de revente/blanchiment sont interdites et les vols de coffres limités à 50% maximum.");
+            else if (cat === 'Services Publics') recs.push("Revoyez les délais obligatoires de l'Immobilier (14 jours) et des manœuvres PIT (10 min).");
+            else if (cat === 'Prises d\'otages') recs.push("Attention aux plafonds des rançons (15k max pour un lead) et à la durée maximale d'une scène.");
+            else recs.push(`Section ${cat} : Relisez attentivement le panneau correspondant dans l'onglet Règlement.`);
+        }
+    });
+    
+    if (recs.length === 0) {
+        recs.push("Parfait ! Vos connaissances réglementaires sont validées par l'administration. Bon jeu sur MMT FA !");
+    }
+    
+    recs.forEach(rec => {
+        const li = document.createElement('li');
+        li.textContent = rec;
+        list.appendChild(li);
+    });
+}
+
+function resetQuiz() {
+    document.getElementById('quiz-menu').style.display = 'flex';
+    document.getElementById('quizContainer').style.display = 'none';
+    document.getElementById('resultsContainer').style.display = 'none';
+}
+
+function openLexique() { document.getElementById('lexiqueModal').style.display = 'flex'; }
+function closeLexique() { document.getElementById('lexiqueModal').style.display = 'none'; }
+
+document.getElementById('lexiqueModal').addEventListener('click', function(e) {
+    if (e.target === this) closeLexique();
+});
+
+function selectAnswer(selectedIndex) {
+    const q = currentQuestions[currentQuestionIndex];
+    const buttons = document.querySelectorAll('.option-btn');
+    
+    buttons.forEach(btn => btn.classList.add('disabled'));
+    buttons[q.correct].classList.add('correct');
+    
+    if (selectedIndex !== q.correct) {
+        buttons[selectedIndex].classList.add('incorrect');
+    }
+    
+    if (!categoryStats[q.category]) {
+        categoryStats[q.category] = { total: 0, correct: 0 };
+    }
+    categoryStats[q.category].total++;
+    
+    if (selectedIndex === q.correct) {
+        score++;
+        categoryStats[q.category].correct++;
+    }
+    
+    setTimeout(() => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < currentQuestions.length) {
+            showQuestion();
+        } else {
+            showResults();
+        }
+    }, 1800);
+}
+
+function showResults() {
+    document.getElementById('quizContainer').style.display = 'none';
+    document.getElementById('resultsContainer').style.display = 'block';
+    
+    const total = currentQuestions.length;
+    const percentage = (score / total) * 100;
+    
+    document.getElementById('scoreText').textContent = `${score}/${total}`;
+    
+    let message, rank, color;
+    if (percentage >= 80) {
+        message = 'Excellent ! Maîtrise avancée du règlement.';
+        rank = '👑 EXPERT RP';
+        color = 'var(--quiz-easy)';
+    } else if (percentage >= 60) {
+        message = 'Bon travail ! Quelques points restent à consolider.';
+        rank = '⭐ CONFIRMÉ';
+        color = 'var(--quiz-medium)';
+    } else {
+        message = 'Des révisions s’imposent. Prenez le temps de relire la charte.';
+        rank = '📚 APPRENTI';
+        color = 'var(--quiz-hard)';
+    }
+    
+    document.getElementById('scoreMessage').textContent = message;
+    document.getElementById('scoreMessage').style.color = color;
+    
+    const rankEl = document.getElementById('scoreRank');
+    rankEl.textContent = rank;
+    rankEl.style.background = color;
+    
+    showCategoryAnalysis();
+    showRecommendations();
+}
+
+function showCategoryAnalysis() {
+    const container = document.getElementById('categoryBreakdown');
+    container.innerHTML = '';
+    
+    Object.entries(categoryStats).forEach(([cat, stats]) => {
+        const pct = Math.round((stats.correct / stats.total) * 100);
+        let status, colorClass;
+        
+        if (pct >= 80) { status = 'Maîtrisé'; colorClass = 'good'; }
+        else if (pct >= 50) { status = 'À consolider'; colorClass = 'medium'; }
+        else { status = 'À revoir'; colorClass = 'bad'; }
+        
+        const card = document.createElement('div');
+        card.className = `category-card ${colorClass}`;
+        card.innerHTML = `
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="fw-bold text-white">${cat}</span>
+                <span class="small" style="opacity:0.8;">${stats.correct}/${stats.total}</span>
+            </div>
+            <div class="small text-muted">${pct}% — Dépôt : ${status}</div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+function showRecommendations() {
+    const list = document.getElementById('recList');
+    list.innerHTML = '';
+    const recs = [];
+    
+    Object.entries(categoryStats).forEach(([cat, stats]) => {
+        const pct = (stats.correct / stats.total) * 100;
+        if (pct < 50) {
+            if (cat === 'Fear RP') recs.push("Priorité sur la préservation de vie : coopérez face à une menace directe.");
+            else if (cat === 'Meta Gaming') recs.push("N'utilisez jamais d'informations externes (Discord/Streams) en jeu.");
+            else if (cat === 'Power Gaming') recs.push("Respectez les limites physiques et simulez vos blessures de manière réaliste.");
+            else if (cat === 'Véhicules') recs.push("Rappel : Les collisions volontaires sans contexte lourd (VDM) sont proscrites.");
+            else recs.push(`Dossier ${cat} : Des détails importants de la charte n'ont pas été assimilés.`);
+        }
+    });
+    
+    if (recs.length === 0) {
+        recs.push("Félicitations du staff ! Vos connaissances théoriques sont parfaitement opérationnelles.");
+    }
+    
+    recs.forEach(rec => {
+        const li = document.createElement('li');
+        li.textContent = rec;
+        list.appendChild(li);
+    });
+}
+
+function resetQuiz() {
+    document.getElementById('quiz-menu').style.display = 'flex';
+    document.getElementById('quizContainer').style.display = 'none';
+    document.getElementById('resultsContainer').style.display = 'none';
+}
+
+function openLexique() { document.getElementById('lexiqueModal').style.display = 'flex'; }
+function closeLexique() { document.getElementById('lexiqueModal').style.display = 'none'; }
+
+document.getElementById('lexiqueModal').addEventListener('click', function(e) {
+    if (e.target === this) closeLexique();
+});
+
+// Bloquer le clic droit
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// Bloquer les raccourcis inspecteur (F12, Ctrl+Maj+I, Ctrl+U)
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+        (e.ctrlKey && e.shiftKey && e.key === 'J') || 
+        (e.ctrlKey && e.key === 'u') || 
+        (e.ctrlKey && e.key === 'U')) {
+        e.preventDefault();
+        return false;
+    }
+});
+
     </script>
 </body>
 </html>
