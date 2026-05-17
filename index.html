@@ -2396,6 +2396,107 @@ html, body {
 
 
 <div class="vision-card mb-5" style="border-left: 4px solid var(--primary); background: rgba(15, 15, 15, 0.9);">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+        <h3 class="mb-0 text-white">🧪 Devlog & Fixes — Patch-Note 1.12</h3>
+        <span class="badge fw-bold px-3 py-2" style="background-color: var(--primary); color: #000;">17/05/2026</span>
+    </div>
+
+    <div class="mt-3">
+        <div class="row g-4 text-white">
+            
+            <div class="col-md-4">
+                <h5 style="color:var(--primary)"><i class="fas fa-shield-alt me-2"></i> 🛡️ Sécurité & Administration</h5>
+                <ul class="ps-3 mb-3" style="font-size: 0.85rem; list-style-type: none;">
+                    <li><i class="fas fa-plus me-2" style="color: var(--primary); font-size: 0.7rem;"></i> Nouvelle permission pour les véhicules Full Performance Admin</li>
+                    <li><i class="fas fa-plus me-2" style="color: var(--primary); font-size: 0.7rem;"></i> Ajout d'une permission pour ignorer les tenues imposées du Staff</li>
+                    <li><i class="fas fa-user-shield me-2" style="color: var(--primary);"></i> Protection renforcée des comptes joueurs et meilleur cryptage des mots de passe</li>
+                    <li><i class="fas fa-ban me-2" style="color: var(--primary);"></i> Amélioration de l'anti-cheat (retrait des faux positifs liés aux animaux)</li>
+                    <li><i class="fas fa-shield-alt me-2" style="color: var(--primary);"></i> Sécurisation et blocage des failles dans les menus des garages</li>
+                    <li><i class="fas fa-lock me-2" style="color: var(--primary);"></i> Refonte complète du système de vérification des grades et permissions</li>
+                </ul>
+
+                <h5 style="color:var(--primary)"><i class="fas fa-car me-2"></i> 🚗 Véhicules & Concessionnaire</h5>
+                <ul class="ps-3 mb-3" style="font-size: 0.85rem; list-style-type: none;">
+                    <li><i class="fas fa-spinner fa-spin me-2" style="color: #ffaa00;"></i> <b>Bugs Véhicules :</b> Correction en cours des différents soucis remontés via les rapports de bugs (<u>En cours...</u>)</li>
+                    <li><i class="fas fa-wrench me-2" style="color: var(--primary);"></i> <b>Nouveau Métier :</b> Création officielle de l'entreprise et du job <b>Benny's Docks</b> !</li>
+                    <li><i class="fas fa-plus me-2" style="color: var(--primary);"></i> <b>Benny's Docks :</b> Ajout de 2 nouveaux véhicules de fonction pour l'entreprise !</li>
+                    <li><i class="fas fa-map-marker-alt me-2" style="color: var(--primary);"></i> Ajout du repère (blip) du <b>Benny's</b> sur votre carte GPS</li>
+                    <li><i class="fas fa-paint-brush me-2" style="color: var(--primary);"></i> Les véhicules de location apparaissent désormais directement avec la bonne couleur</li>
+                    <li><i class="fas fa-tachometer-alt me-2" style="color: var(--primary);"></i> Synchronisation parfaite de la position de votre compteur de vitesse via Karathub</li>
+                    <li><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Correction du spawn des véhicules depuis le catalogue de l'administration</li>
+                    <li><i class="fas fa-bolt me-2" style="color: var(--primary);"></i> Optimisation des performances réseau lors de l'utilisation des fonctions admin</li>
+                    <li><i class="fas fa-history me-2" style="color: var(--primary);"></i> Essais concessionnaire : l'ancien test s'annule proprement si vous en lancez un nouveau</li>
+                    <li><i class="fas fa-warehouse me-2" style="color: var(--primary);"></i> Affichage propre du nom de votre organisation dans les séparateurs du garage</li>
+                </ul>
+
+                <h5 style="color:var(--primary)"><i class="fas fa-coins me-2"></i> 🪙 Boutique & Ajustements Prix</h5>
+                <ul class="ps-3 mb-3" style="font-size: 0.85rem; list-style-type: none;">
+                    <li><i class="fas fa-tags me-2" style="color: var(--primary);"></i> Flash GTD : Passage de <span style="text-decoration: line-through; color: #aaa;">1000 Coins</span> à <b>1500 Coins</b></li>
+                    <li><i class="fas fa-tags me-2" style="color: var(--primary);"></i> Buffalo 4 : Passage de <span style="text-decoration: line-through; color: #aaa;">1500 Coins</span> à <b>1900 Coins</b></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4">
+                <h5 style="color:var(--primary)"><i class="fas fa-cogs me-2"></i> 🛒 Gameplay & Activités</h5>
+                <ul class="ps-3 mb-3" style="font-size: 0.85rem; list-style-type: none;">
+                    <li><i class="fas fa-spinner fa-spin me-2" style="color: #ffaa00;"></i> <b>Ballas Club :</b> Possibilité de consommer les burgers du club (<u>En cours de développement...</u>)</li> 
+                    <li><i class="fas fa-store me-2" style="color: var(--primary);"></i> Nouveau point d'interaction au supermarché lié directement au serveur</li>
+                    <li><i class="fas fa-fish me-2" style="color: var(--primary);"></i> L'action de pêcher s'arrête désormais automatiquement si vous quittez la zone</li>
+                    <li><i class="fas fa-cubes me-2" style="color: var(--primary);"></i> Meilleure synchronisation des objets au sol dans <b>CircuitFarm</b> et <b>HouseHeist</b></li>
+                    <li><i class="fas fa-briefcase me-2" style="color: var(--primary);"></i> Amélioration visuelle et technique de la gestion des sacs de braquage</li>
+                    <li><i class="fas fa-gem me-2" style="color: var(--primary);"></i> Ajustement et configuration de la limite des objets temporaires pour les VIP</li>
+                    <li><i class="fas fa-cut me-2" style="color: var(--primary);"></i> Cache de la carte (minimap) et blocage des touches pause/map quand vous êtes dans un coffre</li>
+                </ul>
+
+                <h5 style="color:var(--primary)"><i class="fas fa-key me-2"></i> 🔐 Mappings & Doorlocks</h5>
+                <ul class="ps-3 mb-3" style="font-size: 0.85rem; list-style-type: none;">
+                    <li><i class="fas fa-door-closed me-2" style="color: var(--primary);"></i> Ajout de verrous (doorlocks) utilisables à <b>L'œil Rouge</b></li>
+                    <li><i class="fas fa-door-closed me-2" style="color: var(--primary);"></i> Ajout de 2 nouveaux verrous (doorlocks) au domaine du <b>Vigneron</b></li>
+                </ul>
+
+                <h5 style="color:var(--primary)"><i class="fas fa-flask me-2"></i> 🧪 Laboratoires & Illégal</h5>
+                <ul class="ps-3 mb-3" style="font-size: 0.85rem; list-style-type: none;">
+                    <li><i class="fas fa-code me-2" style="color: var(--primary);"></i> Amélioration du système de création des laboratoires (accès et valeurs)</li>
+                    <li><i class="fas fa-database me-2" style="color: var(--primary);"></i> Vérification et sauvegarde automatique des données de vos laboratoires</li>
+                    <li><i class="fas fa-map-marked-alt me-2" style="color: var(--primary);"></i> Sécurité empêchant de créer deux territoires avec le même nom en simultané</li>
+                </ul>
+            </div>
+
+            <div class="col-md-4" style="border-left: 1px solid rgba(255,255,255,0.05);">
+                <h5 style="color:var(--primary)"><i class="fas fa-tv me-2"></i> 🖥️ UI, Confort & Site Web</h5>
+                <ul class="ps-3 mb-3" style="font-size: 0.85rem; list-style-type: none;">
+                    <li><i class="fas fa-image me-2" style="color: var(--primary);"></i> <b>Inventaire :</b> Ajout des visuels pour le permis moto (<code>motorcycle_license</code>) et permis poids lourd (<code>truck_license</code>)</li>
+                    <li><i class="fas fa-desktop me-2" style="color: var(--primary);"></i> <b>Mise à jour visuelle :</b> Modification globale et modernisation de l'HUD en jeu !</li>
+                    <li><i class="fas fa-globe me-2" style="color: var(--primary);"></i> <b>Site Web mmtfa.com :</b> Intégration du tout nouveau <b>Quiz RP</b> en ligne !</li>
+                    <li><i class="fas fa-images me-2" style="color: var(--primary);"></i> <b>Site Web mmtfa.com :</b> Ajout de la galerie photo officielle des <b>Ballas</b></li>
+                    <li><i class="fas fa-spinner me-2" style="color: var(--primary);"></i> <b>Écran de chargement :</b> Mise à jour des crédits avec l'ajout du groupe/responsable cocow_rico</li>
+                    <li><i class="fas fa-expand me-2" style="color: var(--primary);"></i> Pleine compatibilité de l'inventaire et des menus pour les écrans <b>Ultrawide & 4K</b></li>
+                    <li><i class="fas fa-bullhorn me-2" style="color: var(--primary);"></i> Utilisation du mégaphone simplifiée et beaucoup plus fluide</li>
+                    <li><i class="fas fa-keyboard me-2" style="color: var(--primary);"></i> Ajustement des touches et interdiction de sortir les armes en <b>safezone</b></li>
+                </ul>
+
+                <h5 style="color:var(--primary)"><i class="fas fa-tools me-2"></i> 🔧 Propriétés & Correctifs</h5>
+                <ul class="ps-3 mb-3" style="font-size: 0.85rem; list-style-type: none;">
+                    <li><i class="fas fa-toggle-off me-2" style="color: var(--primary);"></i> Désactivation de la revente automatique des propriétés en cas d'inactivité</li>
+                    <li><i class="fas fa-desktop me-2" style="color: var(--primary);"></i> Correction des bugs et crashs liés à l'utilisation des ordinateurs d'intérieur</li>
+                    <li><i class="fas fa-money-bill-wave me-2" style="color: var(--primary);"></i> Nouveau calcul sécurisé des salaires (JobBuilder) avec limites mini/maxi plus justes</li>
+                    <li><i class="fas fa-file-code me-2" style="color: var(--primary);"></i> Centralisation des tenues/positions de prison et zones de chasse pour plus de stabilité</li>
+                    <li><i class="fas fa-exclamation-triangle me-2" style="color: var(--primary);"></i> Réduction drastique des pertes de données lors des sauvegardes serveur</li>
+                    <li><i class="fas fa-bug me-2" style="color: var(--primary);"></i> Correction de bugs majeurs sur les configurations de jeu pour empêcher les crashs</li>
+                    <li><i class="fas fa-trash-alt me-2" style="color: var(--primary);"></i> Nettoyage général et suppression des fichiers inutiles (node_modules) du serveur</li>
+                </ul>
+
+                <div class="p-2 rounded mt-3" style="background: rgba(7, 129, 106, 0.1); border: 1px dashed var(--primary); font-size: 0.75rem;">
+                    <i class="fas fa-info-circle me-1"></i> <b>Note de l'équipe :</b> Cette mise à jour se concentre sur votre confort de jeu, l'arrivée de nouveaux systèmes extérieurs (site web, boutique, HUD) ainsi que l'optimisation globale de la fluidité en ville !
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="vision-card mb-5" style="border-left: 4px solid var(--primary); background: rgba(15, 15, 15, 0.9);">
                     <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
                         <h3 class="mb-0 text-white">🧪 Devlog & Fixes — Ajustements globaux</h3>
                         <span class="badge fw-bold px-3 py-2" style="background-color: var(--primary); color: #000;">16/05/2026</span>
