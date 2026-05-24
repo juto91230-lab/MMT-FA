@@ -2394,6 +2394,176 @@ html, body {
         <div class="patch-card">
             <div class="patch-header">
 
+                <div class="vision-card mb-5" style="border-left: 4px solid var(--primary); background: rgba(15, 15, 15, 0.95); font-family: 'Inter', sans-serif;">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4 p-2">
+        <h3 class="mb-0 text-white d-flex align-items-center gap-2">
+            🧪 <span>Patch Note — Version 1.16</span>
+        </h3>
+        <span class="badge fw-bold px-3 py-2" style="background-color: var(--primary); color: #000; letter-spacing: 0.5px;">24/05/2026</span>
+    </div>
+
+    <div class="mt-2 px-2">
+        <div class="row g-4 text-white">
+
+                <!-- Alerte Reboot -->
+
+    <div class="p-3 rounded mb-4" style="background: rgba(220, 53, 69, 0.1); border: 1px dashed #dc3545; color: #f8d7da; font-size: 0.85rem;">
+
+        <i class="fas fa-sync-alt fa-spin me-2" style="color: #dc3545;"></i> 
+
+        <b>Annonce Importante :</b> Les modifications seront appliquées</b> au reboot de 06h00.
+
+    </div>
+            
+            <div class="col-md-4">
+                <div class="mb-4">
+                    <h5 class="pb-2 mb-3" style="color:var(--primary); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <i class="fas fa-car me-2"></i> Conduite & Véhicules
+                    </h5>
+                    <ul class="ps-2 mb-3" style="font-size: 0.85rem; list-style-type: none; line-height: 1.5;">
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Logique sirène et son refactorée (sirenController)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Retrait blocage classe véhicule pour hélicos/avions</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Force reset palette + frame de délai (ESX.Game.SetVehicleProperties)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Sélection automatique d'un spawn libre en preview garage</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Restriction véhicule par instance & toggle ouvert à tous (jobbuilder)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Cleanup fiable preview garage entreprise (sans auto-teleport)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Sortie véhicule expulse les colocataires + rangement autorisé</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Véhicules de la vitrine du garage déverrouillés par défaut</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> takeOutVehicle (laptop) : migration vers spawn serveur</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Désarmement automatique à l'entrée en véhicule (anti-driveby automatique)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Convars pour limites de véhicules et pilotage hélicos/avions</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Jauge de carburant intégrée au speedometer</li>
+                        <li class="mb-2"><i class="fas fa-tools me-2" style="color: #ffaa00;"></i> <b style="color: #ffaa00;">Fix par Tim :</b> Résolution du bug de garage (23/05)</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <h5 class="pb-2 mb-3" style="color:var(--primary); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <i class="fas fa-map me-2"></i> Mapping & Environnement
+                    </h5>
+                    <ul class="ps-2 mb-3" style="font-size: 0.85rem; list-style-type: none; line-height: 1.5;">
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Optimisation plein atlas L1 (anti-re-flou) & over-zoom z6 (minimap)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Blips radius, cercle de chaleur et réticule style GTA</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Réduction du rayon de la zone de chasse (3000 → 300)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Apparition correcte du PC fantôme au placement via gizmo</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Planification forcée de la météo entre 06h00 et 20h30</li>
+                        <li class="mb-2"><i class="fas fa-tools me-2" style="color: #ffaa00;"></i> <b style="color: #ffaa00;">Fix par Tim :</b> Ajout de la Red Line sur la carte</li>
+                        <li class="mb-2"><i class="fas fa-tools me-2" style="color: #ffaa00;"></i> <b style="color: #ffaa00;">Fix par Tim :</b> Nouveau props ajouté au point de craft (corps d'arme pistolet)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4" style="border-left: 1px solid rgba(255,255,255,0.03); border-right: 1px solid rgba(255,255,255,0.03);">
+                <div class="mb-4">
+                    <h5 class="pb-2 mb-3" style="color:var(--primary); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <i class="fas fa-building me-2"></i> Économie & Sociétés
+                    </h5>
+                    <ul class="ps-2 mb-3" style="font-size: 0.85rem; list-style-type: none; line-height: 1.5;">
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Intégration complète du métier Weazel News (Lua + Tablette React)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Système de vente de propriétés entre joueurs via Agent Immobilier</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Mode visite (read-only walk-around) avant achat immobilier</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Nouvel onglet et écrans de gestion sur la tablette légale</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Masquage dynamique des boutons agent selon le contexte</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Désactivation temporaire du déplacement de l'ordinateur de propriété</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Exclusion automatique des membres hors ligne de la tablette</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Casiers personnels d'employés via le système de Society</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Restriction de grade optionnelle pour les doorlocks d'entreprises</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Gestion dynamique du prix armurerie (déduction cash puis banque)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Centralisation des alertes dispatch et zones d'intervention par job</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <h5 class="pb-2 mb-3" style="color:var(--primary); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <i class="fas fa-user-ninja me-2"></i> Activités Illicites
+                    </h5>
+                    <ul class="ps-2 mb-3" style="font-size: 0.85rem; list-style-type: none; line-height: 1.5;">
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Braquage Bijouterie Vangelico (Configuration via Gestion Serveur)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Reconfiguration complète des récompenses globales des braquages</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Vol de sac révisé : kInteract target, mini-jeu crochetage & dispatch</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Vente d'armes in-world : DUI, paniers, prix flottants et achat groupé</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Vente de drogue via Alt+Clic (ContextMenu) limitée à une vente par PNJ</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Point de TP optionnel pour le Blackmarket (avec suppression live admin)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Affichage des courriers volés uniquement pour le voleur concerné</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Amélioration visuelle des armes de contrebande placées dans les coffres</li>
+                        <li class="mb-2"><i class="fas fa-tools me-2" style="color: #ffaa00;"></i> <b style="color: #ffaa00;">Fix par Tim :</b> Résolution du crash/ban pendant la vente de drogues</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="mb-4">
+                    <h5 class="pb-2 mb-3" style="color:var(--primary); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <i class="fas fa-gamepad me-2"></i> Expérience Joueur
+                    </h5>
+                    <ul class="ps-2 mb-3" style="font-size: 0.85rem; list-style-type: none; line-height: 1.5;">
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Nouveau mini-jeu de Billard complet (Addon core + interface NUI)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Système de Bras de fer (tables customs, scénarios assis et paris)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Système de chaleur dynamique lié à l'heure réelle et aux boissons</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Durabilité sur les cannes à pêche et gestion des appâts (vers)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Remplacement du drain faim/soif par un malus de sprint et de saut</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Nouvelle roue des armes style loris29p (effets verre et dégradés or)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Kevlar & Bulletproof : Fiabilisation de l'armure et des plaques</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Navigation simplifiée via flèches dans les menus coiffeur et tatouages</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Notification sonore de sonnette résidentielle (Touche E pour ouvrir)</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <h5 class="pb-2 mb-3" style="color:var(--primary); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <i class="fas fa-shield-alt me-2"></i> Sécurité & Administration
+                    </h5>
+                    <ul class="ps-2 mb-3" style="font-size: 0.85rem; list-style-type: none; line-height: 1.5;">
+                        <li class="mb-2"><i class="fas fa-shield-alt me-2" style="color: #ff3333;"></i> Application stricte de la hiérarchie staff (Ban/Kick/Freeze/Jail)</li>
+                        <li class="mb-2"><i class="fas fa-shield-alt me-2" style="color: #ff3333;"></i> Blocage centralisé de 66 commandes sensibles sur le serveur de test</li>
+                        <li class="mb-2"><i class="fas fa-shield-alt me-2" style="color: #ff3333;"></i> Neutralisation des faux-positifs anticheat (pickups d'armes au sol désactivés)</li>
+                        <li class="mb-2"><i class="fas fa-shield-alt me-2" style="color: #ff3333;"></i> Whitelisting précis des hashs d'armes et entités dans l'anticheat</li>
+                        <li class="mb-2"><i class="fas fa-shield-alt me-2" style="color: #ff3333;"></i> Option permettant la désactivation complète de l'anticheat via config</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Action rapide F7 pour intercepter instantanément un nouveau report</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Confiscation de téléphones fonctionnelle en BDD (Online & Offline)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Auto-hide de l'overlay StaffAnalytics après fermeture du menu F10</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <h5 class="pb-2 mb-3" style="color:var(--primary); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <i class="fas fa-code me-2"></i> Optimisations & Code Core
+                    </h5>
+                    <ul class="ps-2 mb-3" style="font-size: 0.82rem; list-style-type: none; line-height: 1.4; opacity: 0.85;">
+                        <li class="mb-1"><i class="fas fa-undo me-1 text-warning"></i> Revert : bypass entityCreating whitelist + 4 spawns</li>
+                        <li class="mb-1"><i class="fas fa-undo me-1 text-warning"></i> Revert : blocage pickup arme à la mort</li>
+                        <li class="mb-1"><i class="fas fa-undo me-1 text-warning"></i> Revert : bouton fermeture NUI focus sur screenview</li>
+                        <li class="mb-1"><i class="fas fa-undo me-1 text-warning"></i> Revert : garage société réservé uniquement aux orgas</li>
+                        <li class="mb-1"><i class="fas fa-bolt me-1 text-info"></i> Traitement des events d'entités en O(1)</li>
+                        <li class="mb-1"><i class="fas fa-bolt me-1 text-info"></i> Thread différé PLAYER_LOADED (Supprime un freeze de 87ms)</li>
+                        <li class="mb-1"><i class="fas fa-check-circle me-1"></i> Intégration du hook SessionStart de Claude (auto pull fast-forward)</li>
+                        <li class="mb-1"><i class="fas fa-check-circle me-1"></i> Rebuild global du bundle karat-nui et routage openInput</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-12 mt-1">
+                <div class="p-2 rounded" style="background: rgba(7, 129, 106, 0.08); border: 1px dashed rgba(7, 129, 106, 0.3); font-size: 0.75rem;">
+                    <i class="fas fa-info-circle me-1" style="color: var(--primary);"></i> 
+                    <b>Mise à jour des assets :</b> Nouvelles icônes d'inventaire implémentées (<b>angle_grinder, coke_leaf, meth, weed, weed_seed, pizza</b>). Le poids de la meth et de la coke a été ajusté. L'item obsolète <b>bottle water</b> a été définitivement supprimé des tables de loot. Nettoyage et suppression d'une image origin ainsi que d'une piste audio inutilisée.
+                </div>
+            </div>
+
+            <div class="col-12 mt-2">
+                <hr style="opacity: 0.1; margin-top: 5px; margin-bottom: 15px;">
+                <h6 class="text-uppercase" style="font-size: 0.7rem; letter-spacing: 1px; color: var(--primary); font-weight: bold;">
+                    <i class="fas fa-wine-glass-alt me-1"></i> Liste complète de l'inventaire des nouveaux consommables :
+                </h6>
+                <p class="mb-0 text-muted" style="font-size: 0.75rem; font-style: italic; text-align: justify; line-height: 1.6;">
+                    Bière gingembre, Champagne, Aviation, B52, Bloody Marry, Blue Lagoon, Cuba Libre, Gin Tonic, Long Island, Martini Fresh, Mojito, Negroni, Pina Colada, Rainbow, Rouge Passion, Sweet Poison, Tequila Sunrise, Zombie, Jager, Martini, Rum, Sake, Liqueur Violette, Vin Blanc, Vodka, Wigwam Bleeder, Whisky.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
 <div class="vision-card mb-5 p-4" style="border-left: 4px solid var(--primary); background: rgba(15, 15, 15, 0.9); font-family: sans-serif; border-radius: 0 10px 10px 0;">
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
         <h3 class="mb-0 text-white">🛠️ Patch Note — Version 1.15</h3>
