@@ -2397,6 +2397,134 @@ html, body {
 <div class="vision-card mb-5" style="border-left: 4px solid var(--primary); background: rgba(15, 15, 15, 0.95); font-family: 'Inter', sans-serif;">
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4 p-2">
         <h3 class="mb-0 text-white d-flex align-items-center gap-2">
+            🧪 <span>Patch Note — Version 1.20.1</span>
+        </h3>
+        <span class="badge fw-bold px-3 py-2" style="background-color: var(--primary); color: #000; letter-spacing: 0.5px;">03/06/2026</span>
+    </div>
+
+    <div class="mt-2 px-2">
+        <div class="row g-4 text-white">
+            
+            <div class="col-md-4">
+                <div class="mb-4">
+                    <h5 class="pb-2 mb-3" style="color:var(--primary); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <i class="fas fa-gamepad me-2"></i> Activités & Fonctionnalités
+                    </h5>
+                    <ul class="ps-2 mb-3" style="font-size: 0.85rem; list-style-type: none; line-height: 1.5;">
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Recharge du bidon d'essence (jerrican) avec gestion de durabilité</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Recharge de carburant véhicule via prompt kInteract (touche E)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Activation/désactivation des extras de véhicule via ox_target (JobBuilder)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Plusieurs points par type (récolte / transformation / vente) dans une même zone de farm</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Configuration des horaires de Gunfight via le menu admin</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Configuration de l'échelle des blips de garage</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Système de Permis de Port d'Arme (PPA) + bouton Retirer le PPA dans le menu police</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Écran de croissance de la weed (weed growth)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Protection nouveau joueur (anti-carkill + ghost) sur les véhicules</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Recensement manuel des citoyens dans le MDT + permissions d'amendes dynamiques</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Position configurable pour le showcase véhicule du garage</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Menu admin pour gérer le recel de véhicules (boosting)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Menu admin pour modifier l'entrée des cambriolages de maison</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Gestion admin de la production des labos (weed, coke, meth) configurable</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Gestion admin des circuits de farm (JSON dédié + reload à chaud)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Système de ralentisseurs (speed bumps) avec création et édition</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Points d'interaction custom avec gestion d'items (shop custom)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Configuration du braquage d'ATM (récompenses, cooldown, classes de véhicules)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Configuration des courses et tarifs taxi</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Modification du label d'un job depuis la gestion</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> S'allonger sur les lits d'hôpital et s'asseoir sur les chaises (ox_target)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Commande /r pour répondre au staff sur son report</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Sonnette de propriété avec acceptation (Y) et refus (G)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Vol des boîtes aux lettres générant des items « Courrier volé » lisibles</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Bouton « Placer plus tard » pour le PC de propriété</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Gestion des améliorations de vente d'arme illégale (dispatch, double crédit, zoom, quantité)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Remise des clés du véhicule au joueur lors du spawn (concession)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Synchronisation météo améliorée au démarrage + mises à jour périodiques</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--primary);"></i> Gestion des intervalles et activation des events dans le menu admin</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4" style="border-left: 1px solid rgba(255,255,255,0.03); border-right: 1px solid rgba(255,255,255,0.03);">
+                <div class="mb-4">
+                    <h5 class="pb-2 mb-3" style="color:var(--primary); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <i class="fas fa-bug me-2"></i> Corrections & Fixes
+                    </h5>
+                    <ul class="ps-2 mb-3" style="font-size: 0.85rem; list-style-type: none; line-height: 1.5;">
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Joueurs bloqués en zone safe (collisions véhicule jamais rétablies) + déblocage du joueur téléporté en zone</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Inventaire bloqué quand on spam la touche d'ouverture</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Le désherbage fonctionne même quand l'herbe s'enfonce dans le sol</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Spawn de ped custom au reboot (Robbery) + étape sans mini-jeu</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Webhook screenshot configurable + capture attachée directement via le bot Discord</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Restriction de la Gestion Serveur à la permission MANAGE_SERVER stricte</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Kill/Goto/Bring/Freeze/Screenshot utilisaient l'ID serveur au lieu de l'UID</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Blocage de l'attribution métier/orga si la commande est désactivée</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Empêche le changement de sexe via le vestiaire</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Empêche les gardes de s'entretuer (cargo)</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Protection des créations d'objets côté serveur (Fleeca)</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Déploiement du parachute en chute libre</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Terminal de paiement (TPE) rendu responsive</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Protection de FinalizeSpawn contre les entités invalides</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Migration des colonnes evidences en LONGTEXT (MDT)</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Empêche le sprint et le saut quand la faim ou la soif est vide</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Plus de gestion d'explosion quand l'anticheat est désactivé</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Seuil de dégâts d'arme 250 → 1000 (fix désync fusils à pompe)</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Rotation du perso au clothing store sur drag horizontal</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Icône d'état moteur reflétant la santé du véhicule (vert/orange/rouge)</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Prop cacahuètes attaché à la bonne main (comme les chips)</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Préview véhicule en bucket privé au lieu de spawn en l'air (garage)</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Vérifie la disponibilité d'un spawn avant la préview véhicule</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Stoppe la récolte quand on s'éloigne du point de farm</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Waypoint GPS automatique au lancement de chaque contrat de braquage</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Vente de drogue entre 1 et 3 unités par transaction (territoires)</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Déclaration de la permission MANAGE_SERVER (points d'interaction)</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Comble les trous de la pyramide de tuiles de la minimap (bas-zoom)</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Stoppe le spam de callback ATM (reliable network event overflow)</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Persiste la progression des territoires (scoreboard) au reboot</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Pose de prop cohérente côté serveur (CleanPool)</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Affectation dispatch + accès fiche patient EMS corrigés (MDT)</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Compteur « en service » basé sur le job du viewer (MDT)</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Rentabilité appliquée à la paie + paie linéaire (fin du quadratique, JobInterim)</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Bloque les jobs typés autorités & EMS pour le vol de sac</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> Cohérence du token de noclip à l'activation/désactivation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="mb-4">
+                    <h5 class="pb-2 mb-3" style="color:var(--primary); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <i class="fas fa-rocket me-2"></i> Refontes & Optimisations
+                    </h5>
+                    <ul class="ps-2 mb-3" style="font-size: 0.85rem; list-style-type: none; line-height: 1.5; opacity: 0.85;">
+                        <li class="mb-2"><i class="fas fa-check me-2"></i> Refonte de la gestion EMS (pharmacie gratuite, restrictions d'items, anims, délais dynamiques, facture TPE instantanée, cooldown & plafond)</li>
+                        <li class="mb-2"><i class="fas fa-check me-2"></i> Refonte de la gestion immobilière (colocataires reconnus, locataire qui reste dans la prop, poids du coffre en live, modal ordinateur)</li>
+                        <li class="mb-2"><i class="fas fa-check me-2"></i> Refonte de la weapon damage / anticheat (whitelist d'entités honorée dans entityCreating)</li>
+                        <li class="mb-2"><i class="fas fa-check me-2"></i> Refactor du composant RanksPage (retrait de l'édition de salaire)</li>
+                        <li class="mb-2"><i class="fas fa-check me-2"></i> Optimisation serveur pour tenir 300+ joueurs</li>
+                        <li class="mb-2"><i class="fas fa-check me-2"></i> Optimisation des curseurs natifs de la map (moins de messages NUI)</li>
+                        <li class="mb-2"><i class="fas fa-check me-2"></i> Optimisation du braquage (gestion d'erreurs sur coordonnées manquantes : boosting, cargo, fleeca, house, pacific)</li>
+                        <li class="mb-2"><i class="fas fa-check me-2"></i> Spawner de véhicule géré côté serveur</li>
+                        <li class="mb-2"><i class="fas fa-check me-2"></i> Logique de craft améliorée pour les items non-stackables</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-3 p-3" style="border-top: 1px solid rgba(255,255,255,0.1); background: rgba(255, 255, 255, 0.02);">
+            <h5 class="text-white mb-2" style="font-size: 0.9rem;">
+                <i class="fas fa-clock me-2" style="color: #f39c12;"></i> En cours / Arrivages prochains :
+            </h5>
+            <ul class="ps-4 mb-0 text-white" style="font-size: 0.85rem; line-height: 1.6; opacity: 0.8;">
+                <li>Ajout des feux d'artifice dans la boutique / Intégration du système de vente d'organes / Résolution caméras laboratoires / Ajustement conso essence</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+                
+<div class="vision-card mb-5" style="border-left: 4px solid var(--primary); background: rgba(15, 15, 15, 0.95); font-family: 'Inter', sans-serif;">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4 p-2">
+        <h3 class="mb-0 text-white d-flex align-items-center gap-2">
             🧪 <span>Patch Note — Version 1.20</span>
         </h3>
         <span class="badge fw-bold px-3 py-2" style="background-color: var(--primary); color: #000; letter-spacing: 0.5px;">03/06/2026</span>
@@ -2442,7 +2570,7 @@ html, body {
                     </h5>
                     <ul class="ps-2 mb-3" style="font-size: 0.85rem; list-style-type: none; line-height: 1.5; opacity: 0.85;">
                         <li class="mb-2"><i class="fas fa-edit me-2" style="color: #f39c12;"></i> Modification coffre GBMOJAVE</li>
-                        <li class="mb-2"><i class="fas fa-edit me-2" style="color: #f39c12;"></i> Modification des poids de ressources : Fer, Acier, Caoutchouc, Ferraille</li>
+                        <li class="mb-2"><i class="fas fa-edit me-2" style="color: #f39c12;"></i> Modification des points de ressources : Fer, Acier, Caoutchouc, Ferraille</li>
                     </ul>
                 </div>
             </div>
