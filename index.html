@@ -284,6 +284,25 @@
             color: var(--text-muted);
         }
 
+        /* Style Premium pour les images d'emotes */
+.emote-preview-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px; /* Un rayon légèrement moins prononcé pour un look plus net */
+    border: none !important; /* Force la suppression de toute bordure pour éliminer la ligne blanche */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Ombre de profondeur subtile */
+    transition: all 0.3s ease-in-out; /* Transition fluide pour le survol */
+    position: relative;
+    z-index: 1;
+}
+
+.emote-preview-img:hover {
+    transform: scale(1.1); /* Léger zoom au survol pour l'interactivité */
+    box-shadow: 0 0 15px rgba(13, 110, 253, 0.8), 0 0 10px rgba(255, 255, 255, 0.2); /* Lueur d'accentuation bleu primaire et point lumineux */
+    z-index: 10; /* S'affiche au-dessus des autres éléments au survol */
+}
+
         .rule-tab.active {
             border-color: var(--primary);
             color: var(--primary);
@@ -332,6 +351,20 @@
     width: 100%;
 }
 
+.btn-outline-custom {
+            border: 1px solid var(--border-color);
+            color: #fff;
+            background: transparent;
+        }
+
+        .btn-outline-custom:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-color: #fff;
+        }
+
 /* Si tu as un container à l'intérieur, vérifie aussi ses marges */
 .nav-container {
     padding-top: 5px;
@@ -339,6 +372,51 @@
     margin-top: 0;
 }
    
+
+/* --- STYLE PREMIUM POUR LE MODAL EMOTES --- */
+
+/* Personnalisation de la barre de défilement (Scrollbar) pour Chrome, Safari et Edge */
+.premium-scrollbar::-webkit-scrollbar {
+    width: 6px; /* Très fine et moderne */
+}
+
+.premium-scrollbar::-webkit-scrollbar-track {
+    background: #111215; /* Même couleur exacte que le fond du modal */
+    border-radius: 10px;
+}
+
+.premium-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(2, 10, 22, 0.25); /* Teinte bleutée transparente */
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.premium-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #0dedfd; /* Devient cyan brillant au survol avec la souris */
+}
+
+/* Compatibilité de la Scrollbar pour Firefox */
+.premium-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.25) #111215;
+}
+
+/* Style des images sans aucune bordure blanche parasite */
+.emote-preview-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: none !important; /* Supprime définitivement la ligne blanche */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); /* Ombre portée pour donner du relief */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Effet au survol de l'image */
+.emote-preview-img:hover {
+    transform: scale(1.08); /* Léger zoom fluide */
+    box-shadow: 0 0 15px rgba(13, 110, 253, 0.6); /* Lueur bleue premium */
+}
 
 /* 1. On retire les marges par défaut du navigateur */
 html, body {
@@ -661,17 +739,18 @@ html, body {
                                 <span class="hero-badge">Votre expérience notre plaisir</span>
                                 <h1>BIENVENUE SUR <br><span class="accent-color">MMT FA</span></h1>
                                 <p>Entrez dans une expérience vivante, façonnée par vos décisions. Un univers unique conçu pour une immersion totale et une fluidité maximale.</p>
-                                <div class="d-flex gap-3 mt-4">
+                                   <div class="d-flex gap-3 mt-4">
                                     <a onclick="showPage('reglement')" class="btn-premium btn-primary-custom">
-                                        <i class="fas fa-book-open me-2"></i> Lire le règlement
+                                        <i class="fas fa-book-open me-2"></i> Règlement
                                     </a>
-                                    <a href="https://discord.gg/ervEHwbCMG" target="_blank" class="btn-premium btn-outline-custom" style="border: 1px solid var(--border-color); color:#fff;">
+                                    <a onclick="openEmote()" class="btn-premium btn-outline-custom">
+                                        <i class="fa-solid fa-masks-theater me-2"></i> Emotes
+                                    </a>
+                                    <a href="https://discord.gg/ervEHwbCMG" target="_blank" class="btn-premium btn-outline-custom">
                                         <i class="fab fa-discord me-2"></i> Discord
                                     </a>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
+                            </div> </div> <div class="col-lg-6">
                             <div id="heroCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel">
                                 <div class="carousel-indicators custom-indicators">
                                     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
@@ -2348,6 +2427,149 @@ html, body {
             </div>
         </div>
     </div>
+
+<div id="emoteModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; justify-content: center; align-items: center; padding: 20px; backdrop-filter: blur(5px);">
+    <div class="premium-scrollbar" style="background: #111215; color: white; padding: 30px; border-radius: 16px; max-width: 850px; width: 100%; max-height: 85vh; overflow-y: auto; border: 1px solid rgba(255,255,255,0.08); position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.6);">
+        
+        <span onclick="closeEmote()" style="position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #aaa; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">&times;</span>
+        
+        <h2 style="font-family: 'Lexend', sans-serif; font-weight: 700; margin-bottom: 25px; color: #fff; text-align: center;">
+            </i> Liste des Emotes MMT FA
+        </h2>
+        
+        <div class="mb-4" style="position: relative;">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: #0dedfd; opacity: 0.6;"></i>
+            <input type="text" id="emoteSearchInput" oninput="filtrerEmotes()" placeholder="Rechercher une emote... (ex: sit, police, dormir)" style="width: 100%; padding: 12px 20px 12px 48px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; color: #fff; font-family: 'Inter', sans-serif; outline: none; transition: 0.3s;" onfocus="this.style.borderColor='#0dedfd'; this.style.boxShadow='0 0 10px rgba(13, 110, 253, 0.2)';" onblur="this.style.borderColor='rgba(255,255,255,0.08)'; this.style.boxShadow='none';">
+        </div>
+        
+        <div class="table-responsive" style="border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05);">
+            <table class="table table-dark table-striped table-hover align-middle text-center m-0">
+                <thead style="background: #1d1f24; font-family: 'Lexend', sans-serif;">
+                    <tr>
+                        <th scope="col" style="padding: 15px; color: #0dedfd; font-weight: 600;">Commande</th>
+                        <th scope="col" style="padding: 15px; font-weight: 600;">Description</th>
+                        <th scope="col" style="padding: 15px; font-weight: 600;">Aperçu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 15px;"><code style="background: rgba(13, 110, 253, 0.15); color: #0dedfd; padding: 6px 12px; border-radius: 6px; font-size: 0.95rem;">/e sit</code></td>
+                        <td style="font-family: 'Inter', sans-serif; font-size: 0.95rem;">S'asseoir par terre (détente)</td>
+                        <td>
+                            <img src="https://i.postimg.cc/5YSByqCM/1A1E67F8-1E3D-41D4-8E4B-B3711D0360DE.png" alt="Emote sit" class="emote-preview-img">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px;"><code style="background: rgba(13, 110, 253, 0.15); color: #0dedfd; padding: 6px 12px; border-radius: 6px; font-size: 0.95rem;">/e medic2</code></td>
+                        <td style="font-family: 'Inter', sans-serif; font-size: 0.95rem;">S'accroupir au sol</td>
+                        <td>
+                            <img src="https://i.postimg.cc/hJHyTrv9/5FAA1039-6A3F-4B61-A1B6-A457AB361E90.png" alt="Emote Medic2" class="emote-preview-img">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px;"><code style="background: rgba(13, 110, 253, 0.15); color: #0dedfd; padding: 6px 12px; border-radius: 6px; font-size: 0.95rem;">/e sleep</code></td>
+                        <td style="font-family: 'Inter', sans-serif; font-size: 0.95rem;">Dormir</td>
+                        <td>
+                            <img src="https://i.postimg.cc/SnVjnTZW/F497AFBF-1274-4141-A75F-26F2B0991761.png" alt="Emote Dormir" class="emote-preview-img">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px;"><code style="background: rgba(13, 110, 253, 0.15); color: #0dedfd; padding: 6px 12px; border-radius: 6px; font-size: 0.95rem;">/e pushup</code></td>
+                        <td style="font-family: 'Inter', sans-serif; font-size: 0.95rem;">Faire des pompes</td>
+                        <td>
+                            <img src="https://i.postimg.cc/D4dnt0RT/2F89D1FF-03AA-48E1-AFFF-6C76DC8DE7F3.png" alt="Emote Pompe" class="emote-preview-img">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px;"><code style="background: rgba(13, 110, 253, 0.15); color: #0dedfd; padding: 6px 12px; border-radius: 6px; font-size: 0.95rem;">/e lean</code></td>
+                        <td style="font-family: 'Inter', sans-serif; font-size: 0.95rem;">Pause </td>
+                        <td>
+                            <img src="https://i.postimg.cc/Ty4VDYkN/96D13976-2B4B-4ECF-B17A-34E0FEA87202.png" alt="Emote Pause" class="emote-preview-img">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px;"><code style="background: rgba(13, 110, 253, 0.15); color: #0dedfd; padding: 6px 12px; border-radius: 6px; font-size: 0.95rem;">/e cop</code></td>
+                        <td style="font-family: 'Inter', sans-serif; font-size: 0.95rem;">Pause police </td>
+                        <td>
+                            <img src="https://i.postimg.cc/BLfxgw0T/BE5A31E7-A38C-4EA2-A7BE-9E453E6E7219.png" alt="Emote Pause police" class="emote-preview-img">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px;"><code style="background: rgba(13, 110, 253, 0.15); color: #0dedfd; padding: 6px 12px; border-radius: 6px; font-size: 0.95rem;">/e surrender</code></td>
+                        <td style="font-family: 'Inter', sans-serif; font-size: 0.95rem;">Otage </td>
+                        <td>
+                            <img src="https://i.postimg.cc/N5ZLm2YL/5012DA20-6885-4D2D-9819-992A518738E6.png" alt="Emote Otage" class="emote-preview-img">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px;"><code style="background: rgba(13, 110, 253, 0.15); color: #0dedfd; padding: 6px 12px; border-radius: 6px; font-size: 0.95rem;">/e slap</code></td>
+                        <td style="font-family: 'Inter', sans-serif; font-size: 0.95rem;">Claque </td>
+                        <td>
+                            <img src="https://i.postimg.cc/Hjcg5ZLF/D0A8A6DD-04B4-433F-B9A1-F213ACE9E25F.png" alt="Emote Claque" class="emote-preview-img">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px;"><code style="background: rgba(13, 110, 253, 0.15); color: #0dedfd; padding: 6px 12px; border-radius: 6px; font-size: 0.95rem;">/e holster</code></td>
+                        <td style="font-family: 'Inter', sans-serif; font-size: 0.95rem;">La main sur le holster   </td>
+                        <td>
+                            <img src="https://i.postimg.cc/HVghxB8J/61A2FC74-944F-47C0-8AA4-5F19F0CEE138.png" alt="Emote La main sur le holster " class="emote-preview-img">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px;"><code style="background: rgba(13, 110, 253, 0.15); color: #0dedfd; padding: 6px 12px; border-radius: 6px; font-size: 0.95rem;">/e clap</code></td>
+                        <td style="font-family: 'Inter', sans-serif; font-size: 0.95rem;">Bravo !  </td>
+                        <td>
+                            <img src="https://i.postimg.cc/phmgfrP9/3138D2F2-CF0D-45CF-9D1E-9714369C946E.png" alt="Emote Bravo" class="emote-preview-img">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px;"><code style="background: rgba(13, 110, 253, 0.15); color: #0dedfd; padding: 6px 12px; border-radius: 6px; font-size: 0.95rem;">/e cpr</code></td>
+                        <td style="font-family: 'Inter', sans-serif; font-size: 0.95rem;">Reanimer </td>
+                        <td>
+                            <img src="https://i.postimg.cc/yJcRkXZx/D93165CE-C3A5-42E3-A658-2B4014ABAA69.png" alt="Emote Reanimer" class="emote-preview-img">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px;"><code style="background: rgba(13, 110, 253, 0.15); color: #0dedfd; padding: 6px 12px; border-radius: 6px; font-size: 0.95rem;">/e sitchair</code></td>
+                        <td style="font-family: 'Inter', sans-serif; font-size: 0.95rem;">S'asseoir</td>
+                        <td>
+                            <img src="https://i.postimg.cc/R6pDqBfq/9C078564-E399-46F8-ADE4-8BABC300C374.png" alt="Emote S'asseoir" class="emote-preview-img">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px;"><code style="background: rgba(13, 110, 253, 0.15); color: #0dedfd; padding: 6px 12px; border-radius: 6px; font-size: 0.95rem;">/e salute</code></td>
+                        <td style="font-family: 'Inter', sans-serif; font-size: 0.95rem;">Salut militaire</td>
+                        <td>
+                            <img src="https://i.postimg.cc/VrJFGbSV/BAC1F08B-306D-474F-8044-27F8FF6E8F3A.png" alt="Emote Salut militaire" class="emote-preview-img">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px;"><code style="background: rgba(13, 110, 253, 0.15); color: #0dedfd; padding: 6px 12px; border-radius: 6px; font-size: 0.95rem;">/e coffee</code></td>
+                        <td style="font-family: 'Inter', sans-serif; font-size: 0.95rem;">Boire un coffee</td>
+                        <td>
+                            <img src="https://i.postimg.cc/p5TM1CQf/82777818-1A92-4C2D-B684-60BC7B81F60F.png" alt="Emote coffee" class="emote-preview-img">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px;"><code style="background: rgba(13, 110, 253, 0.15); color: #0dedfd; padding: 6px 12px; border-radius: 6px; font-size: 0.95rem;">/e finger2</code></td>
+                        <td style="font-family: 'Inter', sans-serif; font-size: 0.95rem;">Faire un doigt d'honneur</td>
+                        <td>
+                            <img src="https://i.postimg.cc/6yW8BxcY/094B13C4-EFA2-43AD-96C4-E95AE61A1134.png" alt="Emote Fuck you" class="emote-preview-img">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px;"><code style="background: rgba(13, 110, 253, 0.15); color: #0dedfd; padding: 6px 12px; border-radius: 6px; font-size: 0.95rem;">/e notepad</code></td>
+                        <td style="font-family: 'Inter', sans-serif; font-size: 0.95rem;">Calle-Pain / Bloque-note</td>
+                        <td>
+                            <img src="https://i.postimg.cc/XX22g4rF/46CAD924-28D4-47B1-89ED-D5F836D44CAD.png" alt="Emote Calle-Pain / Bloque-note" class="emote-preview-img">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div>
 
     <div id="lexiqueModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:10005; justify-content:center; align-items:center; padding:20px;">
         <div class="p-4" style="background: #0a0a0a; border: 1px solid var(--primary); border-radius:24px; max-width:800px; width:100%; max-height:85vh; overflow-y:auto; position:relative; backdrop-filter: blur(20px);">
@@ -4496,6 +4718,55 @@ document.addEventListener('keydown', function(e) {
         return false;
     }
 });
+
+function openLexique() { document.getElementById('lexiqueModal').style.display = 'flex'; }
+function closeLexique() { document.getElementById('lexiqueModal').style.display = 'none'; }
+
+document.getElementById('lexiqueModal').addEventListener('click', function(e) {
+    if (e.target === this) closeLexique();
+});
+// Fonctions pour le Modal des Emotes
+function openEmote() { document.getElementById('emoteModal').style.display = 'flex'; }
+function closeEmote() { document.getElementById('emoteModal').style.display = 'none'; }
+
+document.getElementById('emoteModal').addEventListener('click', function(e) {
+    if (e.target === this) closeEmote();
+});
+
+// Fonctions de contrôle de la fenêtre Emotes
+function openEmote() { 
+    document.getElementById('emoteModal').style.display = 'flex'; 
+    document.getElementById('emoteSearchInput').value = ''; // Vide la recherche à chaque ouverture
+    filtrerEmotes(); // Réaffiche toutes les lignes
+}
+function closeEmote() { 
+    document.getElementById('emoteModal').style.display = 'none'; 
+}
+
+// Ferme la fenêtre si on clique en dehors du cadre
+document.getElementById('emoteModal').addEventListener('click', function(e) {
+    if (e.target === this) closeEmote();
+});
+
+// L'UNIQUE fonction de recherche pour filtrer le tableau
+function filtrerEmotes() {
+    // Récupère ce qui est écrit dans la barre tout en haut
+    const saisie = document.getElementById('emoteSearchInput').value.toLowerCase().trim();
+    // Sélectionne toutes les lignes (tr) du corps de ton tableau (tbody)
+    const lignes = document.querySelectorAll('#emoteModal tbody tr');
+
+    lignes.forEach(ligne => {
+        // Analyse le texte de la ligne entière (la commande + la description)
+        const texteLigne = ligne.textContent.toLowerCase();
+        
+        // Si le mot écrit est présent dans la ligne, on la laisse visible, sinon on la masque
+        if (texteLigne.includes(saisie)) {
+            ligne.style.display = ''; // Affiche la ligne
+        } else {
+            ligne.style.display = 'none'; // Cache la ligne
+        }
+    });
+}
 
     </script>
 </body>
